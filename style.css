@@ -1,0 +1,106 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: left;
+  background-color: #fff;
+}
+.cajaIzquierdaAfuera{
+    z-index: -1;
+    background-color: #00D69B;
+    width: 34%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.caja1{
+    border-radius: 15px;
+    margin: 50px auto;
+    width: 80%;
+    height: 500px;
+    box-shadow: 5px 5px 9px 10px rgba(0, 0, 0, 0.16);
+    display: flex;
+}
+.panelIzquierda{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 30%;
+    
+}
+.panelIzquierda img{
+    width: 145px;
+   margin-top: 170px;
+   margin-left: 30%;
+}
+.frmLogin{  
+    width: 40%;
+    margin: 40px auto;
+}
+
+.frmLogin h2{
+    width: 100%;
+    text-align: center;
+    font-size: 1.9rem;
+    color: #000000;
+}
+
+.cajaLogin{
+   display: flex;
+   flex-direction: column;
+}
+.item{
+    margin: 20px;
+}
+.item label{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.itemTexto{
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.itemTexto:focus {
+    color: #677e6c;
+    background-color: #fff;
+    border-color:  #00D69B;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 191, 0.25);
+}
+.accionesLogin{
+    width: 100%;
+    margin-top: 10px;
+}
+.btnlogin{
+    cursor: pointer;
+    background-color:  #00D69B;
+    width: 200px;
+    padding: 12px 10px;
+    border-radius: 5px;
+    margin: 15px 115px;
+    border: 2px solid  #027a58;
+}
+.btnlogin:hover{
+    background-color:  #00ffb7; 
+}

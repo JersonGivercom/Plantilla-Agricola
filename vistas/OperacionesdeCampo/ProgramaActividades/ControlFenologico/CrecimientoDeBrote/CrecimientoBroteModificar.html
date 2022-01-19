@@ -18,8 +18,8 @@
                     <i class="fas fa-holly-berry icon-gradient bg-night-fade">
                     </i>
                 </div>
-                <div>Modificar el Crecimiento del Brote
-                    <div class="page-title-subheading">Modificar el crecimiento del brote
+                <div>Modificar el Crecimiento de Brotación
+                    <div class="page-title-subheading">Modificar la información del crecimiento de brotación.
                     </div>
                 </div>
             </div>
@@ -130,6 +130,10 @@
                         </div>
 
                     </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Fecha de Programación</label>
+                        <input type="date" class="form-control" id="fechaPro" value="">
+                    </div>
 
                     <div class="col-md-4 mb-3">
 
@@ -160,7 +164,9 @@
                 window.location.href="CrecimientoBroteList.html";
                 }
 
-
+                window.load= function name(params) {
+                    document.getElementById("fechaPro").value = "2022-01-15";
+                }
 
                 // Example starter JavaScript for disabling form submissions if there are invalid fields
                 (function () {
