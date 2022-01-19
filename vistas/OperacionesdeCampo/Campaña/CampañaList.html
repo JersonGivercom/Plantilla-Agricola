@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../estilo/main.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <title>Document</title>
+</head>
+<body class="pagina">
+    <div class="app-page-title">
+
+        <div class="page-title-wrapper">
+
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-albums icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div>Campaña
+                    <div class="page-title-subheading">Listado de las campañas creadas en el sistema.
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-title-actions">
+                
+                <div class="d-inline-block dropdown">
+                    <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-business-time fa-w-20"></i>
+                        </span>
+                        Acciones
+                    </button>
+                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="Campaña.html" class="nav-link" >
+                                    <i class="fas fa-plus-square nav-link-icon"></i>
+                                    <span>
+                                        Nueva 
+                                    </span>
+                                  
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0);" class="nav-link" data-toggle="modal" data-target="#modalProcess">
+                                    <i class="fas fa-file-export nav-link-icon" ></i>
+                                    <span>
+                                        Exportar Excel
+                                    </span>
+                                   
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0);" class="nav-link">
+                                    <i class="fas fa-window-close nav-link-icon"></i>
+                                    <span>
+                                        Cerrar
+                                    </span>
+                                </a>
+                            </li>
+                       
+                        </ul>
+                    </div>
+                </div>
+            </div>      
+        
+        </div>
+
+    </div>           
+    
+    
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title"  onClick="muestra_oculta('busqueda')">Filtro de Búsqueda <i class="fa fa-angle-down ic"></i> </h5>
+            <form class="needs-validation" id="busqueda" novalidate>
+
+                <div class="form-row">
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Codigo </label>
+                        <input type="text" class="form-control" id="validationCustom01"
+                         placeholder="Ingrese código" value="" required>
+                        <div class="valid-feedback">
+                            Correcto!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Nombre </label>
+                        <input type="text" class="form-control" id="validationCustom02" 
+                        placeholder="Ingrese nombre" value="" required>
+                        <div class="valid-feedback">
+                            Correcto!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom03">Fundo</label>
+
+                        <select class="mb-2 form-control" required>
+                            <option>Seleccione</option>
+                            <option>Sacramento</option>
+                        </select>
+
+                        <div class="invalid-feedback">
+                            Por favor seleccionar un Fundo
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom03">Estado</label>
+
+                        <select class="mb-2 form-control" required>
+                            <option>Seleccione</option>
+                            <option>Activo</option>
+                            <option>Inactivo</option>
+                        </select>
+
+                        <div class="invalid-feedback">
+                            Por favor seleccionar un estado
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button class="btn btn-primary" type="submit">Refrescar</button>
+
+               
+            </form>
+
+            <script>
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function() {
+                    'use strict';
+                    window.addEventListener('load', function() {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function(form) {
+                            form.addEventListener('submit', function(event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
+        </div>
+    </div>
+    
+
+  
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <h5 class="card-title"  onClick="muestra_oculta('resultado')">Resultado <i class="fa fa-angle-down ic"></i> </h5>
+                <div class="table-responsive" id="resultado">
+                    <table id="tablax" class="mb-5 table" >
+                        <thead class="tabla_encabezado">
+                            <th>Código </th>
+                            <th>Nombre </th>
+                            <th>Fundo</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Fin</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">C20210101</th>
+                                <td>Temporada Uva 2021</td>
+                                <td>Sacramento</td>
+                                <td>01/01/2021</td>
+                                <td>28/07/2021</td>
+                                 <td>   
+                                    <div class="d-inline-block dropdown">
+                                        <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false"
+                                            class="btn-shadow dropdown-toggle btn btn-info">
+                                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                <i class="fa fa-business-time fa-w-20"></i>
+                                            </span>
+                                            Acciones
+                                        </button>
+
+                                        <div tabindex="-1" role="menu" aria-hidden="true"
+                                            class="dropdown-menu dropdown-menu-right">
+                                            <ul class="nav flex-column">
+
+                                                <li class="nav-item">
+                                                    <a href="CampañaVer.html" class="nav-link">
+                                                        <i class="fas fa-eye nav-link-icon"></i>
+                                                        <span>
+                                                            Ver
+                                                        </span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a href="CampañaModificar.html" class="nav-link">
+                                                        <i class="fas fa-pencil-alt nav-link-icon"></i>
+                                                        <span>
+                                                            Modificar
+                                                        </span>
+
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="javascript:eliminarCampaña();"
+                                                        class="nav-link">
+                                                        <i class="fas fa-trash-alt nav-link-icon"></i>
+                                                        <span>
+                                                            Eliminar
+                                                        </span>
+
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>  
+                            </tr>    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+</script>
+<!-- DATATABLES -->
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
+</script>
+<!-- BOOTSTRAP -->
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
+</script>
+<script>
+    function eliminarCampaña() {
+                if (confirm("Esta seguro de eliminar?")) {
+                }
+                window.location.href="CampañaList.html";
+            }
+
+</script>
+<script type="text/javascript" src="../../../assets/scripts/tree_view.js"></script>
+<script type="text/javascript" src="../../../assets/scripts/Tabla.js"></script>
+<script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</body>
+</html>

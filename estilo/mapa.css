@@ -1,0 +1,154 @@
+.mapa{
+    margin-left: 15px;
+    width: 98%;
+    height: 560px;
+    display: flex;
+    flex-direction: row;
+    border-radius:15px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    padding: 10px 20px ;
+    background: #fff;
+    box-shadow: 6px 5px 9px 13px rgb(118 111 111 / 24%);
+}
+.mapas_md_gm{
+   border-radius: 15px; 
+   
+}
+.noborde{
+    box-shadow: none !important;
+}
+.imagen{
+    width: 100%;
+    border-radius: 15px;
+    /* box-shadow: 6px 5px 9px 13px rgb(118 111 111 / 24%); */
+}
+/* .mapa path{
+    fill: #cac7c3;
+    stroke: rgb(241, 241, 241);
+    stroke-width: 2px;
+
+} */
+
+.mapa svg{
+    width: 99%;
+    height: 480px;
+}
+
+/* .mapa :hover{
+    fill: #908E8B;
+    
+} */
+
+.mapa_datos{
+    border-radius: 15px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #00B17E;
+    /* box-shadow: 6px 5px 9px 13px rgb(118 111 111 / 24%); */
+   
+}
+
+.description_text{
+    color: black;
+    text-align: center;
+    
+}
+.estadistica{
+    margin-top: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.estadistica:hover{
+    transform: translate(0px, -2px);
+}
+
+i{
+    font-size: 30px;
+    color: white;
+}
+
+.mapa_estadistica{
+    width: 50%;    
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.mapa_estadistica .cajas{ 
+    width: 95%;
+    height: 100px;
+    margin-left: 10px;
+    margin-top: 30px;
+    display: flex;
+    border-radius: 15px;
+    /* box-shadow: 6px 5px 9px 13px rgb(118 111 111 / 24%); */
+    
+}
+.mapa_estadistica .cajas:hover{
+    transform: translate(0px, -8px);
+}
+.color1{
+    background-color: #FF9700;
+}
+.color2{
+    background-color: #00C3F1;
+}
+.color3{
+    background-color: #F43D25;
+}
+.color4{
+    background-color: #00A961;
+}
+.cajas_imagen{
+    width: 30%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.397);
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    margin-right: 15px;
+}
+.cajas_imagen i{
+    font-size: 40px;
+    margin: 0px auto;
+
+}
+.cajas_info{
+    
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.cajas_info label{
+    font-size: 14px;
+}
+.mapas_md_go{
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+}
+
+.estadistica_titulo{
+    color: #0e0e0e;
+    text-transform: uppercase;
+}
+
+
+
+/* Nuevo */
+
+
+.bordeCajasMapas{
+    border: 1px solid aqua;
+}
+.listaDatosMapa{
+    display: flex;
+    flex-direction: column;
+}
+.tituloCaja{
+    font-size: 1.25rem;
+}

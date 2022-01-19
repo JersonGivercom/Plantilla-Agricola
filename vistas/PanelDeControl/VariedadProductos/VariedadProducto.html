@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../estilo/main.css">
+    <title>Document</title>
+</head>
+<body class="pagina">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-albums icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div>Nueva Variedad de Producto
+                    <div class="page-title-subheading">Nueva información de la variedad de un producto.
+                    </div>
+                </div>
+            </div>
+            <div class="page-title-actions">
+
+           
+
+                <div class="d-inline-block dropdown">
+                    <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-business-time fa-w-20"></i>
+                        </span>
+                        Acciones
+                    </button>
+                    <div tabindex="-1" role="menu" aria-hidden="true"
+                        class="dropdown-menu dropdown-menu-right">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a disabled href="VariedadProductosLista.html" class="nav-link">
+                                    <i class="fas fa-window-close nav-link-icon"></i>
+                                    <span>
+                                        Cerrar
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title">Nueva</h5>
+
+            <form class="needs-validation" novalidate>
+
+                <div class="form-row">
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom01">Código</label>
+                        <input type="text" disabled class="form-control" id="validationCustom01"
+                            placeholder="Campo Autogenerado" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Nombre</label>
+                        <input type="text" class="form-control" id="validationCustom02"
+                            placeholder="Ingresar nombre" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom03">Descripción</label>
+                        <input type="text" class="form-control" id="validationCustom03"
+                            placeholder="Ingresar descripción" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom03">Licenciada</label>
+                            <div class="form-row">
+                                <div class="col-md-3 radio_licenciado_producto">
+                                    <input type="radio" class="radio_no" onclick="txtNombreLicenciado.disabled =false"  name="licencia" id="">No
+                                    <input type="radio" class="radio_si"  onclick="txtNombreLicenciado.disabled =false" name="licencia" id="">Si
+                                </div>
+                                <div class="col-md-9 mb-3">
+                                    <input type="text" name="txtNombreLicenciado" disabled  class="form-control"  
+                                    placeholder="Nombre">
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom04">Color</label>
+                        <select class="mb-2 form-control" required>
+                            <option>Seleccione</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor seleccionar un color
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom05">Forma</label>
+                        <select class="mb-2 form-control" required>
+                            <option>Seleccione</option>
+                            <option>Ovalada</option>
+                            <option>Alargada</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor seleccionar una forma
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom06">Tamañó de Baya</label>
+                        <input type="text" class="form-control" id="validationCustom06"
+                            placeholder="Ingresar tamaño de baya" value="" required>
+                            <div class="invalid-feedback">
+                                Por favor seleccionar una baya
+                            </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom06">Peso de Baya</label>
+                        <input type="text" class="form-control" id="validationCustom06"
+                            placeholder="Ingresar peso de baya" value="" required>
+                            <div class="invalid-feedback">
+                                Por favor seleccionar una baya
+                            </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom06">Peso Promedio de Racimo</label>
+                        <input type="text" class="form-control" id="validationCustom06"
+                            placeholder="Ingresar peso promedio " value="" required>
+                            <div class="invalid-feedback">
+                                Por favor seleccionar una baya
+                            </div>
+                    </div>
+
+                    <!-- <div class="col-md-4 mb-3">
+                        <label for="validationCustom06">Peso Minimo de Racimo</label>
+                        <input type="text" class="form-control" id="validationCustom06"
+                            placeholder="Ingresar el peso minimo" value="" required>
+                            <div class="invalid-feedback">
+                                Por favor seleccionar una baya
+                            </div>
+                    </div> -->
+                    <!-- <div class="col-md-4 mb-3">
+                        <label for="validationCustom06">Escobajo</label>
+                        <input type="text" class="form-control" id="validationCustom06"
+                            placeholder="Ingresar el escobajo" value="" required>
+                            <div class="invalid-feedback">
+                                Por favor seleccionar una baya
+                            </div>
+                    </div> -->
+                    <!-- <div class="col-md-4 mb-3">
+                        <label for="validationCustom06">Indicador de Madures</label>
+                        <input type="text" class="form-control" id="validationCustom06"
+                            placeholder="Ingresar el indicador de madures" value="" required>
+                            <div class="invalid-feedback">
+                                Por favor seleccionar una baya
+                            </div>
+                    </div> -->
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom06">Rendimiento Esperado</label>
+                        <input type="text" class="form-control" id="validationCustom06"
+                            placeholder="Ingresar el rendimiento esperado" value="" required>
+                            <div class="invalid-feedback">
+                                Por favor seleccionar una baya
+                            </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom07">Unidades</label>
+                        <select class="4b-2 form-control" required>
+                            <option>Seleccionar</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor seleccionar unidad
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-4 mb-3">
+                        <label for="validationCustom08">Tipo Producto</label>
+                        <select class="mb-2 form-control" required>
+                            <option>Oleaginosas</option>
+                            <option>Cereales</option>
+                            <option>Forrajeras</option>
+                            <option>Bosques y montes implantados</option>
+                            <option>Cultivos industriales</option>
+                            <option>Frutales</option>
+                            <option>Legumbres</option>
+                            <option>Hortalizas</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor seleccionar tipo producto
+                        </div>
+                    </div> -->
+
+
+                    <!-- <div class="col-md-4 mb-3">
+                        <label for="validationCustom09">Tipo Cultivo</label>
+                        <select class="4b-2 form-control" required>
+                            <option>Alimentarios</option>
+                            <option>Para forraje</option>
+                            <option>Textiles</option>
+                            <option>Oleaginosos</option>
+                            <option>Ornamentales</option>
+                            <option>Industriales</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor s4leccionar tipo cultivo
+                        </div>
+                    </div> -->
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom10">Tipo Suelo</label>
+                        <select class="mb-2 form-control" required>
+                            <option>Seleccione</option>
+                            <option>Limosos</option>
+                            <option>Arcillosos</option>
+                            <option>Arenosos</option>
+                            <option>Salinos</option>
+                            <option>Turba</option>
+                        </select>
+
+
+                        <div class="invalid-feedback">
+                            Por favor seleccionar tipo suelo
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-4 mb-3">
+                        <label for="validationCustom11">Metodo de Labranza</label>
+                        <select class="mb-2 form-control" required>
+                            <option>Convencional o tradicional</option>
+                            <option>Minima o conservacionista</option>
+                            <option>Cero o siembra directa</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor seleccionar metodo de labranza
+                        </div>
+                    </div> -->
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom12">Tipo de Riego</label>
+                        <select class="mb-2 form-control" required>
+                            <option>Seleccione</option>
+                            <option>Inundacion</option>
+                            <option>Por Goteo</option>
+                            <option>Aspersion o Inundacion</option> 
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor seleccionar Tipo de Drenaje/Irrigación
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom12">Fuentes</label>
+                        <select class="mb-2 form-control" required>
+                            <option>Seleccione</option>
+                            <option>Embalses</option>
+                            <option>Acueductos</option>  
+                            <option>Pozos</option> 
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor seleccionar Tipo de Drenaje/Irrigación
+                        </div>
+                    </div>
+                </div>  
+
+                
+               
+
+                <button class="btn btn-primary" type="submit">Guardar</button>
+
+                <button class="btn btn-secondary" onclick="cerrar()">Cerrar
+                </button>
+            </form>
+
+            <script>
+
+                function cerrar(){
+                
+                window.location.href="VariedadProductosLista.html";
+                }
+
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                    'use strict';
+                    window.addEventListener('load', function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</body>
+</html>

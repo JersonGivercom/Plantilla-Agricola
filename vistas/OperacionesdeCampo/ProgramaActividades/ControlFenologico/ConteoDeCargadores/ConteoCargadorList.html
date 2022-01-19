@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="../../../../../estilo/main.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <title></title>
+</head>
+<body class="pagina">
+            <div class="app-page-title">
+
+                <div class="page-title-wrapper">
+
+                    <div class="page-title-heading">
+                        <div class="page-title-icon">
+                            <i class="fas fa-seedling icon-gradient bg-night-fade">
+                            </i>
+                        </div>
+                        <div>Conteo de Cargadores
+                            <div class="page-title-subheading"> Listado de conteo de cargadores creados en el sistema.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page-title-actions">
+                        
+
+                        <div class="d-inline-block dropdown">
+                            <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                                <span class="btn-icon-wrapper pr-2 opacity-7">
+                                    <i class="fa fa-business-time fa-w-20"></i>
+                                </span>
+                                Acciones
+                            </button>
+                            <div tabindex="-1" role="menu" aria-hidden="true"
+                                class="dropdown-menu dropdown-menu-right">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a href="ConteoCargador.html" class="nav-link">
+                                            <i class="fas fa-plus-square nav-link-icon"></i>
+                                            <span>
+                                                Nuevo
+                                            </span>
+
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link" data-toggle="modal"
+                                            data-target="#modalProcess">
+
+                                            <i class="fas fa-file-export nav-link-icon" ></i>
+                                            <span>
+                                                Exportar Excel
+                                            </span>
+
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link">
+                                            <i class="fas fa-window-close nav-link-icon"></i>
+                                            <span>
+                                                Cerrar
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title"  onClick="muestra_oculta('busqueda')">Filtro de Búsqueda <i class="fa fa-angle-down ic"></i> </h5>
+                    <form class="needs-validation" id="busqueda" novalidate>
+
+                        <div class="form-row">
+
+                            <div class="col-md-4 mb-3">
+                                <label for="validationCustom01">Código</label>
+                                <input type="text" class="form-control" id="validationCustom01"
+                                    placeholder="ingrese código" value="">
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label for="validationCustom03">Fundo</label>
+                                <select class="mb-2 form-control" required>
+                                    <option>Seleccionar</option>
+                                    <option>Sacramento</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+
+                                <label for="validationCustom03">Lote</label>
+                                <select required class="mb-2 form-control">
+                                    <option>Seleccionar </option>
+                                    <option>Ampliación 1</option>
+                                    <option>Ampliación 2</option>
+                                    <option>Ampliación 3</option>
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label for="validationCustom02">Fecha de Programación</label>
+                                <input type="date" class="form-control" id="validationCustom01" value="">
+                            </div>
+
+
+                            <div class="col-md-4 mb-3">
+                                <label for="validationCustom03">Estado</label>
+                                <select class="mb-2 form-control">
+                                    <option>Seleccione</option>
+                                    <option>En Proceso</option>
+                                    <option>Pendiente</option>
+                                    <option>Finalizado</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">Refrescar</button>
+
+
+                    </form>
+
+                    <script>
+                        // Example starter JavaScript for disabling form submissions if there are invalid fields
+                        (function () {
+                            'use strict';
+                            window.addEventListener('load', function () {
+                                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                var forms = document.getElementsByClassName('needs-validation');
+                                // Loop over them and prevent submission
+                                var validation = Array.prototype.filter.call(forms, function (form) {
+                                    form.addEventListener('submit', function (event) {
+                                        if (form.checkValidity() === false) {
+                                            event.preventDefault();
+                                            event.stopPropagation();
+                                        }
+                                        form.classList.add('was-validated');
+                                    }, false);
+                                });
+                            }, false);
+                        })();
+                    </script>
+                </div>
+            </div>
+
+
+
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title"  onClick="muestra_oculta('resultado')">Resultado <i class="fa fa-angle-down ic"></i> </h5>
+
+                    <div class="table-responsive" id="resultado">
+                        <table id="tablax" class="mb-5 table">
+                            <thead class="tabla_encabezado">
+                                <tr>
+                                    <th>Código </th>
+                                    <th>Fundo</th>
+                                    <th>Lote</th>
+                                    <th>Producto</th>
+                                    <th>Variedad </th>
+                                    <th>Fecha de Programación</th>
+                                    <th>Estado</th>
+                                    <th></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <th scope="row">CC000001</th>
+                                    <td>Sacramento</td>
+                                    <td>Ampliación 1 </td>
+                                    <td>Uva</td>
+                                    <td>Red Globe</td>
+                                    <td>05/01/2022 </td>
+                                    <td>En Proceso</td>
+                                    <td>
+                                        <div class="d-inline-block dropdown">
+                                            <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false"
+                                                class="btn-shadow dropdown-toggle btn btn-info">
+                                                <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                    <i class="fa fa-business-time fa-w-20"></i>
+                                                </span>
+                                                Acciones
+                                            </button>
+
+                                            <div tabindex="-1" role="menu" aria-hidden="true"
+                                                class="dropdown-menu dropdown-menu-right">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item" >
+                                                        <a href="ConteoCargadorModificar.html" class="nav-link">
+                                                            <i class="fas fa-pencil-alt nav-link-icon"></i>
+                                                            <span>
+                                                                Modificar
+                                                            </span>
+            
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="javascript:eliminarRegistro();" class="nav-link">
+                                                            <i class="fas fa-trash-alt nav-link-icon"></i>
+                                                            <span>
+                                                                Eliminar
+                                                            </span>
+            
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item" >
+                                                        <a href="ConteoCargadorVer.html" class="nav-link">
+                                                            <i class="fas fa-eye nav-link-icon"></i>
+                                                            <span>
+                                                                Ver
+                                                            </span>
+                                                        </a>
+                                                    </li>
+            
+                                                    <li class="nav-item" >
+                                                        <a href="javascript:void(0);" class="nav-link"
+                                                            data-toggle="modal" data-target="#modalRegistroContadores">
+                                                            <i class="fas fa-edit nav-link-icon"></i>
+                                                            <span>
+                                                                Registrar Diario
+                                                            </span>
+                                                        </a>
+                                                    </li>
+            
+            
+                                                    <li class="nav-item" >
+                                                        <a href="ConteoCargadorReporte.html" class="nav-link">
+                                                            <i class="nav-link-icon fas fa-file-signature"></i>
+                                                            <span>
+                                                                Reporte de Análisis
+                                                            </span>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">CC000002</th>
+                                    <td>Sacramento</td>
+                                    <td>Ampliación 2 </td>
+                                    <td>Uva</td>
+                                    <td>Red Globe</td>
+                                    <td>31/01/2022 </td>
+                                    <td>Pendiente</td>
+                                    <td>
+                                        <div class="d-inline-block dropdown">
+                                            <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false"
+                                                class="btn-shadow dropdown-toggle btn btn-info">
+                                                <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                    <i class="fa fa-business-time fa-w-20"></i>
+                                                </span>
+                                                Acciones
+                                            </button>
+
+                                            <div tabindex="-1" role="menu" aria-hidden="true"
+                                                class="dropdown-menu dropdown-menu-right">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a href="ConteoCargadorModificar.html" class="nav-link">
+                                                            <i class="fas fa-pencil-alt nav-link-icon"></i>
+                                                            <span>
+                                                                Modificar
+                                                            </span>
+            
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="javascript:eliminarRegistro();" class="nav-link">
+                                                            <i class="fas fa-trash-alt nav-link-icon"></i>
+                                                            <span>
+                                                                Eliminar
+                                                            </span>
+            
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="ConteoCargadorVer.html" class="nav-link">
+                                                            <i class="fas fa-eye nav-link-icon"></i>
+                                                            <span>
+                                                                Ver
+                                                            </span>
+                                                        </a>
+                                                    </li>
+            
+                                                    <li class="nav-item" >
+                                                        <a href="javascript:void(0);" class="nav-link"
+                                                            data-toggle="modal" data-target="#modalRegistroContadores">
+                                                            <i class="fas fa-edit nav-link-icon"></i>
+                                                            <span>
+                                                                Registrar Diario
+                                                            </span>
+                                                        </a>
+                                                    </li>
+            
+            
+                                                    <li class="nav-item" >
+                                                        <a href="ConteoCargadorReporte.html" class="nav-link">
+                                                            <i class="nav-link-icon fas fa-file-signature"></i>
+                                                            <span>
+                                                                Reporte de Análisis
+                                                            </span>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">CC000003</th>
+                                    <td>Sacramento</td>
+                                    <td>Ampliación 3 </td>
+                                    <td>Uva</td>
+                                    <td>Red Globe</td>
+                                    <td>12/01/2022 </td>
+                                    <td>Finalizado</td>
+                                    <td>
+                                        <div class="d-inline-block dropdown">
+                                            <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false"
+                                                class="btn-shadow dropdown-toggle btn btn-info">
+                                                <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                    <i class="fa fa-business-time fa-w-20"></i>
+                                                </span>
+                                                Acciones
+                                            </button>
+
+                                            <div tabindex="-1" role="menu" aria-hidden="true"
+                                                class="dropdown-menu dropdown-menu-right">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item" style="pointer-events: none;opacity: 0.5;">
+                                                        <a href="ConteoCargadorModificar.html" class="nav-link">
+                                                            <i class="fas fa-pencil-alt nav-link-icon"></i>
+                                                            <span>
+                                                                Modificar
+                                                            </span>
+            
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item" style="pointer-events: none;opacity: 0.5;">
+                                                        <a href="javascript:eliminarRegistro();" class="nav-link">
+                                                            <i class="fas fa-trash-alt nav-link-icon"></i>
+                                                            <span>
+                                                                Eliminar
+                                                            </span>
+            
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item" >
+                                                        <a href="ConteoCargadorVer.html" class="nav-link">
+                                                            <i class="fas fa-eye nav-link-icon"></i>
+                                                            <span>
+                                                                Ver
+                                                            </span>
+                                                        </a>
+                                                    </li>
+            
+                                                    <li class="nav-item" style="pointer-events: none;opacity: 0.5;">
+                                                        <a href="javascript:void(0);" class="nav-link"
+                                                            data-toggle="modal" data-target="#modalRegistroContadores">
+                                                            <i class="fas fa-edit nav-link-icon"></i>
+                                                            <span>
+                                                                Registrar Diario
+                                                            </span>
+                                                        </a>
+                                                    </li>
+            
+            
+                                                    <li class="nav-item" >
+                                                        <a href="ConteoCargadorReporte.html" class="nav-link">
+                                                            <i class="nav-link-icon fas fa-file-signature"></i>
+                                                            <span>
+                                                                Reporte de Análisis
+                                                            </span>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        <script>
+
+
+            function eliminarConteoCargador() {
+                if (confirm("Esta seguro de eliminar?")) {
+
+
+                }
+            }
+
+
+
+        </script>
+
+    <div class="modal fade" id="modalRegistroContadores" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modalSinMargin">
+            <div class="modal-content anchoModal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registro Diario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate>
+
+                        <div class="form-row">
+                            <div class="cabeza_tabla_variedadPoduc">
+                                <span class="span_enfermedades_titulo">Registros de Cargadores</span>
+                                <div class="agregar_enfermedad">
+                                    <a href="javascript:void()" class="btn btn-danger"  id="btnEliminarCargadores" > <i class="fas fa-trash-alt"></i></a>
+                                    <a href="javascript:insertarFila()"  class="btn btn-success" id="btnAgregar" > <i class="fas fa-plus-square"></i> </a>
+                                </div> 
+                        </div> 
+
+                        <div class="table-responsive tablaAlto  ">                                  
+                            <table  class="mb-5 table colorTable tablaAncho"  >
+                                <thead class="tabla_encabezado ">
+                                    <tr>
+                                        <th colspan="1"></th>
+                                        <th colspan="1"></th>
+                                        <th colspan="1"></th>
+                                        <th colspan="4" style="border-bottom: 1.5px solid #00EFBD;" >Tipo de Cargador </th>
+                                        <th colspan="1"></th>
+                                        <th colspan="4" style="border-bottom: 1.5px solid #00EFBD;">Nro. de Yemas </th>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="checkbox" id="all6"></th>
+                                        <th>Nro. de Planta</th>
+                                        <th>Nro. de Brazo</th>
+                                        <th > Debil</th>
+                                        <th > Normal</th>
+                                        <th > Vigoroso</th>
+                                        <th > Tableado Vigoroso</th>
+                                        <th>Pitones</th>
+                                        <th > Débil</th>
+                                        <th > Normal</th>
+                                        <th > Vigoroza</th>
+                                        <th > Tableado Vigoroso</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody id="tablaCargadores">
+                                     
+                                </tbody>
+                            </table>
+                        </div>        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Registrar datos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+         function insertarFila(){
+            
+            var tabla = document.getElementById("tablaCargadores");
+            for(i = 1; i<tabla.getElementsByTagName('tr').length+1; i++){
+                i
+            }
+            tabla.insertRow(-1).innerHTML = '<td><input type="checkbox"  name="rdo'+i+'" id="'+i+'"></td>'+
+            ' <td> <select name="" id=""  class="form-control">'+
+                                                '<option>1</option>'+
+                                                '<option>2</option>'+
+                                                '<option>3</option>'+
+                                                '<option>4</option>'+
+                                                '<option>5</option>'+
+                                                '<option>6</option>'+
+                                                '<option>7</option>'+
+                                                '<option>8</option>'+
+                                                '<option>9</option>'+
+                                                '<option>10</option>'+
+                                            '</select>'+           
+                                            '<div class="valid-feedback">'+
+                                                'Correcto!'+
+                                            '</div>'+
+                                         '</td>'+
+            ' <td> <input type="number" class="form-control " id="validationCustom02" value="0" min="1" required> </td>'+
+            ' <td> <input type="number" class="form-control " id="validationCustom02" value="0" min="1" required> </td>'+
+            ' <td> <input type="number" class="form-control " id="validationCustom02" value="0" min="1" required> </td>'+
+            ' <td> <input type="number" class="form-control " id="validationCustom02" value="0" min="1" required> </td>'+
+            ' <td> <input type="number" class="form-control " id="validationCustom02" value="0" min="1" required> </td>'+
+            ' <td> <input type="number" class="form-control " id="validationCustom02" value="0" min="1" required> </td>'+
+            ' <td> <input type="number" class="form-control " id="validationCustom02" value="0" min="1" required> </td>'+
+            ' <td> <input type="number" class="form-control " id="validationCustom02" value="0" min="1" required> </td>'+
+            ' <td> <input type="number" class="form-control " id="validationCustom02" value="0" min="1" required> </td>'+
+            ' <td> <input type="number" class="form-control " id="validationCustom02" value="0" min="1" required> </td>'
+        }
+    </script>
+
+    <div class="modal fade" id="modalProcess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <div class="mb-3 progress">
+                        <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar"
+                            aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
+                    </div>
+
+                    <p>Generando reporte de conteos de cargadores... </p>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+</script>
+<!-- DATATABLES -->
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
+</script>
+<!-- BOOTSTRAP -->
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
+</script>
+<script>
+    function eliminarRegistro() {
+                if (confirm("Esta seguro de eliminar?")) {
+
+
+                }
+            }
+</script>
+
+    <script  type="text/javascript"src="../../../../../assets/scripts/ElimarEnTabla.js"></script> 
+    <script type="text/javascript" src="../../../../../assets/scripts/Tabla.js"></script>
+    <script type="text/javascript" src="../../../../../assets/scripts/tree_view.js"></script>
+    <script type="text/javascript" src="../../../../../assets/scripts/main.js"></script>
+</body>
+
+</html>

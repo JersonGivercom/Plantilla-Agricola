@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../../../../assets/scripts/Busqueda_en_tabla.js"></script>
+    <link rel="stylesheet" href="../../../../../estilo/main.css">
+    <title></title>
+</head>
+
+<body class="pagina">
+
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="fas fa-seedling icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div>Modificar la Infromación del Conteo de Cargadores
+                    <div class="page-title-subheading">Modificar conteo de cargadores.
+                    </div>
+                </div>
+            </div>
+            <div class="page-title-actions">
+
+            
+
+                <div class="d-inline-block dropdown">
+                    <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-business-time fa-w-20"></i>
+                        </span>
+                        Acciones
+                    </button>
+                    <div tabindex="-1" role="menu" aria-hidden="true"
+                        class="dropdown-menu dropdown-menu-right">
+                        <ul class="nav flex-column">
+
+
+
+                            <li class="nav-item">
+                                <a disabled href="ConteoCargadorList.html" class="nav-link">
+                                    <i class="fas fa-window-close nav-link-icon"></i>
+                                    <span>
+                                        Cerrar
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title"> Modificar</h5>
+
+            <form class="needs-validation" novalidate>
+
+                <div class="form-row">
+
+                    
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Código </label>
+                        <input type="text" disabled class="form-control" id="validationCustom02"
+                            placeholder="Campo Autogenerado" value="CC000001" required>
+                        <div class="valid-feedback">
+                            Correcto!
+                        </div>
+                    </div>
+
+                
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom03">Fundo</label>
+                        <select class="mb-2 form-control"  required>
+                            <option>Sacramento</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor seleccionar un fundo
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Lote</label>
+                        
+                        <select required  class="mb-2 form-control">
+                        <option>Ampliación 1</option>
+                        <option>Ampliación 2</option>
+                        <option>Ampliación 3</option>
+                        
+
+
+
+                    </select>
+                        <div class="valid-feedback">
+                            Correcto!
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom03">Producto</label>
+
+                        <select class="mb-2 form-control" required>
+                            <option>Uva</option>
+                            <option>Granda</option>
+                        </select>
+
+
+                        <div class="invalid-feedback">
+                            Por favor seleccionar un porducto
+                        </div>
+
+                    </div>
+
+                
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom03">Variedad</label>
+
+
+                        <select class="mb-2 form-control" required>
+                            <option>Red Globe</option>
+                            <option>Sweet GLobe</option>
+                            <option>Sugar Crisp</option>
+                        </select>
+
+                        <div class="invalid-feedback">
+                            Por favor seleccionar un variedad producto
+                        </div>
+
+                    </div>
+
+                    <div class=" col-md-4 mb-3" >
+                        <label for="validationCustom01">Encargado de la Poda</label>
+                        <div class="caja_pais_texto_boton">
+                             <input type="text" disabled class="form-control texto_buscar_pais" 
+                             id="txtencargadoPoda"
+                            placeholder="Don Jose"  value="" 
+                            name="txtencargadoPoda" required>
+                            <button type="button" id="btn"  data-toggle="modal"
+                             data-target="#listaPersonal" 
+                            class="btn-shadow  btn btn-info boton_buscar_pais">
+                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                <i class="fas fa-search"></i>
+                            </span> 
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Fecha de Programación</label>
+                        <input type="date"  class="form-control" id="fechaPro"required>
+                        <div class="valid-feedback">
+                            Correcto!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom03">Nro. Semana</label>
+                        <input type="text"  disabled  class="form-control" placeholder="21" id="validationCustom02"
+                          required>
+
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom03">Estado</label>
+                        <input type="text" placeholder="En Proceso" disabled  class="form-control" id="validationCustom02"
+                          required>
+
+                    </div>
+
+                    <div class="col-md-4 mb-3 fradio">
+                        <label for="validationCustom02" class="form-check-labe">Finalizar Programa</label>
+                        <input type="checkbox" class="form-che" id="validationCustom02" required>
+                    </div>
+                </div>
+            </form>
+
+            <button class="btn btn-primary" type="submit">Guardar</button>
+
+            <button class="btn btn-secondary" onclick="goConteoCargadorList()">Cerrar
+            </button>
+
+
+            <script>
+
+            function goConteoCargadorList(){ 
+                window.location.href="ConteoCargadorList.html";
+            }
+            window.load= function name(params) {
+                    document.getElementById("fechaPro").value = "2022-01-05";
+            }
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                    'use strict';
+                    window.addEventListener('load', function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
+        </div>
+    </div>
+ <!-- MODAL DEL LISTADO DEL PERSONAL -->
+ <div class="modal fade" id="listaPersonal" tabindex="-1" role="dialog" 
+ aria-labelledby="exampleModalLabel"aria-hidden="true">
+ <div class="modal-dialog" role="document">
+     <div class="modal-content">
+         <div class="modal-header">
+             <h4 class="titulos_datos" id="exampleModalLabel">
+                 Personal
+             </h4>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+             </button>
+         </div>
+         <div class="modal-body">
+             <div class="col-md-12 mb-3">
+                 <div class="table-responsive" >
+                     <div class="buscar_tabla">
+                         <div class="col-md-4 mb-1">
+                             <label class="label_buscar" for="validationCustom03">Buscar:</label>
+                         </div>
+                         <div class="col-md-4 mb-1">
+                             <input type="text" class="form-control light-table-filter buscar_input" data-table="order-table"  >
+                         </div>
+                     </div>
+                     <table id="tablaPersonal" class="table table-bordered order-table">
+                         <thead class="tabla_encabezado">
+                            <tr>
+                                <th>Seleccione</th>
+                                <th>Código</th>
+                                <th>Nombre</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td ><input type="radio" name="Personal" id="persona1" value="Alvaro Casas"></td>
+                                 <td>Cof22</td>
+                                 <td>Alvaro Casas</td>
+                             </tr>
+                             <tr>
+                                 <td ><input type="radio" name="Personal" id="persona2" value="Don Jose"></td>
+                                 <td>Cof24</td>
+                                 <td>Don Jose</td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>    
+             </div>
+         </div> 
+         <div class="modal-footer">
+             <button type="button" id="btnpersonal" class="btn btn-secondary" onclick="llevarPersona()"data-dismiss="modal" >Seleccionar</button>
+         </div>
+     </div>
+ </div>
+   <script>
+        function llevarPersona() {
+            if(document.getElementById('persona1').checked){
+                var rdi1= document.getElementById("persona1").value;
+                document.getElementById("txtencargadoPoda").value=rdi1
+
+            }
+            if( document.getElementById("persona2").checked){
+                var rdi2= document.getElementById("persona2").value;
+                document.getElementById("txtencargadoPoda").value=rdi2
+            }
+        }
+    </script>        
+</div>
+    <script type="text/javascript" src="./../../../../../assets/scripts/main.js"></script>
+</body>
+
+</html>

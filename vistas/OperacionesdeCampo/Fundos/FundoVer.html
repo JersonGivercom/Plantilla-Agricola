@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="Inline validation is very easy to implement using the Architect Framework.">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="../../../estilo/main.css" rel="stylesheet">
+</head>
+
+<body class="pagina">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div class="page-title-icon">
+                        <i class="pe-7s-bookmarks icon-gradient bg-night-fade">
+                        </i>
+                    </div>
+                    <div>Detalle del Fundo
+                        <div class="page-title-subheading">Visualizar información del fundo.
+                        </div>
+                    </div>
+                </div>
+                <div class="page-title-actions">
+                    <div class="d-inline-block dropdown">
+                        <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                <i class="fa fa-business-time fa-w-20"></i>
+                            </span>
+                            Acciones
+                        </button>
+                        <div tabindex="-1" role="menu" aria-hidden="true"
+                            class="dropdown-menu dropdown-menu-right">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a  href="FundoList.html" class="nav-link" >
+                                        <i class="fas fa-window-close nav-link-icon"></i>
+                                        <span>
+                                            Cerrar
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <h5 class="card-title">Detalle</h5>
+
+                <form class="needs-validation" novalidate>
+
+                    <div class="form-row">
+
+                        <div class="col-md-4 mb-3">
+
+                            <label for="validationCustom01">Código </label>
+                            <input type="text" disabled class="form-control" id="validationCustom01"
+                                placeholder="Campo Autogenerado" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom02">Nombre</label>
+                            <input type="text" disabled class="form-control" id="validationCustom02"
+                                placeholder="Nombre" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom03">Departamento</label>
+                            <select class="mb-2 form-control" disabled required>
+                                <option>Seleccionar</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor seleccionar un departamento
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 mb-3">
+
+                            <label for="validationCustom03">Provincia</label>
+                            <select disabled class="mb-2 form-control" required>
+                                <option>Seleccionar</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor seleccionar una provincia
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom03">Distrito</label>
+                            <select disabled class="mb-2 form-control" required>
+                                <option>Seleccionar</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor seleccionar un distrito
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">Dirección</label>
+                            <input type="text" disabled class="form-control" id="validationCustom01"
+                                placeholder="Ingresar dirección" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom02">Área en Ha.</label>
+                            <input type="text" disabled class="form-control" id="validationCustom02"
+                                placeholder="Ingresar área" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Tabla de productos -->
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <div class="tabla_producto_encabezado" onclick="muestra_oculta('enfermedades')">
+                                <span class="span_enfermedades_titulo"  >Productos</span>
+                                <i class="fas fa-angle-down ico_pro" ></i>
+                            </div> 
+                                <div class="table-responsive" id="enfermedades">
+                                    <table  class="mb-0 table" >
+                                        <thead class="tabla_encabezado" >
+                                            <th>Producto</th>
+                                            <th colspan="1">Acciones</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Uva</td>
+                                                <td>
+                                                    <div class="page-title-actions">
+                                                        <div class="d-inline-block dropdown">
+                                                            <button type="button"  data-toggle="modal" data-target="#Lotes" 
+                                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                             class="btn-shadow  btn btn-info">
+                                                                <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                                <i class="pe-7s-crop"></i>
+                                                                </span>
+                                                                Ver Detalle Lotes
+                                                            </button>
+                                                        </div>
+                                                    </div> 
+                                                </td>  
+                                            </tr>  
+                                            <tr>
+                                                <td>Naranja</td>
+                                            <td>
+                                                <div class="page-title-actions">
+                                                    <div class="d-inline-block dropdown">
+                                                        <button type="button"  data-toggle="modal" data-target="#Lotes"
+                                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
+                                                         class="btn-shadow  btn btn-info">
+                                                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                            <i class="pe-7s-crop"></i>
+                                                            </span>
+                                                            Ver Detalle Lotes
+                                                        </button>
+                                                    </div>
+                                                </div> 
+                                            </td> 
+                                            </tr>
+                                            <tr>
+                                                <td>Manzana Verde</td>
+                                                <td>
+                                                    <div class="page-title-actions">
+                                                        <div class="d-inline-block dropdown">
+                                                            <button type="button"  data-toggle="modal" data-target="#Lotes" 
+                                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
+                                                            class="btn-shadow btn btn-info">
+                                                                <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                                <i class="pe-7s-crop"></i>
+                                                                </span>
+                                                                Ver Detalle Lotes
+                                                            </button>
+                                                        </div>
+                                                    </div> 
+                                                </td>  
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>   
+                        </div>
+                    </div>
+
+                    <!-- Modal lotes -->
+                    <div class="modal fade" id="Lotes" tabindex="-1" role="dialog" 
+                    aria-labelledby="exampleModalLabel"aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="titulos_datos" id="exampleModalLabel">
+                                    Lotes
+                                </h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        Lote 1
+                                        <a href="#" class="btn btn-success" id="lote1" data-toggle="modal" data-target="#exampleModal" >Ver Inventario</a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        Lote 2
+                                        <a href="#" class="btn btn-success"  id="lote2" data-toggle="modal" data-target="#exampleModal">Ver Inventario</a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        Lote 3
+                                        <a href="#" class="btn btn-success" id="lote3" data-toggle="modal" data-target="#exampleModal" >Ver Inventario</a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        Lote 4
+                                        <a href="#" class="btn btn-success" id="lote4" data-toggle="modal" data-target="#exampleModal" >Ver Inventario</a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        Lote 5
+                                        <a href="#" class="btn btn-success" id="lote5" data-toggle="modal" data-target="#exampleModal" >Ver Inventario</a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        Lote 6
+                                        <a href="#" class="btn btn-success" id="lote5" data-toggle="modal" data-target="#exampleModal" >Ver Inventario</a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        Lote 7
+                                        <a href="#" class="btn btn-success" id="lote5" data-toggle="modal" data-target="#exampleModal" >Ver Inventario</a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        Lote 8
+                                        <a href="#" class="btn btn-success" id="lote5" data-toggle="modal" data-target="#exampleModal" >Ver Inventario</a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        Lote 9
+                                        <a href="#" class="btn btn-success" id="lote5" data-toggle="modal" data-target="#exampleModal" >Ver Inventario</a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        Lote 10
+                                        <a href="#" class="btn btn-success" id="lote5" data-toggle="modal" data-target="#exampleModal" >Ver Inventario</a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        Lote 11
+                                        <a href="#" class="btn btn-success" id="lote5" data-toggle="modal" data-target="#exampleModal" >Ver Inventario</a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        Lote 12
+                                        <a href="#" class="btn btn-success" id="lote5" data-toggle="modal" data-target="#exampleModal" >Ver Inventario</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="btn" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                            
+                    </div>
+
+                </form>
+
+                <button class="btn btn-secondary"  onclick="irFundoList()" >Cerrar
+                </button>
+            
+                <script>
+                    function irFundoList (){
+                    window.location.href="FundoList.html";
+                    }
+
+                    // Example starter JavaScript for disabling form submissions if there are invalid fields
+                    (function () {
+                        'use strict';
+                        window.addEventListener('load', function () {
+                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                            var forms = document.getElementsByClassName('needs-validation');
+                            // Loop over them and prevent submission
+                            var validation = Array.prototype.filter.call(forms, function (form) {
+                                form.addEventListener('submit', function (event) {
+                                    if (form.checkValidity() === false) {
+                                        event.preventDefault();
+                                        event.stopPropagation();
+                                    }
+                                    form.classList.add('was-validated');
+                                }, false);
+                            });
+                        }, false);
+                    })();
+                </script>
+            </div>
+        </div>
+
+        <!-- Modal de Inventario de Plantas Por Lote -->
+        <div class="modal fade inventario_plantas_lote" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg dialogo_plantas_lote">
+            <div class="modal-content plantaslote_contenido">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Inventario de Plantas por Lote</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body cuerpo_lote">
+                    <form class="formulario_lotes" novalidate>
+                        <div class="tabla_lotes" >
+                            <div class="">
+                                <div class="table-responsive" >
+                                    <table class='Tabla_generada'>
+                                        <thead style ='background-color: darkgray'>
+                                            <th class='tabla_generada_encabezado' >1</th>
+                                            <th class='tabla_generada_encabezado' >2</th>
+                                            <th class='tabla_generada_encabezado' >3</th>
+                                            <th class='tabla_generada_encabezado' >4</th>
+                                            <th class='tabla_generada_encabezado' >5</th>
+                                            <th class='tabla_generada_encabezado' >6</th>
+                                            <th class='tabla_generada_encabezado' >7</th>
+                                            <th class='tabla_generada_encabezado' >8</th>
+                                            <th class='tabla_generada_encabezado' >9</th>
+                                            <th class='tabla_generada_encabezado' >10</th>
+                                            <th class='tabla_generada_encabezado' >11</th>
+                                            <th class='tabla_generada_encabezado' >12</th>
+                                            <th class='tabla_generada_encabezado' >13</th>
+                                            <th class='tabla_generada_encabezado' >14</th>
+                                            <th class='tabla_generada_encabezado' >15</th>
+                                            <th class='tabla_generada_encabezado' >16</th>
+                                            <th class='tabla_generada_encabezado' >17</th>
+                                            <th class='tabla_generada_encabezado' >18</th>
+                                            <th class='tabla_generada_encabezado' >19</th>
+                                            <th class='tabla_generada_encabezado' >20</th>
+                                            
+                                        </thead>
+                                        <tbody>
+                                            <td class="tabla_generada_td" id="1" onclick='cambiarColor("1")'>1</td>
+                                            <td class="tabla_generada_td" id="2" onclick='cambiarColor("2")'>2</td>
+                                            <td class="tabla_generada_td" id="3" onclick='cambiarColor("3")'>3</td>
+                                            <td class="tabla_generada_td" id="4" onclick='cambiarColor("4")'>4</td>
+                                            <td class="tabla_generada_td" id="5" onclick='cambiarColor("5")'>5</td>
+                                            <td class="tabla_generada_td" id="6" onclick='cambiarColor("6")'>6</td>
+                                            <td class="tabla_generada_td" id="7" onclick='cambiarColor("7")'>7</td>
+                                            <td class="tabla_generada_td" id="8" onclick='cambiarColor("8")'>8</td>
+                                            <td class="9" id="9" onclick='cambiarColor("9")'>9</td>
+                                            <td class="tabla_generada_td" id="10" onclick='cambiarColor("10")'>10</td>
+                                            <td class="tabla_generada_td" id="11" onclick='cambiarColor("11")'>11</td>
+                                            <td class="tabla_generada_td" id="12" onclick='cambiarColor("12")'>12</td>
+                                            <td class="tabla_generada_td" id="13" onclick='cambiarColor("13")'>13</td>
+                                            <td class="tabla_generada_td" id="14" onclick='cambiarColor("14")'>14</td>
+                                            <td class="tabla_generada_td" id="15" onclick='cambiarColor("15")'>15</td>
+                                            <td class="tabla_generada_td" id="16" onclick='cambiarColor("16")'>16</td>
+                                            <td class="tabla_generada_td" id="17" onclick='cambiarColor("17")'>17</td>
+                                            <td class="tabla_generada_td" id="18" onclick='cambiarColor("18")'>18</td>
+                                            <td class="tabla_generada_td" id="19" onclick='cambiarColor("19")'>19</td>
+                                            <td class="tabla_generada_td" id="20" onclick='cambiarColor("20")'>20</td>
+                                            <td class='tabla_generada_celda_final'>1</td>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contenedor_botones">
+                            <!-- <label for="color">Seleccione color: </label>
+                            <input type="color" id="color"> -->
+                             <button type="button" name="" class="btn btn-success"
+                             id="activar">Ativar Planta</button> 
+                             <button type="button" name="" class="btn btn-danger" 
+                             id="desactivar" >Quitar Plantas</button> 
+                        </div>
+                        <script>
+                           
+                           document.querySelectorAll(".chk").forEach(el => {
+                                    el.addEventListener("click", e => {
+                                        const id = e.target.getAttribute("id");
+                                        console.log(id);
+                                    });
+                                });
+                        </script>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Modal de Estados -->
+        <!-- Se elimina ??? -->
+        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Estado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">  
+                        <form class="needs-validation" novalidate>
+                            <div class="form-row" >
+                                <fieldset class="position-relative form-group">
+                                    <div class="position-relative form-check">
+                                        <label class="form-check-label">
+                                            <input name="radio1" data-dismiss="modal" type="radio" class="form-check-input"> 
+                                            Viva</label>
+                                    </div>
+                                    <div class="position-relative form-check">
+                                        <label class="form-check-label">
+                                        <input name="radio1" data-dismiss="modal" type="radio" class="form-check-input">
+                                        Muerta</label></div>
+                                    <div class="position-relative form-check disabled">
+                                        <label class="form-check-label">
+                                            <input name="radio1" data-dismiss="modal"  type="radio" class="form-check-input"> 
+                                            Débil</label></div>
+                                </fieldset>              
+                            </div>
+                        
+                        </form> 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script type="text/javascript" src="../../../assets/scripts/GeneradorDeTabla.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/tree_view.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</body>
+
+</html>

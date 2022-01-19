@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../../estilo/main.css">
+    
+    <title>Document</title>
+</head>
+<body class="pagina">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-map-2 icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div>Modificar Auditoria
+                    <div class="page-title-subheading">Modificación de la Auditoria.
+                    </div>
+                </div>
+            </div>
+            <div class="page-title-actions">
+
+           
+
+                <div class="d-inline-block dropdown">
+                    <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-business-time fa-w-20"></i>
+                        </span>
+                        Acciones
+                    </button>
+                    <div tabindex="-1" role="menu" aria-hidden="true"
+                        class="dropdown-menu dropdown-menu-right">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a disabled href="SeguridadAuditoriaLista.html" class="nav-link">
+                                    <i class="fas fa-window-close nav-link-icon"></i>
+                                    <span>
+                                        Cerrar
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title">Modificar Auditoria</h5>
+
+            <form class="needs-validation" novalidate>
+
+                <div class="form-row">
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom01">Código</label>
+                        <input type="text" disabled class="form-control" id="validationCustom01"
+                            placeholder="Campo autogenerado" value="" name="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Accion de la Auditoria</label>
+                        <select class="mb-2 form-control" id="validationCustom02" required>
+                            <option>Seleccione</option>
+                            <option>Accion 1</option>
+                            <option>Accion 2</option>
+                        </select>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                
+                <div class="col-md-4 mb-3">
+
+                    <label for="validationCustom03">Código Sesión</label>
+                    <input type="text"  class="form-control" id="validationCustom03"
+                        placeholder="Campo automatico" value="" name="" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+
+                </div>
+
+            
+                <div class="col-md-4 mb-3">
+
+                    <label for="validationCustom04">Descripción</label>
+                    <input type="text"  class="form-control" id="validationCustom04"
+                        placeholder="Descripción" value="" name="" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+
+                </div>
+                <div class="col-md-4 mb-3">
+
+                    <label for="validationCustom05">Fecha de Creacion</label>
+                    <input type="date"  class="form-control" id="validationCustom05"
+                        value="" name="" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+
+                </div>
+                <div class="col-md-4 mb-3">
+
+                    <label for="validationCustom06">Cod. Registro</label>
+                    <input type="text"  class="form-control" id="validationCustom06"
+                        value="Código de registro" name="" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+
+                </div>
+                <div class="col-md-4 mb-3">
+
+                    <label for="validationCustom07">Cod. Usuario</label>
+                    <input type="text"  class="form-control" id="validationCustom07"
+                        value="Código de Usuario" name="" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom08">Estado</label>
+                    <select class="mb-2 form-control" id="validationCustom08" required>
+                        <option>Seleccione</option>
+                        <option>Activo</option>
+                        <option>Inactivo</option>
+                    </select>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+               
+            </div>
+                <button class="btn btn-primary" type="submit">Guardar</button>
+
+                <button class="btn btn-secondary" onclick="cerrar()">Cerrar
+                </button>
+
+           
+
+            </form>
+
+            <script>
+
+                function cerrar(){
+                
+                 window.location.href="SeguridadAuditoriaLista.html";
+                }
+
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                    'use strict';
+                    window.addEventListener('load', function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</body>
+</html>

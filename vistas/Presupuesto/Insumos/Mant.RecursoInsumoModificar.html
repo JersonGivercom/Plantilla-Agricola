@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../../estilo/main.css">
+</head>
+
+<body class="pagina">
+   
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="pe-7s-phone icon-gradient bg-night-fade">
+                </i>
+            </div>
+            <div>Modificar Insumo
+                <div class="page-title-subheading">
+                </div>
+            </div>
+        </div>
+        <div class="page-title-actions">
+
+        
+
+            <div class="d-inline-block dropdown">
+                <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                    <span class="btn-icon-wrapper pr-2 opacity-7">
+                        <i class="fa fa-business-time fa-w-20"></i>
+                    </span>
+                    Acciones
+                </button>
+                <div tabindex="-1" role="menu" aria-hidden="true"
+                    class="dropdown-menu dropdown-menu-right">
+                    <ul class="nav flex-column">
+
+
+
+                        <li class="nav-item">
+                            <a disabled href="Mant.RecursoInsumoListar.html" class="nav-link">
+                                <i class="nav-link-icon lnr-file-empty"></i>
+                                <span>
+                                    Cerrar
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-card mb-3 card">
+    <div class="card-body">
+        <h5 class="card-title"> Modificar</h5>
+
+        <form class="needs-validation" novalidate>
+
+            <div class="form-row">
+
+                <div class="col-md-4 mb-3">
+
+                    <label for="validationCustom01">Código</label>
+                    <input disabled type="text" class="form-control" id="validationCustom01"
+                        placeholder="Campo Autogenerado" value="" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom02">Nombre </label>
+                    <input type="text" class="form-control" id="validationCustom02"
+                        placeholder="Ingresar nombre" value="Uva Italia" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationCustom03">Tipo de insumo</label>
+
+
+                    <select class="mb-2 form-control" required>
+                        <option>Limpieza</option>
+                        <option>Luminaria</option>
+                        <option>Herramienta</option>
+                        <option>Indumentaria</option>
+                        <option>Higuiene</option>
+                    </select>
+
+
+                    <div class="invalid-feedback">
+                        Por favor seleccionar tipo de insumo
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom03">Marca</label>
+
+
+                    <select class="mb-2 form-control" required>
+                        <option>Marca 1</option>
+                        <option>Marca 2</option>
+                        <option>Marca 3</option>
+                        <option>Marca 4</option>
+                        <option>Marca 5</option>
+                    </select>
+
+
+                    <div class="invalid-feedback">
+                        Por favor seleccionar Marca
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom03">Modelo</label>
+
+
+                    <select class="mb-2 form-control" required>
+                        <option>Modelo 1</option>
+                        <option>Modelo 2</option>
+                        <option>Modelo 3</option>
+                        <option>Modelo 4</option>
+                        <option>Modelo 5</option>
+                    </select>
+
+
+                    <div class="invalid-feedback">
+                        Por favor seleccionar Modelo
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom02">Centro de Costo</label>
+                    <input type="text" class="form-control" id="validationCustom02"
+                        placeholder="Ingresar centro de costo" value="130250" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom03">Unidad de Medida</label>
+
+
+                    <select class="mb-2 form-control" required>
+                        <option>Galon</option>
+                        <option>Unidad</option>
+                        <option>Litro</option>
+                        <option>Caja</option>
+                        <option>Pack</option>
+                    </select>
+
+
+                    <div class="invalid-feedback">
+                        Por favor seleccionar la unidad
+                    </div>
+                </div>
+            </div>
+
+            
+            <button class="btn btn-primary" type="submit">Guardar</button>
+
+            <button class="btn btn-secondary" type="button" onclick="ListarInsumo()">Cerrar
+            </button>
+
+
+
+        </form>
+
+        <script>
+
+            function modificarVariedadProducto(){
+            window.location.href="VariedadProductoModificar.html";
+            }
+
+            function ListarInsumo(){
+             window.location.href="Mant.RecursoInsumoListar.html";
+            }
+
+
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script>
+    </div>
+</div>
+
+
+
+    
+<script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</body>
+
+</html>

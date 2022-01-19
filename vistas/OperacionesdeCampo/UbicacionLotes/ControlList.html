@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../estilo/mapa.css">
+    <link rel="stylesheet" href="../../../estilo/main.css">
+    <script src="../../../assets/scripts/chart.js"></script>
+    <title>Document</title>
+</head>
+<body class="pagina">
+    
+  <div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="pe-7s-map-2 icon-gradient bg-night-fade">
+                </i>
+            </div>
+            <div>Ubicación de Fundos y Lotes
+                <div class="page-title-subheading">Ubicación de fundos y lotes.
+                </div>
+            </div>
+        </div>     
+    </div>
+  </div>
+
+  <div class="main-card mb-3 card">
+    <div class="card-body ">
+        <h5 class="card-title"  onClick="muestra_oculta('busqueda')">Filtro de Búsqueda
+           <i class="fa fa-angle-down flecha_abajo"></i> </h5>
+        <form class="needs-validation" id="busqueda" novalidate>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Empresa </label>
+                    <select name="" id="cboEmpresa" class="form-control">
+                      <option value="">Seleccione</option>
+                      <option value="-6.739450005667471  -79.8462331640625">Tomatito S.A</option>
+                      <option value="-12.071844528571917  -77.06081274627685">Tecnologica de Alimentos SA</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom02">País </label>
+                    <select name="" id="cboPais" class="form-control">
+                      <option value="">Seleccione</option>
+                      <option value="-9.189967  -75.015152">Perú</option>
+                      <option value="4.60971  -74.08175">Colombia</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom02">Fundo </label>
+                  <select name="" id="cboPais" class="form-control">
+                    <option value="">Seleccione</option>
+                    <option value="">Todos</option>
+                    <option value="-9.189967  -75.015152">Fundo Sacramento</option>
+                    <option value="4.60971  -74.08175">Fundo SanTomate</option>
+                  </select>
+              </div>
+            </div>
+            
+          <button class="btn btn-primary"  id="buscar" >buscar</button> 
+        </form>
+
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script>
+    </div>
+</div>
+      
+  <div class="mapa" id="mapa">
+          <div class="imagen">
+            <div class="card-title">Mapa del mundo</div>
+              <div id="google" class="google_maps"></div>
+          </div>
+          <div class="form-row estadisticaMapa"> 
+            <div class="col-md-12 cajaFundo_nombre">
+              <div class="mb-3 card noborde">
+                  <div class="card-header-tab card-header-tab-animation card-header">
+                      <div class="card-header-title">
+                          <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                          Fundo
+                      </div>
+                  </div>
+                  <div class="card-body noborde">
+                      Sacramento
+                  </div>
+              </div>
+          </div>
+
+            <div class="col-md-12 ">
+              <div class="mb-3 card noborde">
+                  <div class="card-header-tab card-header-tab-animation card-header">
+                      <div class="card-header-title">
+                          <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                        Cantidad de Cajas por Lote
+                      </div>
+                  </div>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Lote</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Lote 1(A)</td>
+                        <td>Uva</td>
+                        <td>44</td>
+                      </tr>
+                      <tr>
+                        <td>Lote 2(A)</td>
+                        <td>Manzana</td>
+                        <td>60</td>
+                      </tr>
+                      <tr>
+                        <td>Lote 3(A)</td>
+                        <td>Tomate</td>
+                        <td>14</td>
+                      </tr>
+                      <tr>
+                        <td>Lote 4(A)</td>
+                        <td>Palta</td>
+                        <td>79</td>
+                      </tr>
+                      <tr>
+                        <td>Lote 5(A)</td>
+                        <td>Fresa</td>
+                        <td>35</td>
+                      </tr>
+                      <tr>
+                        <td>Lote 6(A)</td>
+                        <td>Melon</td>
+                        <td>25</td>
+                      </tr>
+                      <tr>
+                        <td>Lote 7(A)</td>
+                        <td>Mandarina</td>
+                        <td>15</td>
+                      </tr>
+                      <tr>
+                        <td>Lote 8(A)</td>
+                        <td>Papaya</td>
+                        <td>55</td>
+                      </tr>
+                    </tbody>
+                  </table>
+ 
+              </div>
+          </div>
+        </div>
+         
+    </div>
+    <!-- Nuevo -->
+    
+    <div class="row">   
+      <div class="col-md-12 col-lg-6">
+          <div class="mb-3 card">
+              <div class="card-header-tab card-header-tab-animation card-header">
+                  <div class="card-header-title">
+                      <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                      Productos 
+                  </div>
+              </div>
+              <div class="card-body">
+                  <canvas id="frafico1" ></canvas>
+              </div>
+          </div>
+      </div>  
+
+      <div class="col-md-12 col-lg-6">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header-tab-animation card-header">
+                <div class="card-header-title">
+                    <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                    Cantidad de Producción
+                </div>
+            </div>
+            <div class="card-body">
+                <canvas id="frafico2" ></canvas>
+            </div>
+        </div>
+      </div>
+
+      
+  </div>
+
+<!-- 
+  <div class="mapa_estadistica">
+    <div class="cajas color1">
+        <div class="cajas_imagen">
+          <i class="fas fa-object-ungroup"></i>
+        </div>
+        <div class="cajas_info">
+          <label class="estadistica_titulo">Fundos</label>
+          <label >Sacramento</label>
+        </div>
+    </div>
+    <div class="cajas color2">
+      <div class="cajas_imagen">
+        <i class="fas fa-map-marked-alt"></i>
+      </div>
+      <div class="cajas_info">
+        <label class="estadistica_titulo">Lotes</label>
+        <label>Cantidad: 50</label>
+      </div>
+    </div>
+    <div class="cajas color3 ">
+      <div class="cajas_imagen">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <div class="cajas_info">
+        <label class="estadistica_titulo">Inventario de Plantas</label>
+        <label>Cantidad: 10,000</label>
+      </div>
+    </div>
+    <div class="cajas color4">
+      <div class="cajas_imagen">
+        <i class="fas fa-box-open"></i>
+      </div>
+      <div class="cajas_info">
+        <label class="estadistica_titulo">
+          Inventario por Caja</label>
+        <label>Uva: 50 </label>
+        <label>Naranja: 60</label>
+      </div>
+    </div>
+  </div> -->
+
+
+    <script>
+      
+    
+    // GRAFICO DE PRODUCTOS
+     const gProductos = document.getElementById('frafico1').getContext('2d');
+      const graficoProductos = new Chart( gProductos, {
+        type:'bar',
+        data: {
+              labels: ['Uva', 'Manzana', 'Tomate',"Palta" ,"Fresa" ,"Melon" ,"Mandarina" ,"Papaya" ],
+              datasets: [{
+                  label: '# de Productos',
+                  data: [12, 29, 9,35,14,22,13,35],
+                  backgroundColor: [
+                    '#00A982',
+                    '#00B2AB',
+                    '#FF7D55',
+                    '#FFAC39'
+                  ],
+                  borderColor: [
+                    '#006650',
+                    '#006650',
+                    '#FF3C00',
+                    '#AA7226'
+                  ],
+                  borderWidth: 1,
+                  
+              }]
+          },
+          // options: {
+          //     scales: {
+          //         y: { 
+          //             min: 0,
+          //             max: 30
+          //         }
+          //     },
+          // }
+      });
+    
+
+    // GRAFICO DE CANTIDAD DE PRODUCCION
+    const CantidaadProduccion =document.getElementById('frafico2').getContext('2d');
+    const graficoProduccion = new Chart(CantidaadProduccion,{
+      type:'line',
+        data: {
+              labels: ['Lote 1', 'Lote 2', 'Lote 3',"Lote 4","Lote 5","Lote 6","Lote 7","Lote 8" ],
+              datasets: [{
+                  label: '# por Lote',
+                  data: [15 ,10, 29,15,24,12,35,10],
+                  backgroundColor: [
+                      '#00A982',
+                      '#00B2AB',
+                      '#FF7D55',
+                      '#FFAC39'
+                  ],
+                  borderColor: [
+                      '#006650',
+                      '#006650',
+                      '#FF3C00',
+                      '#AA7226'
+                  ],
+                  borderWidth: 1,
+                  
+              }]
+          },
+          options: {
+            // scales: {
+            //     y: { 
+            //         min: 0,
+            //         max: 30
+            //     }
+            // },
+            animations: {
+                tension: {
+                    duration: 1000,
+                    easing: 'linear',
+                    from: 1,
+                    to: 0,
+                    loop: true
+                }
+            },
+        }
+    });
+
+    
+    </script>
+
+
+    <script type="text/javascript" src="../../../assets/scripts/GoogleMaps.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUc5YDg1FCeUz6PXPR8dQ3ACQnFVInMKY&callback=iniciarMapa"></script>
+    <script type="text/javascript" src="../../../assets/scripts/tree_view.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</body>
+</html>

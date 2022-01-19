@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../../estilo/main.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <title>Document</title>
+</head>
+
+<body class="pagina">
+
+
+<div class="app-page-title">
+
+    <div class="page-title-wrapper">
+
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-edit icon-gradient bg-night-fade"></i>
+            </div>
+            <div>Análisis de Yemas
+                <div class="page-title-subheading">Listado de análisis de yemas creados en el
+                    sistema.
+                </div>
+            </div>
+        </div>
+
+        <div class="page-title-actions">
+           
+
+            <div class="d-inline-block dropdown">
+                <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                    <span class="btn-icon-wrapper pr-2 opacity-7">
+                        <i class="fa fa-business-time fa-w-20"></i>
+                    </span>
+                    Acciones
+                </button>
+                <div tabindex="-1" role="menu" aria-hidden="true"
+                    class="dropdown-menu dropdown-menu-right">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="Yemas.html" class="nav-link">
+                                <i class="fas fa-plus-square nav-link-icon"></i>
+                                <span>
+                                    Nueva
+                                </span>
+
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="javascript:void(0);" class="nav-link" data-toggle="modal"
+                                data-target="#modalProcess">
+
+                                <i class="fas fa-file-export nav-link-icon" ></i>
+                                <span>
+                                    Exportar Excel
+                                </span>
+
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="javascript:void(0);" class="nav-link">
+                                <i class="fas fa-window-close nav-link-icon"></i>
+                                <span>
+                                    Cerrar
+                                </span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="main-card mb-3 card">
+    <div class="card-body">
+        <h5 class="card-title"  onClick="muestra_oculta('busqueda')">Filtro de Búsqueda <i class="fa fa-angle-down ic"></i> </h5>
+        <form class="needs-validation" id="busqueda" novalidate>
+
+            <div class="form-row">
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Código</label>
+                    <input type="text" class="form-control" id="validationCustom01"
+                        placeholder="ingrese código" value="">
+
+                </div>
+
+                <div class="col-md-4 mb-3">
+
+                    <label for="validationCustom03">Fundo</label>
+                    <select class="mb-2 form-control">
+                        <option>Seleccione</option>
+                        <option>Sacramento</option>
+                    </select>
+
+                </div>
+
+                <div class="col-md-4 mb-3">
+
+                    <label for="validationCustom03">Lote</label>
+                    <select class="mb-2 form-control">
+                        <option>Seleccione</option>
+                        <option>Ampliación 1</option>
+                        <option>Ampliación 2</option>
+                        <option>Ampliación 3</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom02">Fecha de Programación</label>
+                    <input type="date" class="form-control" id="validationCustom01">
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom03">Estado</label>
+                    <select class="mb-2 form-control">
+                        <option>Seleccione</option>
+                        <option>En proceso</option>
+                        <option>Pendiente</option>
+                        <option>Finalizado</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Refrescar</button>
+
+
+        </form>
+
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script>
+    </div>
+</div>
+
+
+
+<div class="main-card mb-3 card">
+    <div class="card-body">
+
+        <h5 class="card-title"  onClick="muestra_oculta('resultado')">Resultado <i class="fa fa-angle-down ic"></i> </h5>
+
+        <div class="table-responsive" id="resultado">
+            <table id="tablax" class="mb-5 table" >
+                <thead class="tabla_encabezado">
+                        <th>Código</th>
+                        <th>Fundo</th>
+                        <th>Lote</th>
+                        <th>Producto</th>
+                        <th>Variedad</th>
+                        <th>Fecha de Programación</th>
+                        <th>Estado</th>
+                        <th></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">AY000001</th>
+                        <td>Sacramento</td>
+                        <td>Ampliación 1 </td>
+                        <td>Uva</td>
+                        <td>Red Globe</td>
+                        <td>18/01/2022 </td>
+                        <td>Pendiente</td>
+                        <td>
+                            <div class="d-inline-block dropdown">
+                                <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"
+                                    class="btn-shadow dropdown-toggle btn btn-info">
+                                    <span class="btn-icon-wrapper pr-2 opacity-7">
+                                        <i class="fa fa-business-time fa-w-20"></i>
+                                    </span>
+                                    Acciones
+                                </button>
+
+                                <div tabindex="-1" role="menu" aria-hidden="true"
+                                    class="dropdown-menu dropdown-menu-right">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a href="YemasModificar.html" class="nav-link">
+                                                <i class="fas fa-pencil-alt nav-link-icon"></i>
+                                                <span>
+                                                    Modificar
+                                                </span>
+
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="javascript:eliminarYema();" class="nav-link">
+                                                <i class="fas fa-trash-alt nav-link-icon"></i>
+                                                <span>
+                                                    Eliminar
+                                                </span>
+
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="YemasVer.html" class="nav-link">
+                                                <i class="fas fa-eye nav-link-icon"></i>
+                                                <span>
+                                                    Ver
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0);" class="nav-link"
+                                                data-toggle="modal" data-target="#exampleModal">
+                                                <i class="fas fa-edit nav-link-icon"></i>
+                                                <span>
+                                                    Registrar Diario
+                                                </span>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="nav-item">
+                                            <a href="YemasReporte.html" class="nav-link">
+                                                <i class="nav-link-icon fas fa-file-signature"></i>
+                                                <span>
+                                                    Reporte de Análisis
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row">AY000002</th>
+                        <td>Sacramento</td>
+                        <td>Ampliación 2</td>
+                        <td>Uva</td>
+                        <td>Red Globe</td>
+                        <td>12/01/2021 </td>
+                        <td>En Proceso</td>
+                        <td>
+                            <div class="d-inline-block dropdown">
+                                <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"
+                                    class="btn-shadow dropdown-toggle btn btn-info">
+                                    <span class="btn-icon-wrapper pr-2 opacity-7">
+                                        <i class="fa fa-business-time fa-w-20"></i>
+                                    </span>
+                                    Acciones
+                                </button>
+
+                                <div tabindex="-1" role="menu" aria-hidden="true"
+                                    class="dropdown-menu dropdown-menu-right">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a href="YemasModificar.html" class="nav-link">
+                                                <i class="fas fa-pencil-alt nav-link-icon"></i>
+                                                <span>
+                                                    Modificar
+                                                </span>
+
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="javascript:eliminarYema();" class="nav-link">
+                                                <i class="fas fa-trash-alt nav-link-icon"></i>
+                                                <span>
+                                                    Eliminar
+                                                </span>
+
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="YemasVer.html" class="nav-link">
+                                                <i class="fas fa-eye nav-link-icon"></i>
+                                                <span>
+                                                    Ver
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0);" class="nav-link"
+                                                data-toggle="modal" data-target="#exampleModal">
+                                                <i class="fas fa-edit nav-link-icon"></i>
+                                                <span>
+                                                    Registrar Diario
+                                                </span>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="nav-item">
+                                            <a href="YemasReporte.html" class="nav-link">
+                                                <i class="nav-link-icon fas fa-file-signature"></i>
+                                                <span>
+                                                    Reporte de Análisis
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row">AY000003</th>
+                        <td>Sacramento</td>
+                        <td>Ampliación 3 </td>
+                        <td>Uva</td>
+                        <td>Red Globe</td>
+                        <td>12/01/2022</td>
+                        <td>Finalizado</td>
+                        <td>
+                            <div class="d-inline-block dropdown">
+                                <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"
+                                    class="btn-shadow dropdown-toggle btn btn-info">
+                                    <span class="btn-icon-wrapper pr-2 opacity-7">
+                                        <i class="fa fa-business-time fa-w-20"></i>
+                                    </span>
+                                    Acciones
+                                </button>
+
+                                <div tabindex="-1" role="menu" aria-hidden="true"
+                                    class="dropdown-menu dropdown-menu-right">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item" style="pointer-events: none;opacity: 0.5;">
+                                            <a href="YemasModificar.html" class="nav-link">
+                                                <i class="fas fa-pencil-alt nav-link-icon"></i>
+                                                <span>
+                                                    Modificar
+                                                </span>
+
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" style="pointer-events: none;opacity: 0.5;">
+                                            <a href="javascript:eliminarYema();" class="nav-link">
+                                                <i class="fas fa-trash-alt nav-link-icon"></i>
+                                                <span>
+                                                    Eliminar
+                                                </span>
+
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" >
+                                            <a href="YemasVer.html" class="nav-link">
+                                                <i class="fas fa-eye nav-link-icon"></i>
+                                                <span>
+                                                    Ver
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item" style="pointer-events: none;opacity: 0.5;">
+                                            <a href="javascript:void(0);" class="nav-link"
+                                                data-toggle="modal" data-target="#exampleModal">
+                                                <i class="fas fa-edit nav-link-icon"></i>
+                                                <span>
+                                                    Registrar Diario
+                                                </span>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="nav-item" >
+                                            <a href="YemasReporte.html" class="nav-link">
+                                                <i class="nav-link-icon fas fa-file-signature"></i>
+                                                <span>
+                                                    Reporte de Análisis
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>    
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>
+<script>
+    function goYemasVisualizar() {
+        window.location.href = "YemasVer.html";
+    }
+    function eliminarYema() {
+        if (confirm("Esta seguro de eliminar?")) {
+        }
+    }
+
+    function goYemasModificar() {
+        window.location.href = "YemasModificar.html";
+    }
+</script>  
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registro Diario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-6">
+                                <label for="validationCustom02">Nro. Plantas</label>
+                                <select name="" id="cboNumeroPlanta" class="form-control">
+                                    <option value="">Seleccione</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                    <option value="">6</option>
+                                    <option value="">7</option>
+                                    <option value="">8</option>
+                                    <option value="">9</option>
+                                </select>
+
+                                <div class="valid-feedback">
+                                    Correcto!
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6 mb-6">
+                                <label for="validationCustom03">Tipo Cargador</label>
+                                <select class="mb-2 form-control" required>
+                                    <option>Seleccionar</option>
+                                    <option>Debil</option>
+                                    <option>Normal</option>
+                                    <option>Vigoroso</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Por favor seleccionar un tipo de cargador
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="cabeza_tabla_variedadPoduc">
+                                    <span class="span_enfermedades_titulo">Registros de Yemas</span>
+                                    <div class="agregar_enfermedad">
+                                        <a href="javascript:void()" class="btn btn-danger"  id="btnEliminar" > <i class="fas fa-trash-alt"></i></a>
+                                        <a href="javascript:insertarFila()"  class="btn btn-success" id="btnAgregar" > <i class="fas fa-plus-square"></i> </a>
+                                    </div> 
+                            </div> 
+                            <script>
+                                
+                                var btnAdd = document.getElementById("btnAgregar");
+                                btnAdd.addEventListener('click', function() {
+                                    var cboNumeroPlanta = document.getElementById("cboNumeroPlanta");
+                                    cboNumeroPlanta.disabled =true;
+                                }) 
+                            </script>
+
+                            <div class="table-responsive tablaAlto">                                  
+                                <table class="mb-5 table colorTable" >
+                                    <thead class="tabla_encabezado ">
+                                        <tr>
+                                            <th><input type="checkbox" id="all5"></th>
+                                            <th>Nro Yema</th>
+                                            <th>Tipo</th>
+                                            <th>Presencia de Acaros</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tabla">
+                                         <!-- <tr>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td> <input type="text"  class="form-control"
+                                                    id="validationCustom02" placeholder="Ingresar nro. Yema"
+                                                    value="" required>
+
+                                                <div class="valid-feedback">
+                                                    Correcto!
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <select class="mb-2 form-control" required>
+                                                    <option>Seleccionar</option>
+                                                    <option>Tejido necrosado</option>
+                                                    <option>Tejido vegetativo</option>
+                                                    <option>Racimo indiferenciado</option>
+                                                    <option>Racimo medianamente formado</option>
+                                                    <option>Racimo chico</option>
+                                                    <option>Racimo mediano</option>
+                                                    <option>Racimo grande</option>
+                                                    <option>No hay presencia de Yemas</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Por favor seleccionar un tipo
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="display: flex; justify-content: space-between;">
+
+                                                    <div class="position-relative form-check">
+                                                        <label class="form-check-label">
+                                                        <input name="radio1" type="radio"class="form-check-input">SI</label>
+                                                    </div>
+                                                    <div class="position-relative form-check">
+                                                        <label class="form-check-label">
+                                                            <input name="radio1" type="radio" class="form-check-input">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>  -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Registrar datos</button>
+                </div>
+                <script>
+                    function insertarFila(){
+                        
+                        var tabla = document.getElementById("tabla");
+                        for(i = 1; i<tabla.getElementsByTagName('tr').length+1; i++){
+                            i
+                        }
+                        tabla.insertRow(-1).innerHTML = '<td><input type="checkbox"  name="rdo'+i+'" id="'+i+'"></td>'+ 
+                     '<td><input type="number"  class="form-control" id="validationCustom02" min="1" name="txtnumeroYemas'+i+'" disabled value="'+i+'"> <div class="valid-feedback">Correcto!</div></td>'+
+                     ' <td> <select class="mb-2 form-control" required>'+
+                                                    '<option>Seleccionar</option>'+
+                                                    '<option>Tejido necrosado</option>'+
+                                                    '<option>Tejido vegetativo</option>'+
+                                                    '<option>Racimo indiferenciado</option>'+
+                                                    '<option>Racimo medianamente formado</option>'+
+                                                    '<option>Racimo chico</option>'+
+                                                    '<option>Racimo mediano</option>'+
+                                                    '<option>Racimo grande</option>'+
+                                                    '<option>No hay presencia de Yemas</option>'+
+                                                '</select>'+
+                                                '<div class="invalid-feedback">'+
+                                                   ' Por favor seleccionar un tipo'+
+                                                '</div></td>'+
+                     ' <td>  <div class="grupoCheck">'+
+                                                    '<div class="position-relative form-check">'+
+                                                       ' <label class="form-check-label">'+
+                                                         '<input name="radio'+i+'" type="radio" class="form-check-input">SI</label>'+
+                                                    '</div>'+
+                                                    '<div class="position-relative form-check">'+
+                                                        '<label class="form-check-label">'+
+                                                            '<input name="radio'+i+'" type="radio" class="form-check-input">'+
+                                                           ' No'+
+                                                       ' </label>'+
+                                                   ' </div>'+
+                                                '</div></td>';
+                     }
+                     
+                    function deleteRow() {
+                        document.getElementById("myTable").deleteRow(0);
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modalProcess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <div class="mb-3 progress">
+                        <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar"
+                            aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
+                    </div>
+
+                    <p>Generando reporte de análisis de yemas... </p>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function eliminar() {
+                    if (confirm("Esta seguro de eliminar?")) {
+                  } }
+    </script>
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+</script>
+<!-- DATATABLES -->
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
+</script>
+<!-- BOOTSTRAP -->
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
+</script>
+ 
+<script  type="text/javascript"src="../../../../../assets/scripts/ElimarEnTabla.js"></script> 
+<script type="text/javascript" src="../../../../../assets/scripts/tree_view.js"></script>
+<script type="text/javascript" src="../../../../../assets/scripts/Tabla.js"></script>
+<script type="text/javascript" src="../../../../../assets/scripts/main.js"></script>
+
+</body>
+</html>

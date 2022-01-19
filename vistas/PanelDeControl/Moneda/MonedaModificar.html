@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="../../../estilo/main.css">
+    <title>Document</title>
+</head>
+<body class="pagina">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-cash icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div>Modificar Moneda
+                    <div class="page-title-subheading">Modificar información de la Moneda.
+                    </div>
+                </div>
+            </div>
+            <div class="page-title-actions">
+
+           
+
+                <div class="d-inline-block dropdown">
+                    <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-business-time fa-w-20"></i>
+                        </span>
+                        Acciones
+                    </button>
+                    <div tabindex="-1" role="menu" aria-hidden="true"
+                        class="dropdown-menu dropdown-menu-right">
+                        <ul class="nav flex-column">
+
+
+
+                            <li class="nav-item">
+                                <a disabled href="MonedaList.html" class="nav-link">
+                                    <i class="fas fa-window-close nav-link-icon"></i>
+                                    <span>
+                                        Cerrar
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title">Modificar</h5>
+
+            <form class="needs-validation" novalidate>
+
+                <div class="form-row">
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom01">Código</label>
+                        <input type="text" disabled class="form-control" id="validationCustom01"
+                            placeholder="Campo Autogenerado" value="" name="txtNombrePais" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Nombre </label>
+                        <input type="text"  class="form-control" id="validationCustom02"
+                            placeholder="Ingresar nombre" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">País de Origen</label>
+                        <input type="text"  class="form-control" id="validationCustom02"
+                            placeholder="Ingresar el país de origen" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Abreviatura</label>
+                        <input type="text"  class="form-control" id="validationCustom02"
+                            placeholder="Ingresar la abreviatura" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Simbolo</label>
+                        <input type="text"  class="form-control" id="validationCustom02"
+                            placeholder="Ingresar el Simbolo" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom03">Estado</label>
+
+                        <select class="mb-2 form-control" required>
+                            <option>Seleccione el estado</option>
+                            <option>Activo</option>
+                            <option>Inactivo</option>
+                        </select>
+
+                        <div class="invalid-feedback">
+                            Por favor seleccionar un estado
+                        </div>
+
+                    </div>
+                </div>
+
+        
+
+
+                <button class="btn btn-primary" type="submit">Guardar</button>
+
+                <button class="btn btn-secondary" onclick="irMonedaList()">Cerrar
+                </button>
+
+            </form>
+
+            <script>
+
+                function irMonedaList(){
+                    
+                    window.location.href="MonedaList.html";
+                }
+
+
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                    'use strict';
+                    window.addEventListener('load', function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</body>
+</html>

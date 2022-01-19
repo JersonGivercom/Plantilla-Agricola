@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../../estilo/main.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+</head>
+
+<body class="pagina">
+
+<div class="app-page-title">
+
+    <div class="page-title-wrapper">
+
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="pe-7s-phone icon-gradient bg-night-fade">
+                </i>
+            </div>
+            <div>Mantenimiento del Recurso de Insumos
+                <div class="page-title-subheading"> Listado de recursos de insumos creados en el sistema.
+                </div>
+            </div>
+        </div>
+
+        <div class="page-title-actions">
+          
+            <div class="d-inline-block dropdown">
+                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                    <span class="btn-icon-wrapper pr-2 opacity-7">
+                        <i class="fa fa-business-time fa-w-20"></i>
+                    </span>
+                    Acciones
+                </button>
+                <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="Mant.RecursoInsumoNuevo.html" class="nav-link" >
+                                <i class="nav-link-icon lnr-inbox pe-7s-news-paper"></i>
+                                <span>
+                                    Nuevo
+                                </span>
+                                
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="javascript:void(0);" class="nav-link" data-toggle="modal" data-target="#modalProcess">
+
+                                <i class="nav-link-icon lnr-book pe-7s-download"></i>
+                                <span>
+                                    Exportar Excel
+                                </span>
+                                
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="javascript:void(0);" class="nav-link">
+                                <i class="nav-link-icon lnr-picture pe-7s-back"></i>
+                                <span>
+                                    Cerrar
+                                </span>
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>      
+    
+    </div>
+
+</div>           
+
+
+<div class="main-card mb-3 card">
+    <div class="card-body">
+        <h5 class="card-title">Filtro de búsqueda</h5>
+        <form class="needs-validation" novalidate>
+
+            <div class="form-row">
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Código</label>
+                    <input type="text" class="form-control" id="validationCustom01"
+                     placeholder="ingrese código" value="" >
+                    
+                </div>
+
+        
+
+
+                <div class="col-md-4 mb-3">
+    
+                    <label for="validationCustom01">Nombre</label>
+                    <input type="text" class="form-control" id="validationCustom01"
+                     placeholder="ingrese el nombre" value="" >
+                                                            
+                </div>
+
+                <div class="col-md-4 mb-3">
+    
+                    <label for="validationCustom03">Estado</label>
+
+
+                    <select class="mb-2 form-control" >
+                        <option>Todos</option>
+                        <option>Activo</option>
+                        <option>Inactivo</option>
+                    </select>
+
+                </div>
+
+            <button class="btn btn-primary" type="submit">Refrescar</button>
+ 
+        </form>
+
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script>
+    </div>
+</div>
+
+
+
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            
+            <h5 class="card-title">Resultado</h5>
+
+            <div class="table-responsive">
+                
+                <table id="tablax" class="mb-5 table">
+                    <thead class="tabla_encabezado">
+                            <tr>
+                                <th>Código</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Tipo</th>
+                                <th>Unidad de Medida</th>
+                                <th></th>
+                            
+                            </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                <th scope="row">IN000001</th>
+                                <td>Insecticida Tipo A</td>
+                                <td>Para todo tipo de planta de uva</td>
+                                <td>Insecticida</td>
+                                <td>Galon</td>
+                                <td>   
+                                    <div class="page-title-actions">
+                                        <div class="d-inline-block dropdown">
+                                        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                <i class="fa fa-business-time fa-w-20"></i>
+                                            </span>
+                                            Acciones
+                                            </button>
+                                    
+                                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a href="Mant.RecursoInsumoVer.html" class="nav-link" >
+                                                            <i class="nav-link-icon lnr-inbox"></i>
+                                                            <span>
+                                                            Ver
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="Mant.RecursoInsumoModificar.html" class="nav-link">
+                                                            <i class="nav-link-icon lnr-book"></i>
+                                                            <span>
+                                                            Modificar
+                                                            </span>
+                                                    
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="javascript:void(0);" class="nav-link">
+                                                            <i class="nav-link-icon lnr-picture"></i>
+                                                                <span>
+                                                                Eliminar
+                                                                </span>
+                                                        </a>
+                                                    </li>                                       
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>   
+                            </tr>
+
+                            <tr>
+                                <th scope="row">IN000002</th>
+                                <td>Lejia</td>
+                                <td>Para limpieza y desinfección</td>
+                                <td>Limpieza</td>
+                                <td>Galon</td>
+                                <td>   
+                                    <div class="page-title-actions">
+                                        <div class="d-inline-block dropdown">
+                                        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                <i class="fa fa-business-time fa-w-20"></i>
+                                            </span>
+                                            Acciones
+                                            </button>
+                                    
+                                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a href="Mant.RecursoInsumoVer.html" class="nav-link" >
+                                                            <i class="nav-link-icon lnr-inbox"></i>
+                                                            <span>
+                                                            Ver
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="Mant.RecursoInsumoModificar.html" class="nav-link">
+                                                            <i class="nav-link-icon lnr-book"></i>
+                                                            <span>
+                                                            Modificar
+                                                            </span>
+                                                    
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="javascript:void(0);" class="nav-link">
+                                                            <i class="nav-link-icon lnr-picture"></i>
+                                                                <span>
+                                                                Eliminar
+                                                                </span>
+                                                        </a>
+                                                    </li>                                       
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <th scope="row">IN000003</th>
+                                <td>Escoba</td>
+                                <td>Para espacios con piso y acumulación de polvo</td>
+                                <td>Limpieza</td>
+                                <td>Unidad</td>
+                                <td>   
+                                    <div class="page-title-actions">
+                                        <div class="d-inline-block dropdown">
+                                        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                <i class="fa fa-business-time fa-w-20"></i>
+                                            </span>
+                                            Acciones
+                                            </button>
+                                    
+                                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a href="Mant.RecursoInsumoVer.html" class="nav-link" >
+                                                            <i class="nav-link-icon lnr-inbox"></i>
+                                                            <span>
+                                                            Ver
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="Mant.RecursoInsumoModificar.html" class="nav-link">
+                                                            <i class="nav-link-icon lnr-book"></i>
+                                                            <span>
+                                                            Modificar
+                                                            </span>
+                                                    
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="javascript:void(0);" class="nav-link">
+                                                            <i class="nav-link-icon lnr-picture"></i>
+                                                                <span>
+                                                                Eliminar
+                                                                </span>
+                                                        </a>
+                                                    </li>                                       
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>                   
+                            </tr>                   
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+<script>
+    function visualizarInsumo()
+    {
+        window.location.href="Mant.RecursoInsumoVer.html";
+    }
+    function eliminarInsumo()
+    {
+    if(confirm("Esta seguro de eliminar?")){
+    }
+    }
+    function ModificarInsumo()
+    {
+        window.location.href="Mant.RecursoInsumoModificar.html";
+    }
+</script>
+
+
+
+
+
+
+<div class="modal fade" id="modalProcess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        
+            <div class="modal-body">
+                
+                <div class="mb-3 progress">
+                    <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
+                </div>
+
+                <p>Generando reporte de listado de productos ...  </p>
+            
+            </div>
+
+        
+        </div>
+    </div>
+</div>
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+</script>
+<!-- DATATABLES -->
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
+</script>
+<!-- BOOTSTRAP -->
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
+</script>
+
+<script type="text/javascript" src="../../../assets/scripts/Tabla.js"></script>
+<script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</body>
+
+</html>

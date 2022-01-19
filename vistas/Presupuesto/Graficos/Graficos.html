@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../../../assets/scripts/chart.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../../estilo/main.css">
+    <title>Document</title>
+</head>
+<body class="pagina">
+      
+  <div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="pe-7s-car icon-gradient bg-mean-fruit">
+                </i>
+            </div>
+            <div>Proyección de Ejecución
+                <div class="page-title-subheading">
+                    Proyección de ejecución
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <div class="main-card mb-3 card">
+    <div class="card-body">
+        <h5 class="card-title"  onClick="muestra_oculta('busqueda')">Filtros de Búsqueda <i class="fa fa-angle-down ic"></i> </h5>
+        <form class="needs-validation" novalidate id="busqueda">
+
+            <div class="form-row" >
+                <div class="col-md-6 mb-3">
+                    <label for="validationCustom01">Fundo</label>
+                    <select class="mb-2 form-control" required>
+                        <option>Seleccione</option>
+                        <option>Sacramento </option>
+                        <option>Tomatito S.A.</option>
+                    </select>
+                    <div class="valid-feedback">
+                        Correcto!
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationCustom01">Campaña</label>
+                    <select class="mb-2 form-control" required>
+                        <option>Seleccione</option>
+                        <option>Campaña Uva 2018 - 2021</option>
+                        <option>Campaña Manzana Enero - 2021</option>
+                    </select>
+                    <div class="valid-feedback">
+                        Correcto!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row" >
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Variedades</label>
+                    <div class="contenedor_Tabla">
+                        <table class="table">
+                            <thead class="tabla_encabezado">
+                                <tr>
+                                    <th><input type="checkbox" class="chb_Todo" id="todoVariedad">Seleccione Todo</th>
+                                    <th>Nombre</th>
+                                </tr>
+                            </thead>
+                            <tbody id="BodyVariedad">
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>Red Glove</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>Sugar Crisp</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>Flame</td>
+                                </tr>           
+                            </tbody>
+                        </table>
+                    </div>
+                </div> 
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Lotes</label>
+                    <div class="contenedor_Tabla">
+                        <table class="table">
+                            <thead class="tabla_encabezado">
+                                <tr>
+                                    <th><input type="checkbox" class="chb_Todo" id="todoLotes">Seleccione Todo</th>
+                                    <th>Nombre</th>
+                                </tr>
+                            </thead>
+                            <tbody id="BodyLotes">
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>Lote 1(A)</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>Lote 2(B)</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>Lote 3(C)</td>
+                                </tr>          
+                            </tbody>
+                        </table>
+                    </div>
+                </div>  
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Etapas Fenológicas</label>
+                    <div class="contenedor_Tabla">
+                        <table class="table">
+                            <thead class="tabla_encabezado">
+                                <tr>
+                                    <th><input type="checkbox" class="chb_Todo" id="todoFenologico">Seleccione Todo</th>
+                                    <th>Nombre</th>
+                                </tr>
+                            </thead>
+                            <tbody id="BodyTablaEtapasFenologicas">
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>Poda</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>Brotación</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>Floración y Cuajado</td>
+                                </tr>  
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>Envero y Maduración</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>Cosecha</td>
+                                </tr>        
+                            </tbody>
+                        </table>
+                    </div>
+                </div> 
+            </div>
+            <button class="btn btn-primary" type="submit">Refrescar</button>
+        </form>
+        
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+                    //seleccionar todo 
+                $('#todoFenologico').click(function(){
+                    $.each($('#BodyTablaEtapasFenologicas input'),function(idx,item){
+                        item.checked = $('#todoFenologico').prop('checked');
+                    })
+                })
+                //seleccionar todo 
+                $('#todoLotes').click(function(){
+                    $.each($('#BodyLotes input'),function(idx,item){
+                        item.checked = $('#todoLotes').prop('checked');
+                    })
+                })
+                //seleccionar todo 
+                $('#todoVariedad').click(function(){
+                    $.each($('#BodyVariedad input'),function(idx,item){
+                        item.checked = $('#todoVariedad').prop('checked');
+                    })
+                })
+            })();
+        </script>
+    </div>
+</div>   
+
+
+ <div class="row"> 
+      <!-- <div class="col-md-12 col-lg-12">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header-tab-animation card-header">
+                <div class="card-header-title">
+                    <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                    Filtros
+                </div>
+            </div>
+            <div class="card-body">
+                <form class="needs-validation" novalidate id="busqueda">
+                    <div class="form-row" >
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">Fundo</label>
+                            <select class="mb-2 form-control" required>
+                                <option>Seleccione</option>
+                                <option>Sacramento </option>
+                                <option>Tomatito S.A.</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Correcto!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">Campaña</label>
+                            <select class="mb-2 form-control" required>
+                                <option>Seleccione</option>
+                                <option>Campaña Uva 2018 - 2021</option>
+                                <option>Campaña Manzana Enero - 2021</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Correcto!
+                            </div>
+                        </div>  
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">Variedades</label>
+                            <div class="div-tabla">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Seleccione</th>
+                                            <th>Nombre</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td>Red Glove</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td>Sugar Crisp</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td>Flame</td>
+                                        </tr>           
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> 
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom01">Lotes</label>
+                            <div class="div-tabla">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Seleccione</th>
+                                            <th>Nombre</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td>Lote 1(A)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td>Lote 2(B)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td>Lote 3(C)</td>
+                                        </tr>           
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>  
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom01">Etapas Fenológicas</label>
+                            <div class="div-tabla">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Seleccione</th>
+                                            <th>Nombre</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td>Red Glove</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td>Brotacion</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td>Floración y Cuajado</td>
+                                        </tr>  
+                                        <tr>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td>Envero y Maduración</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td>Cosecha</td>
+                                        </tr>         
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>   
+                    </div>                
+                </form> 
+            </div>
+        </div>
+    </div>  -->
+
+    <div class="col-md-12 col-lg-6">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header-tab-animation card-header">
+                <div class="card-header-title">
+                 <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                    Cajas Exportadas por Variedad
+                </div>
+            </div>
+            <div class="card-body ">
+                <canvas id="frafico1" class="frafico"></canvas>
+            </div>
+             <div class="card-footer borderButton altoRelleno">
+                <!-- <div class="text-center">
+                    <div role="group" class="btn-group-sm btn-group-toggle" data-toggle="buttons">
+                        <button type="button" class="mb-2 mr-2 btn-transition btn btn-outline-success">Red Glove</button>
+                        <button type="button" class="mb-2 mr-2 btn-transition btn btn-outline-success">Sugar Crisp</button>
+                        <button type="button" class="mb-2 mr-2 btn-transition btn btn-outline-success">Flame</button>
+                    </div>  
+                </div>     -->
+            </div> 
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-6">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header-tab-animation card-header">
+                <div class="card-header-title">
+                    <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                   Cajas Exportales - Cajas Proyectadas
+                </div>
+            </div>
+            <div class="card-body ">
+                <canvas id="frafico2" class="frafico"></canvas>
+            </div>
+             <div class="card-footer borderButton altoRelleno">
+                <div class="cardFootre_left">
+                    <div class="widget-subheading">Total Cajas Exportables</div>
+                    <div class="widget-subheading">Total Cajas Proyectadas</div>
+                </div>
+                <div class="cardFooter_right">
+                    <div class="widget-numbers "><span>8586</span></div>
+                    <div class="widget-numbers "><span>14.235</span></div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-6">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header-tab-animation card-header">
+                <div class="card-header-title">
+                    <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                    Cajas Exportables x Lote
+                </div>
+            </div>
+            <div class="card-body ">
+                <canvas id="frafico3" class="frafico"></canvas>
+            </div>
+             <div class="card-footer borderButton altoRelleno">
+                <!-- <div class="text-center">
+                    <div role="group" class="btn-group-sm btn-group-toggle" data-toggle="buttons">
+                        <button type="button" class="mb-2 mr-2 btn-transition btn btn-outline-success">Lote 1(A)</button>
+                        <button type="button" class="mb-2 mr-2 btn-transition btn btn-outline-success">Lote 2(B)</button>
+                        <button type="button" class="mb-2 mr-2 btn-transition btn btn-outline-success">Lote 3(C)</button>
+                    </div>  
+                </div>     -->
+            </div> 
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-6">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header-tab-animation card-header">
+                <div class="card-header-title">
+                    <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                    Cajas Exportables x Etapa
+                </div>
+            </div>
+            <div class="card-body ">
+                <canvas id="frafico4"  class="frafico"></canvas>
+            </div>
+             <div class="card-footer borderButton altoRelleno">
+                 <!-- <div class="text-center">
+                    <div role="group" class="btn-group-sm btn-group-toggle" data-toggle="buttons">
+                        <button type="button" class="mb-2 mr-2 btn-transition btn btn-outline-success">Poda</button>
+                        <button type="button" class="mb-2 mr-2 btn-transition btn btn-outline-success">Brotacion</button>
+                        <button type="button" class="mb-2 mr-2 btn-transition btn btn-outline-success">Floración y Cuajado</button>
+                        <button type="button" class="mb-2 mr-2 btn-transition btn btn-outline-success">Envero y Maduración</button>
+                        <button type="button" class="mb-2 mr-2 btn-transition btn btn-outline-success">Cosecha</button>
+                    </div>  
+                </div>     -->
+            </div> 
+        </div>
+    </div>
+
+   
+</div> 
+
+<div class="row" >
+    <div class="col-md-12 col-lg-6 caja_centro">
+        <div class="mb-3 card ">
+            <div class="card-header-tab card-header-tab-animation card-header">
+                <div class="card-header-title">
+                    <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"></i>
+                    Cajas Exportadas 8.2KG
+                </div>
+            </div>
+            <div class="card-body noBordeButton">
+                <div class="div-tabla">
+                    <table class="table">
+                        <thead class="tabla_encabezado colorBlanco">
+                            <tr class="f2">
+                                <th>Variedad</th>
+                                <th>Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr class="f1">
+                                <td>Flame</td>
+                                <td>1400</td>
+                            </tr>
+                            <tr class="f2">
+                                <td>Red Glove</td>
+                                <td>1500</td>
+                            </tr>
+                            <tr class="f1">
+                                <td>Sugar Crisp</td>
+                                <td>1336</td>
+                            </tr>           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer borderButton">
+                <div class="cardFootre_left">
+                    <div class="widget-subheading">Total General</div>
+                </div>
+                <div class="cardFooter_right">
+                    <div class="widget-numbers "><span>4236</span></div>
+                </div>
+            </div>
+      </div>
+    </div>
+</div>
+
+
+ 
+
+<script>
+    // Primero
+     const gf1 = document.getElementById('frafico1').getContext('2d');
+    const grafico1 = new Chart(gf1, {
+        type: 'bar',
+        data: {
+            labels: ['Flame','Sugar Crisp', 'Red Glove' ],
+            datasets: [{
+                label: 'Variedad',
+                data: [4589,5432,3454],
+                backgroundColor: [
+                    'rgba(219, 182, 61, 0.2)',
+                    'rgba(0, 139, 247, 0.2)',
+                    'rgba(0, 204, 148,0.2)'
+
+                ],
+                borderColor: [
+                    'rgba(219, 182, 61, 1)',
+                    'rgba(0, 139, 247,1)',
+                    'rgba(0, 204, 148,1)'
+                ],
+                borderWidth: 1,
+            }]
+        },
+        options: {
+            indexAxis: 'x',
+            scales: {
+            x: {
+                beginAtZero: true
+            }
+            }
+        }
+    });
+    
+    // Segundo
+    const gf2 = document.getElementById('frafico2').getContext('2d');
+    
+    const etiquetas = ["Poda", "Brotació", "Floración y Cuajado", "Envero y Maduracion","Cosecha"]
+    const datosExportables = {
+        label: "Cajas Exportables",
+        data: [1963, 1461, 1023, 1704,2435], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
+        backgroundColor: 'rgba(0, 169, 109, 0.2)', // Color de fondo
+        borderColor: 'rgba(0, 169, 109, 1)', // Color del borde
+        borderWidth: 1,// Ancho del borde
+    };
+    const datosProyectados = {
+        label: "Cajas Proyectadas",
+        data: [3753, 3452, 2341, 2345,2344], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
+        backgroundColor: 'rgba(75, 69, 117, 0.2)',// Color de fondo
+        borderColor: 'rgba(75, 69, 117, 1)',// Color del borde
+        borderWidth: 1,// Ancho del borde
+    };
+    const grafico2 = new Chart(gf2, {
+        type: 'line',
+        data: {
+            labels: etiquetas ,
+            datasets: [
+                datosExportables,
+                datosProyectados,   
+            ]
+        },
+        options: {
+            animations: {
+                tension: {
+                    duration: 1000,
+                    easing: 'linear',
+                    from: 1,
+                    to: 0,
+                    loop: true
+                }
+            },
+        }
+    });
+    // Tercero
+    const gf3 = document.getElementById('frafico3').getContext('2d');
+    const grafico3 = new Chart(gf3, {
+        type: 'bar',
+        data: {
+            labels: ['Lote 1(A)', 'Lote 2(B)', 'Lote 3(C)'],
+            datasets: [{
+                label: 'Por Lotes',
+                data: [5234,3453,2345,5743],
+                backgroundColor: [
+                    'rgba(219, 182, 61, 0.2)',
+                    'rgba(0, 139, 247, 0.2)',
+                    'rgba(0, 204, 148,0.2)'
+                ],
+                borderColor: [
+                    'rgba(219, 182, 61, 1)',
+                    'rgba(0, 139, 247,1)',
+                    'rgba(0, 204, 148,1)'
+                ],
+                borderWidth: 1,
+                
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    // Cuarto
+    const gf4 = document.getElementById('frafico4').getContext('2d');
+    
+    const grafico4 = new Chart(gf4, {
+        type: 'bar',
+        data: {
+            labels: ['Poda', 'Brotación', 'Floración y Cuajado',"Envero y Maduración","Cosecha" ],
+            datasets: [{
+                label: 'Por Etapas',
+                data: [5321, 3835, 5522, 5216,3456],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(91, 30, 109, 0.2)',
+                    'rgba(219, 182, 61, 0.2)',
+                    'rgba(0, 139, 247, 0.2)',
+                    'rgba(0, 204, 148,0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(91, 30, 109, 1)',
+                    'rgba(219, 182, 61, 1)',
+                    'rgba(0, 139, 247,1)',
+                    'rgba(0, 204, 148,1)'
+                ],
+                borderWidth: 1,
+                hoverOffset: 4
+            }]
+        },
+         
+    });
+    
+
+    </script>
+    
+    <script type="text/javascript" src="../../../assets/scripts/tree_view.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</body>
+</html>

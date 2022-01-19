@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../../estilo/main.css">
+</head>
+
+<body class="pagina">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="fas fa-edit icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div> Reporte de Análisis de Yemas
+                    <div class="page-title-subheading">Reporte del análisis de yemas
+                    </div>
+                </div>
+            </div>
+            <div class="page-title-actions">
+                <div class="d-inline-block dropdown">
+                    <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-business-time fa-w-20"></i>
+                        </span>
+                        Acciones
+                    </button>
+                    <div tabindex="-1" role="menu" aria-hidden="true"
+                        class="dropdown-menu dropdown-menu-right">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a  href="YemasList.html" class="nav-link" >
+                                    <i class="fas fa-window-close nav-link-icon"></i>
+                                    <span>
+                                        Cerrar
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0);" class="nav-link" >
+                                    <i class="fas fa-file-export nav-link-icon" ></i>
+                                    <span>
+                                        Exportar Excel
+                                    </span>
+    
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="main-card mb-3 card">
+    <div class="card-body">
+        <h5 class="card-title">Reporte</h5>
+
+
+
+        <div class="table-responsive">
+
+            <table class="mb-12 table reporteYemas" >
+                <thead class="tabla_encabezado backColor">
+                    <tr>
+                        <th > Necrosado </th>
+                        <th > Vegetativo </th>
+                        <th > Indeferenciado </th>
+                        <th > Sin presenci </th>
+                        <th > Media. formad </th>
+                        <th > Racimo chico </th>
+                        <th > Racimo mediano </th>
+                        <th > Racimos grande </th>
+
+                        <th rowspan="2"> Total yemas evaluadas </th>
+                        <th rowspan="2" > ∑ Yemas acumuladas </th>
+                        <th rowspan="2" > ∑ RD + RC + RM + RG </th>
+                        <th rowspan="2" > ∑ Acumulado RD + RC + RM + RG </th>
+                        <th rowspan="2" > % (RD + RC + RM + RG) Fertelidad </th>
+                        <th rowspan="2" > RC + RM + RG </th>
+                        <th rowspan="2" > ∑ Acumulado RC + RM + RG </th>
+                        <th rowspan="2" > % (RC + RM + RG) Fertilidad  </th>
+
+            
+
+                    </tr>
+
+                    <tr>
+                        <th > O </th>
+                        <th > V </th>
+                        <th > I </th>
+                        <th > X </th>
+                        <th > RD </th>
+                        <th > RC </th>
+                        <th > RM </th>
+                        <th > RG </th>
+            
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">6</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">6</td>
+                        <td style="background-color: rgb(247, 242, 216);">7</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td>20</td>
+                        <td>20</td>
+                        <td>13</td>
+                        <td>13</td>
+                        <td style="color: red;">65</td>
+                        <td>7</td>
+                        <td>7</td>
+                        <td>35</td>
+                    </tr>
+
+                    <tr>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">7</td>
+                        <td style="background-color: rgb(247, 242, 216);">2</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">8</td>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td>20</td>
+                        <td>40</td>
+                        <td>10</td>
+                        <td>23</td>
+                        <td style="color: red;">58</td>
+                        <td>10</td>
+                        <td>17</td>
+                        <td>43</td>
+                    </tr>
+
+                    <tr>
+                        <td style="background-color: rgb(247, 242, 216);">2</td>
+                        <td style="background-color: rgb(247, 242, 216);">3</td>
+                        <td style="background-color: rgb(247, 242, 216);">2</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">7</td>
+                        <td style="background-color: rgb(247, 242, 216);">3</td>
+                        <td style="background-color: rgb(247, 242, 216);">2</td>
+                        <td>20</td>
+                        <td>60</td>
+                        <td>13</td>
+                        <td>36</td>
+                        <td style="color: red;">60</td>
+                        <td>12</td>
+                        <td>29</td>
+                        <td>48</td>
+                    </tr>
+
+                    <tr>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">4</td>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">9</td>
+                        <td style="background-color: rgb(247, 242, 216);">5</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td>20</td>
+                        <td>80</td>
+                        <td>14</td>
+                        <td>50</td>
+                        <td style="color: red;">63</td>
+                        <td>14</td>
+                        <td>43</td>
+                        <td>54</td>
+                    </tr>
+
+                    <tr>
+
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">2</td>
+                        <td style="background-color: rgb(247, 242, 216);">3</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">7</td>
+                        <td style="background-color: rgb(247, 242, 216);">4</td>
+                        <td style="background-color: rgb(247, 242, 216);">2</td>
+                        <td>20</td>
+                        <td>100</td>
+                        <td>14</td>
+                        <td>64</td>
+                        <td style="color: red;">64</td>
+                        <td>13</td>
+                        <td>56</td>
+                        <td>56</td>
+                    </tr>
+
+                    <tr>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">3</td>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">5</td>
+                        <td style="background-color: rgb(247, 242, 216);">5</td>
+                        <td style="background-color: rgb(247, 242, 216);">4</td>
+                        <td>20</td>
+                        <td>120</td>
+                        <td>15</td>
+                        <td>79</td>
+                        <td style="color: red;">66</td>
+                        <td>14</td>
+                        <td>70</td>
+                        <td>58</td>
+                    </tr>
+
+                    <tr>
+                        <td style="background-color: rgb(247, 242, 216);">3</td>
+                        <td style="background-color: rgb(247, 242, 216);">3</td>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">2</td>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">6</td>
+                        <td>16</td>
+                        <td>136</td>
+                        <td>9</td>
+                        <td>88</td>
+                        <td style="color: red;">65</td>
+                        <td>9</td>
+                        <td>79</td>
+                        <td>58</td>
+                    </tr>
+
+                    <tr>
+
+                        <td style="background-color: rgb(247, 242, 216);">2</td>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">1</td>
+                        <td style="background-color: rgb(247, 242, 216);">2</td>
+                        <td style="background-color: rgb(247, 242, 216);">6</td>
+                        <td style="background-color: rgb(247, 242, 216);">2</td>
+                        <td>15</td>
+                        <td>151</td>
+                        <td>11</td>
+                        <td>99</td>
+                        <td style="color: red;">66</td>
+                        <td>10</td>
+                        <td>89</td>
+                        <td>59</td>
+                    </tr>
+
+                    <tr>
+                        <td style="background-color: rgb(247, 242, 216);">12</td>
+                        <td style="background-color: rgb(247, 242, 216);">30</td>
+                        <td style="background-color: rgb(247, 242, 216);">10</td>
+                        <td style="background-color: rgb(247, 242, 216);">0</td>
+                        <td style="background-color: rgb(247, 242, 216);">10</td>
+                        <td style="background-color: rgb(247, 242, 216);">47</td>
+                        <td style="background-color: rgb(247, 242, 216);">25</td>
+                        <td style="background-color: rgb(247, 242, 216);">17</td>
+                        <td style="background-color: rgb(247, 242, 216);">151</td>
+                    </tr>
+
+                        <tr>
+                        <td ></td>
+                        <td></td>
+                        <td ></td>
+                        <td ></td>
+                        <td ></td>
+                        <td ></td>
+                        <td ></td>
+                        <td    ></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+
+                    <tr>
+                        <td style="background-color: rgb(247, 242, 216);color: red;">8</td>
+                        <td style="background-color: rgb(247, 242, 216);color: red;">20</td>
+                        <td style="background-color: rgb(247, 242, 216);color: red;">7</td>
+                        <td style="background-color: rgb(247, 242, 216);color: red;">0</td>
+                        <td style="background-color: rgb(247, 242, 216);color: red;">7</td>
+                        <td style="background-color: rgb(247, 242, 216);color: red;">31</td>
+                        <td style="background-color: rgb(247, 242, 216);color: red;">17</td>
+                        <td style="background-color: rgb(247, 242, 216); color: red;">11</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+                </div>
+                    <br>
+                    <br>
+                    <div class="table-responsive">
+                            
+                <table class="mb-12 table">
+                <thead>
+                    <tr>
+
+                        <th >  </th>
+                        <th >  </th>
+                        <th >  </th>
+                        <th style="background-color: rgb(252, 207, 189);"> 40 </th>
+                        <th style="background-color: rgb(228, 238, 169);"> 39 </th>
+                        <th style="background-color: rgb(228, 238, 169);"> 36 </th>
+                        <th style="background-color: rgb(144, 233, 135);"> 35 </th>
+                        <th style="background-color: rgb(144, 233, 135);"> 31 </th>
+                        <th style="background-color: rgb(171, 223, 247);"> 30 </th>
+                        <th style="background-color: rgb(171, 223, 247);"> 26 </th>
+                        <th style="background-color: rgb(242, 242, 242);"> 25 </th>
+                        <th style="background-color: rgb(242, 242, 242);"> 20 </th>
+                        <th >  </th>
+                        <th>  </th>
+                        <th>  </th>
+                        
+                    </tr>
+
+                    <tr>
+
+                        <th rowspan="2" style="background-color: rgb(144, 233, 135);"> Largo del cargador </th>
+                        <th rowspan="2" style="background-color: rgb(144, 233, 135);"> Fertilidad acumulado </th>
+                        <th rowspan="2" style="background-color: rgb(144, 233, 135);"> Potencial racimos </th>
+                        <th colspan="11" style="background-color: rgb(144, 233, 135); text-align: center;"> Número de cargadores </th>
+
+                    </tr>
+
+                        <tr>
+
+                            <th  style="background-color: rgb(144, 233, 135);">10 </th>
+                            <th  style="background-color: rgb(144, 233, 135);">11 </th>
+                            <th  style="background-color: rgb(144, 233, 135);">12 </th>
+                            <th  style="background-color: rgb(144, 233, 135);">13 </th>
+                            <th  style="background-color: rgb(144, 233, 135);">14 </th>
+                            <th  style="background-color: rgb(144, 233, 135);">15 </th>
+                            <th  style="background-color: rgb(144, 233, 135);">16 </th>
+                            <th  style="background-color: rgb(144, 233, 135);">17 </th>
+                            <th  style="background-color: rgb(144, 233, 135);">18 </th>
+                            <th  style="background-color: rgb(144, 233, 135);">19 </th>
+                            <th  style="background-color: rgb(144, 233, 135);">20 </th>
+
+                        </tr>
+
+
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>1 </td>
+                        <td>35% </td>
+                        <td>0.35</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>6</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>7</td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td>2 </td>
+                        <td>43% </td>
+                        <td>0.85</td>
+                        <td>9</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>15</td>
+                        <td>17</td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td>3 </td>
+                        <td>48% </td>
+                        <td>1.45</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>28</td>
+                        <td>29</td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td>4 </td>
+                        <td>54% </td>
+                        <td>2.15</td>
+                        <td>22</td>
+                        <td>24</td>
+                        <td>26</td>
+                        <td>28</td>
+                        <td>30</td>
+                        <td>32</td>
+                        <td>34</td>
+                        <td>37</td>
+                        <td>39</td>
+                        <td>41</td>
+                        <td>43</td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td>5 </td>
+                        <td>56% </td>
+                        <td>2.80</td>
+                        <td>28</td>
+                        <td>31</td>
+                        <td>34</td>
+                        <td>36</td>
+                        <td>39</td>
+                        <td>42</td>
+                        <td>45</td>
+                        <td>48</td>
+                        <td>50</td>
+                        <td>53</td>
+                        <td>56</td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td>6 </td>
+                        <td>58% </td>
+                        <td>3.50</td>
+                        <td>35</td>
+                        <td>39</td>
+                        <td>42</td>
+                        <td>46</td>
+                        <td>49</td>
+                        <td>53</td>
+                        <td>56</td>
+                        <td>60</td>
+                        <td>63</td>
+                        <td>67</td>
+                        <td>70</td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td>7 </td>
+                        <td>58% </td>
+                        <td>4.07</td>
+                        <td>41</td>
+                        <td>45</td>
+                        <td>49</td>
+                        <td>53</td>
+                        <td>57</td>
+                        <td>61</td>
+                        <td>65</td>
+                        <td>69</td>
+                        <td>73</td>
+                        <td>77</td>
+                        <td>81</td>
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+    
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <button class="btn btn-secondary"  onclick="goYemasList()" >Cerrar
+        </button>
+        
+        <script>
+
+
+        function goYemasList(){    
+        window.location.href="YemasList.html";
+        }
+
+
+
+
+
+
+
+
+
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script>
+    </div>
+</div>
+    <script type="text/javascript" src="./../../../../../assets/scripts/main.js"></script>
+</body>
+
+</html>

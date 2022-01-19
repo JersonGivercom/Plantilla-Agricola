@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="../../../assets/scripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../../estilo/main.css" />
+    <title>Document</title>
+  </head>
+  <body class="pagina">
+    <div class="app-page-title">
+      <div class="page-title-wrapper">
+        <div class="page-title-heading">
+          <div class="page-title-icon">
+            <i class="pe-7s-note2 icon-gradient bg-night-fade"> </i>
+          </div>
+          <div>
+            Modificar la Información de Riego y Fertilizante
+            <div class="page-title-subheading">
+              Modificar la información del registro presupuestal de riego y fertilizante.
+            </div>
+          </div>
+        </div>
+        <div class="page-title-actions">
+          <div class="d-inline-block dropdown">
+            <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info" >
+              <span class="btn-icon-wrapper pr-2 opacity-7">
+                <i class="fa fa-business-time fa-w-20"></i>
+              </span>
+              Acciones
+            </button>
+            <div tabindex="-1" role="menu" aria-hidden="true"  class="dropdown-menu dropdown-menu-right" >
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a disabled href="PresupuestoDeRiegoYFertilizanteLista.html" class="nav-link">
+                    <i class="fas fa-window-close nav-link-icon"></i>
+                    <span> Cerrar </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-card mb-3 card">
+      <div class="card-body">
+        <h5 class="card-title">Modificar</h5>
+
+        <form class="needs-validation" id="formulario" novalidate>
+            <div class="form-row">
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Item Presupuestal</label>
+                    <input type="text" placeholder="Riego" disabled  class="form-control">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom02">Tipo de Presupuesto</label>
+                    <select name="" id="" class="form-control">
+                        <option value="">Seleccione</option>
+                        <option value="">Producción</option>
+                        <option value="">Inversion</option>
+                    </select>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Campaña </label>
+                    <select name="" id="cboCampaña" class="form-control">
+                        <option value="seleccione">Seleccione</option>
+                        <option value="Uva">Campaña Uva 2018-2019</option>
+                        <option value="Manzana">Campaña Manzana Enero 2021</option>
+                    </select>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Fecha</label>
+                    <input type="date" id="FechaActual" class="form-control" 
+                    disabled value="" required/>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Categoria</label>
+                    <select name="" id="" class="form-control">
+                        <option value="">Seleccione</option>
+                        <option value="">Ferreteria</option>
+                        <option value="">Accesorios de PVC</option>
+                        <option value="">Equipos de Protección</option>
+                        <option value="">Instrumentos de Precisión</option>
+                        <option value="">Mano de Obra Riego</option>
+                      </select>
+                </div>
+            
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Rubro</label>
+                    <select name="" id="" class="form-control">
+                        <option value="">Seleccione</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+                </div>
+                
+               
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Moneda</label>
+                    <input type="text" name="" class="form-control" placeholder="Dolar" id="" disabled>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Tipo de Cambio</label>
+                    <input type="text" class="form-control"
+                    id="validationCustom01" value=""   disabled  placeholder="4.10"/>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                
+                
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-12 mb-3">
+                    <button class="btn btn-info" type="submit">Insertar Fila</button>
+                    <button class="btn btn-success" id="CopiarFila" type="submit">Copiar Registro</button>
+                    <button class="btn btn-warning" type="submit">Quitar Registro</button>
+                </div>
+                
+
+                <div class="col-md-12 mb-3">
+                <h5 class="card-title">Tabla</h5> 
+                <div class="chebo_Todo">
+                    <input type="checkbox" name="" id="todoTablaItemPresManoObra"><span>Todo</span> 
+                </div>
+                    <div class="table-responsive" id="tablaDatos">
+                    <table id="reporte" class="mb-0 table tablaGrande">
+                        <thead class="tabla_encabezado">
+                        <tr>
+                            <th></th>
+                            <th>Item</th>
+                            <th>Descripcion</th>
+                            <th>Unidad.</th>
+                            <th>Precio Uni. S/</th>
+                            <th>Cantidad May.21</th>
+                            <th>Cantidad Jun.21</th>
+                            <th>Cantidad Jul.21</th>
+                            <th>Cantidad Ago.21</th>
+                            <th>Cantidad Sep.21</th>
+                            <th>Cantidad Oct.21</th>
+                            <th>Cantidad Nov.21</th>
+                            <th>Cantidad Dic.21</th>
+                            <th>Cantidad Ene.21</th>
+                            <th>Cantidad Feb.21</th>
+                            <th>Cantidad Mar.21</th>
+                            <th>Cantidad Abr.21</th>
+                            <th>Total Cantidad</th>
+                            <th>Total Soles</th>
+                            <th>Total Dolares</th>
+                            <th>Justificación</th>
+                        </tr>
+                        </thead>
+                        <tbody id="ItemPresupuestalManoObra">
+                            <tr>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td>1</td>
+                                <td>Juego de Llaves mixtas</td>
+                                <td>UND</td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td>10</td>
+                                <td>500</td>
+                                <td>125</td>
+                                <td><input type="text"  name=""  id="" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td>2</td>
+                                <td>Codo PVC de 2"</td>
+                                <td>UND</td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td><input type="number" min="1" value="0" class="form-control"></td>
+                                <td>10</td>
+                                <td>500</td>
+                                <td>125</td>
+                                <td><input type="text"  name=""  id="" class="form-control"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+
+
+          <button class="btn btn-primary" type="submit">Modificar</button>
+          <a class="btn btn-secondary" href="PresupuestoDeRiegoYFertilizanteLista.html" >Cerrar</a>
+        </form>
+
+        <script>
+        function fecha(){
+          var fecha = new Date(); //Fecha actual
+          var mes = fecha.getMonth()+1; //obteniendo mes
+          var dia = fecha.getDate(); //obteniendo dia
+          var ano = fecha.getFullYear(); //obteniendo año
+          if(dia<10)
+            dia='0'+dia; //agrega cero si el menor de 10
+          if(mes<10)
+            mes='0'+mes //agrega cero si el menor de 10
+          document.getElementById('FechaActual').value=ano+"-"+mes+"-"+dia;
+        }
+
+          // Example starter JavaScript for disabling form submissions if there are invalid fields
+          (function () {
+             //seleccionar todo 
+             $('#todoTablaItemPresManoObra').click(function(){
+                    $.each($('#ItemPresupuestalManoObra input'),function(idx,item){
+                        item.checked = $('#todoTablaItemPresManoObra').prop('checked');
+                    })
+                })
+            "use strict";
+            window.addEventListener(
+              "load",
+              function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName("needs-validation");
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(
+                  forms,
+                  function (form) {
+                    form.addEventListener(
+                      "submit",
+                      function (event) {
+                        if (form.checkValidity() === false) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }
+                        form.classList.add("was-validated");
+                      },
+                      false
+                    );
+                  }
+                );
+              },
+              false
+            );
+          })();
+          fecha()
+        </script>
+      </div>
+    </div>
+    <!-- <script type="text/javascript"src="../../../assets/scripts/TablaReporte.js"></script> -->
+    <script type="text/javascript"src="../../../assets/scripts/main.js"></script>
+  </body>
+</html>

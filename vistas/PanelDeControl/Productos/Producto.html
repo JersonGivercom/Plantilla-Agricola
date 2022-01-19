@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../estilo/main.css">
+    <script src="../../../assets/scripts/Busqueda_en_tabla.js"></script>
+    <title>Document</title>
+</head>
+<body class="pagina">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-box1 icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div>Nuevo Producto
+                    <div class="page-title-subheading">Nueva información de un producto.
+                    </div>
+                </div>
+            </div>
+            <div class="page-title-actions">
+
+           
+
+                <div class="d-inline-block dropdown">
+                    <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-business-time fa-w-20"></i>
+                        </span>
+                        Acciones
+                    </button>
+                    <div tabindex="-1" role="menu" aria-hidden="true"
+                        class="dropdown-menu dropdown-menu-right">
+                        <ul class="nav flex-column">
+
+
+
+                            <li class="nav-item">
+                                <a disabled href="Productoslista.html" class="nav-link">
+                                    <i class="fas fa-window-close nav-link-icon"></i>
+                                    <span>
+                                        Cerrar
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title">Nuevo</h5>
+
+            <form class="needs-validation" novalidate>
+
+                <div class="form-row">
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom01">Código </label>
+                        <input type="text" disabled class="form-control" id="validationCustom01"
+                            placeholder="Campo Autogenerado" value="" name="txtNombrePais" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Nombre </label>
+                        <input type="text"  class="form-control" id="validationCustom02"
+                            placeholder="Ingresar nombre" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom03">Descripción</label>
+                        <input type="text"  class="form-control" id="validationCustom03"
+                            placeholder="Ingresar la descripción" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Lista Etapas Fenologicas -->
+                <div class="form-row">
+                    <!-- Etapas Fenologicas -->
+                    <div class="col-md-6 mb-6 tablavariedad_producto" >
+                        <div class="cabeza_tabla_variedadPoduc">
+                            <span class="span_enfermedades_titulo"  onclick="muestra_oculta('etapasfenlogicas')">Etapas Fenológicas</span>
+                            <div class="agregar_enfermedad">
+                                    <i class="fas fa-angle-down ico_enfer" onclick="muestra_oculta('etapasfenlogicas')"></i>
+                                    <a class="btn btn-danger" id="eliminarEtapasFenologicas"  href="javascript:void();" >
+                                        <i class="fas fa-trash-alt"></i></a>
+                                    <a class="btn btn-success " href="#" 
+                                    data-toggle="modal" data-target="#modalFenologicos" >
+                                    <i class="fas fa-plus-square"></i></a>
+                            </div> 
+                        </div>
+                        
+                            <div class="table-responsive" id="etapasfenlogicas">
+                                <table id="tablaFenologicaDos" class="mb-0 table" >
+                                    <thead class="tabla_encabezado" >
+                                        <th><input type = "checkbox" id = "all1"> Seleccionar todo </th>
+                                        <th>Código</th>
+                                        <th>Nombre</th>
+                                    </thead>
+                                    <tbody id="bodyEtapasFenologicas">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>  
+                    </div>
+        
+                    <!-- Enfermedades -->
+                    <div class="col-md-6 mb-6 tablavariedad_producto">
+                        <div class="cabeza_tabla_variedadPoduc">
+                           <span class="span_enfermedades_titulo"  onclick="muestra_oculta('enfermedades')">Enfermedades</span>
+                           <div class="agregar_enfermedad">
+                               <i class="fas fa-angle-down ico_enfer" onclick="muestra_oculta('enfermedades')"></i>
+                               <a class="btn btn-danger" id="eliminarEnfermedades"  href="javascript:void();" >
+                               <i class="fas fa-trash-alt"></i></a>
+                               <a class="btn btn-success " href="#" 
+                               data-toggle="modal" data-target="#modalEnfermedades" >
+                               <i class="fas fa-plus-square"></i></a>
+                           </div> 
+                       </div> 
+                       <div class="table-responsive" id="enfermedades">
+                           <table id="tablaEnfermedadesDos"  class="mb-0 table" >
+                               <thead class="tabla_encabezado" >
+                                    <th><input type = "checkbox" id = "all2"> Seleccionar todo </th>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                               </thead>
+                               <tbody id="bodyEnfermedades">
+                                  
+                                   
+                               </tbody>
+                           </table>
+                       </div>   
+                    </div>
+                </div>
+                
+
+                <button class="btn btn-primary" type="submit">Guardar</button>
+
+                <button class="btn btn-secondary" onclick="cerrar()">Cerrar
+                </button>
+            </form>
+
+            <script>
+                 function eliminar(){
+                    if(confirm("Esta seguro de eliminar??")){
+
+                    }  
+                 }
+                 
+                function cerrar(){
+                window.location.href="ProductosLista.html";
+                }
+
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                    'use strict';
+                    window.addEventListener('load', function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
+        </div>
+    </div>
+
+
+    <!-- Modal Para Las Enfermedades -->
+    <!-- Modal de Enfermedades -->
+    <div class="modal fade" id="modalEnfermedades" tabindex="-1" role="dialog" 
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="titulos_datos" id="exampleModalLabel">
+                        Nueva Enfermedad
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div> 
+                <div class="modal-body">
+                    <div class="col-md-12 mb-3">
+                        <div class="table-responsive" >
+                            <div class="buscar_tabla">
+                                <div class="col-md-4 mb-1">
+                                    <label class="label_buscar" for="validationCustom03">Buscar:</label>
+                                </div>
+                                <div class="col-md-4 mb-1">
+                                    <input type="text" class="form-control light-table-filter buscar_input" data-table="order-table"  >
+                                </div>
+                            </div>
+                            <table id="tablaEnfermedadesUno" class="table table-bordered order-table">
+                                <thead class="tabla_encabezado">
+                                  <tr>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="checked "><input type="checkbox" id="1" class="enfermedad"></td>
+                                        <td>Pl001</td>
+                                        <td>Oidium</td>
+                                    </tr>  
+                                    <tr>
+                                        <td class="checked"><input type="checkbox" id="2" class="enfermedad"></td>
+                                        <td>Pl002</td>
+                                        <td>Podredumbre gris</td>  
+                                    </tr>
+                                    <tr>
+                                        <td class="checked"><input type="checkbox" id="3" class="enfermedad"></td>
+                                        <td>Pl003</td>
+                                        <td>Agalla de la corona</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>    
+                    </div>
+                </div> 
+                <div class="modal-footer">
+                    <button type="button" id="CopiarEnfermedades" class="btn btn-secondary" data-dismiss="modal">Seleccionar</button>
+                </div>
+            </div>
+        </div>
+
+     </div>
+
+
+       <!-- Modal Para Las Etapas fenológicas -->
+        <!-- Modal de etapas Fenológicas -->
+        <div class="modal fade" id="modalFenologicos" tabindex="-1" role="dialog" 
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="titulos_datos" id="exampleModalLabel">
+                            Etapas Fenológicas
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div> 
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-3">
+                            <div class="table-responsive" >
+                                <div class="buscar_tabla">
+                                    <div class="col-md-4 mb-1">
+                                        <label class="label_buscar" for="validationCustom03">Buscar:</label>
+                                    </div>
+                                    <div class="col-md-4 mb-1">
+                                        <input type="text" class="form-control light-table-filter buscar_input" data-table="order-table"  >
+                                    </div>
+                                </div>
+                                <table id="tablaFenologicaUno" class="table table-bordered order-table">
+                                    <thead class="tabla_encabezado">
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Nombre</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="checked"><input type="checkbox" id="1" class="envio"></td>
+                                            <td>Ef001</td>
+                                            <td>Siembra</td> 
+                                        </tr>  
+                                        <tr>
+                                            <td class="checked"><input type="checkbox" id="2" class="envio"></td>
+                                            <td>Ef002</td>
+                                            <td>Germinación</td> 
+                                        </tr>
+                                        <tr>
+                                            <td class="checked"><input type="checkbox" id="3" class="envio"></td>
+                                            <td>Ef003</td>
+                                            <td>Brotación</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="checked"><input type="checkbox" id="4" class="envio"></td>
+                                            <td>Ef004</td>
+                                            <td>Poda</td> 
+                                        </tr>
+                                        <tr>
+                                            <td class="checked"><input type="checkbox" id="5" class="envio"></td>
+                                            <td>Ef005</td>
+                                            <td>Envero y Maduración</td>  
+                                        </tr>
+                                        <tr>
+                                            <td class="checked"><input type="checkbox" id="5" class="envio"></td>
+                                            <td>Ef006</td>
+                                            <td>Cosecha</td> 
+                                        </tr>
+                                        <tr>
+                                            <td class="checked"><input type="checkbox" id="6" class="envio"></td>
+                                            <td>Ef007</td>
+                                            <td>Post Cosecha</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="checked"><input type="checkbox" id="7" class="envio"></td>
+                                            <td>Ef008</td>
+                                            <td>Floración y Cuajado</td> 
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>    
+                        </div>
+                    </div> 
+                    <div class="modal-footer">
+                        <button type="button" id="btnCopiarFenologica" class="btn btn-secondary"   data-dismiss="modal">Seleccionar</button>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+        
+    <script type="text/javascript" src="../../../assets/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/ElimarEnTabla.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/copiarTablaEnfermedades.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/CopiarTablaEtapasFenologicas.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/tree_view.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</body>
+</html>

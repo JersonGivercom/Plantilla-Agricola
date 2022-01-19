@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <link rel="stylesheet" href="../../../estilo/main.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+</head>
+<body class="pagina">
+ 
+                <div class="app-main__outer">
+                    <div class="app-main__inner">
+
+                        <div class="app-page-title">
+
+                            <div class="page-title-wrapper">
+
+                                <div class="page-title-heading">
+                                    <div class="page-title-icon">
+                                        <i class="pe-7s-crop icon-gradient bg-night-fade">
+                                        </i>
+                                    </div>
+                                    <div>Lotes
+                                        <div class="page-title-subheading">Listado de los lotes creados en el sistema.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="page-title-actions">
+                                    <div class="d-inline-block dropdown">
+                                        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                <i class="fa fa-business-time fa-w-20"></i>
+                                            </span>
+                                            Acciones
+                                        </button>
+                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                            <ul class="nav flex-column">
+                                                
+                                                <li class="nav-item">
+                                                    <a href="Lote.html" class="nav-link" >
+                                                        <i class="fas fa-plus-square nav-link-icon"></i>
+                                                        <span>
+                                                            Nuevo
+                                                        </span>                                                     
+                                                    </a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a href="javascript:void(0);" class="nav-link" data-toggle="modal" data-target="#modalProcess">
+
+                                                        <i class="fas fa-file-export nav-link-icon" ></i>
+                                                        <span>
+                                                            Exportar Excel
+                                                        </span>
+                                                       
+                                                    </a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a href="javascript:void(0);" class="nav-link">
+                                                        <i class="fas fa-window-close nav-link-icon"></i>
+                                                        <span>
+                                                            Cerrar
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                           
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>      
+                            
+                            </div>
+
+                        </div>           
+                        
+                        
+                        <div class="main-card mb-3 card">
+                            <div class="card-body">
+                                <h5 class="card-title"  onClick="muestra_oculta('busqueda')">Filtro de Búsqueda <i class="fa fa-angle-down ic"></i> </h5>
+                                <form class="needs-validation" id="busqueda" novalidate>
+
+                                    <div class="form-row">
+
+                                        <div class="col-md-4 mb-3">
+                                            <label for="validationCustom01">Código </label>
+                                            <input type="text" class="form-control" id="validationCustom01" placeholder="Ingrese código" value="" required>
+                                            <div class="valid-feedback">
+                                                Correcto!
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 mb-3">
+                                            <label for="validationCustom02">Nombre </label>
+                                            <input type="text" class="form-control" id="validationCustom02" placeholder="Ingrese nombre" value="" required>
+                                            <div class="valid-feedback">
+                                                Correcto!
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 mb-3">
+
+                                            <label for="validationCustom03">Producto</label>
+    
+                                            <select class="mb-2 form-control" required>
+                                                <option>Seleccione</option>
+                                                <option>Uva</option>
+                                                <option>Granada</option>
+                                            </select>
+    
+                                            <div class="invalid-feedback">
+                                                Por favor seleccionar un producto
+                                            </div>
+    
+                                        </div>
+
+                                    </div>    
+
+                                    <div class="form-row">
+
+                                      
+
+                                        <div class="col-md-4 mb-3">
+
+                                            <label for="validationCustom03">Variedad de Producto</label>
+    
+                                            <select class="mb-2 form-control" required>
+                                                <option>Seleccione</option>
+                                                <option>Red Globe</option>
+                                                <option>Sweet GLobe</option>
+                                                <option>Sugar Crisp</option>
+                                            </select>
+    
+                                            <div class="invalid-feedback">
+                                                Por favor seleccionar una Variedad de producto
+                                            </div>
+    
+                                        </div>
+
+                                        <div class="col-md-4 mb-3">
+
+                                            <label for="validationCustom03">Estado</label>
+    
+                                            <select class="mb-2 form-control" required>
+                                                <option>Seleccione</option>
+                                                <option>Activo</option>
+                                                <option>Inactivo</option>
+                                            </select>
+    
+                                            <div class="invalid-feedback">
+                                                Por favor seleccionar un estado
+                                            </div>
+    
+                                        </div>
+
+                                    </div>
+
+                                    <button class="btn btn-primary" type="submit">Refrescar</button>
+
+                                   
+                                </form>
+            
+                                <script>
+                                    // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                    (function() {
+                                        'use strict';
+                                        window.addEventListener('load', function() {
+                                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                            var forms = document.getElementsByClassName('needs-validation');
+                                            // Loop over them and prevent submission
+                                            var validation = Array.prototype.filter.call(forms, function(form) {
+                                                form.addEventListener('submit', function(event) {
+                                                    if (form.checkValidity() === false) {
+                                                        event.preventDefault();
+                                                        event.stopPropagation();
+                                                    }
+                                                    form.classList.add('was-validated');
+                                                }, false);
+                                            });
+                                        }, false);
+                                    })();
+                                </script>
+                            </div>
+                        </div>
+                                           
+                        <div class="main-card mb-3 card">
+                            <div class="card-body">
+                                <h5 class="card-title" 
+                                 onClick="muestra_oculta('resultado')">Resultado <i class="fa fa-angle-down ic"></i> </h5>
+                                <div class="table-responsive" id="resultado">
+                                    <table id="tablax" class="mb-5 table">
+                                        <thead>
+                                            <tr>
+                                                <th>Código </th>
+                                                <th>Nombre </th>
+                                                <th>Fundo</th>
+                                                <th>Producto</th>
+                                                <th>Variedad Producto</th>
+                                                <th>Área Ha.</th>
+                                                <th>Tipo Riego</th>
+                                                <th>Fecha Plantación</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">L20210101</th>
+                                                <td>Lote 1</td>
+                                                <td>Sacramento</td>
+                                                <td>Uva</td>
+                                                <td>Red Globe</td>
+                                                <td>60</td>
+                                                <td>Por Goteo</td>
+                                                <td>01/01/2021</td>
+                                                <td>
+                                                    <div class="d-inline-block dropdown">
+                                                        <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false"
+                                                            class="btn-shadow dropdown-toggle btn btn-info">
+                                                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                                <i class="fa fa-business-time fa-w-20"></i>
+                                                            </span>
+                                                            Acciones
+                                                        </button>
+                    
+                                                        <div tabindex="-1" role="menu" aria-hidden="true"
+                                                            class="dropdown-menu dropdown-menu-right">
+                                                            <ul class="nav flex-column">
+                    
+                                                                <li class="nav-item">
+                                                                    <buton data-toggle="modal" data-target="#modalInventario" class="nav-link">
+                                                                        <i class="fas fa-table nav-link-icon"></i>
+                                                                        <span>
+                                                                            Inventario
+                                                                        </span>
+                                                                    </buton>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a href="LoteVer.html" class="nav-link">
+                                                                        <i class="fas fa-eye nav-link-icon"></i>
+                                                                        <span>
+                                                                            Ver
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                    
+                                                                <li class="nav-item">
+                                                                    <a href="LoteModificar.html" class="nav-link">
+                                                                        <i class="fas fa-pencil-alt nav-link-icon"></i>
+                                                                        <span>
+                                                                            Modificar
+                                                                        </span>
+                    
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a href="javascript:eliminarCampaña();"
+                                                                        class="nav-link">
+                                                                        <i class="fas fa-trash-alt nav-link-icon"></i>
+                                                                        <span>
+                                                                            Eliminar
+                                                                        </span>
+                    
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">L20210102</th>
+                                                <td>Lote 2</td>
+                                                <td>Sacramento</td>
+                                                <td>Uva</td>
+                                                <td>Sugar Crisp</td>
+                                                <td>75</td>
+                                                <td>Inundación</td>
+                                                <td>01/01/2021</td>
+                                                <td> 
+                                                    <div class="d-inline-block dropdown">
+                                                        <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false"
+                                                            class="btn-shadow dropdown-toggle btn btn-info">
+                                                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                                <i class="fa fa-business-time fa-w-20"></i>
+                                                            </span>
+                                                            Acciones
+                                                        </button>
+                    
+                                                        <div tabindex="-1" role="menu" aria-hidden="true"
+                                                            class="dropdown-menu dropdown-menu-right">
+                                                            <ul class="nav flex-column">
+                    
+                                                                <li class="nav-item">
+                                                                    <buton data-toggle="modal" data-target="#modalInventario" class="nav-link">
+                                                                        <i class="fas fa-table nav-link-icon"></i>
+                                                                        <span>
+                                                                            Inventario
+                                                                        </span>
+                                                                    </buton>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a href="LoteVer.html" class="nav-link">
+                                                                        <i class="fas fa-eye nav-link-icon"></i>
+                                                                        <span>
+                                                                            Ver
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                    
+                                                                <li class="nav-item">
+                                                                    <a href="LoteModificar.html" class="nav-link">
+                                                                        <i class="fas fa-pencil-alt nav-link-icon"></i>
+                                                                        <span>
+                                                                            Modificar
+                                                                        </span>
+                    
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a href="javascript:eliminarCampaña();"
+                                                                        class="nav-link">
+                                                                        <i class="fas fa-trash-alt nav-link-icon"></i>
+                                                                        <span>
+                                                                            Eliminar
+                                                                        </span>
+                    
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <script>
+
+                        function irRegistrarInventario()
+                        {
+                            window.location.href="Inventario.html";
+                        }
+
+                        function irVerLote()
+                        {
+                            window.location.href="LoteVer.html";
+                        }
+
+                        function irModificarLote()
+                        {
+                            window.location.href="LoteModificar.html";
+                        }
+
+                        function eliminar() {
+                            if (confirm("Esta seguro de eliminar el registro?")) {
+                            }
+                        }
+                        
+                        </script>
+
+     
+    <div class="modal fade" id="modalProcess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+          
+                <div class="modal-body">
+                    
+                    <div class="mb-3 progress">
+                        <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
+                    </div>
+
+                    <p>Generando reporte de análisis de yemas...  </p>
+              
+                </div>
+
+            
+            </div>
+        </div>
+    </div>
+<!-- Modal del inventario -->
+    <div class="modal fade" id="modalInventario" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Inventario de plantas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                Buscar
+                                <input type="text" class="form-control" placeholder="Buscar"  id="buscarPlanta" onkeyup="doSearch()" >
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-10 mb-3">
+                                <div id="contenedorTabla" class="responsive">
+                                    <table id="datos" class='Tabla_generada'>
+                                        <thead style ='background-color: darkgray'>
+                                            <th class='tabla_generada_encabezado' >1</th>
+                                            <th class='tabla_generada_encabezado' >2</th>
+                                            <th class='tabla_generada_encabezado' >3</th>
+                                            <th class='tabla_generada_encabezado' >4</th>
+                                            <th class='tabla_generada_encabezado' >5</th>
+                                            <th class='tabla_generada_encabezado' >6</th>
+                                            <th class='tabla_generada_encabezado' >7</th>
+                                            <th class='tabla_generada_encabezado' >8</th>
+                                            <th class='tabla_generada_encabezado' >9</th>
+                                            <th class='tabla_generada_encabezado' >10</th>
+                                            <th class='tabla_generada_encabezado' >11</th>
+                                            <th class='tabla_generada_encabezado' >12</th>
+                                            <th class='tabla_generada_encabezado' >13</th>
+                                            <th class='tabla_generada_encabezado' >14</th>
+                                            <th class='tabla_generada_encabezado' >15</th>
+                                            <th class='tabla_generada_encabezado' >16</th>
+                                            <th class='tabla_generada_encabezado' >17</th>
+                                            <th class='tabla_generada_encabezado' >18</th>
+                                            <th class='tabla_generada_encabezado' >19</th>
+                                            <th class='tabla_generada_encabezado' >20</th>
+                                            
+                                        </thead>
+                                        <tbody>
+                                            <td class="tabla_generada_td" id="1" onclick='cambiarColor("1")'>1</td>
+                                            <td class="tabla_generada_td" id="2" onclick='cambiarColor("2")'>2</td>
+                                            <td class="tabla_generada_td" id="3" onclick='cambiarColor("3")'>3</td>
+                                            <td class="tabla_generada_td" id="4" onclick='cambiarColor("4")'>4</td>
+                                            <td class="tabla_generada_td" id="5" onclick='cambiarColor("5")'>5</td>
+                                            <td class="tabla_generada_td" id="6" onclick='cambiarColor("6")'>6</td>
+                                            <td class="tabla_generada_td" id="7" onclick='cambiarColor("7")'>7</td>
+                                            <td class="tabla_generada_td" id="8" onclick='cambiarColor("8")'>8</td>
+                                            <td class="9" id="9" onclick='cambiarColor("9")'>9</td>
+                                            <td class="tabla_generada_td" id="10" onclick='cambiarColor("10")'>10</td>
+                                            <td class="tabla_generada_td" id="11" onclick='cambiarColor("11")'>11</td>
+                                            <td class="tabla_generada_td" id="12" onclick='cambiarColor("12")'>12</td>
+                                            <td class="tabla_generada_td" id="13" onclick='cambiarColor("13")'>13</td>
+                                            <td class="tabla_generada_td" id="14" onclick='cambiarColor("14")'>14</td>
+                                            <td class="tabla_generada_td" id="15" onclick='cambiarColor("15")'>15</td>
+                                            <td class="tabla_generada_td" id="16" onclick='cambiarColor("16")'>16</td>
+                                            <td class="tabla_generada_td" id="17" onclick='cambiarColor("17")'>17</td>
+                                            <td class="tabla_generada_td" id="18" onclick='cambiarColor("18")'>18</td>
+                                            <td class="tabla_generada_td" id="19" onclick='cambiarColor("19")'>19</td>
+                                            <td class="tabla_generada_td" id="20" onclick='cambiarColor("20")'>20</td>
+                                            <td class='tabla_generada_celda_final'>1</td>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="contenedor_botones">
+                                     <button type="button" name="" class="btn btn-info"
+                                     id="activar">Activar Planta</button> 
+                                     <button type="button" name="" class="btn btn-secondary" 
+                                     id="desactivar" >Quitar Plantas</button> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <button type="button" name="" class="btn btn-success" 
+                                id="vigoroza" >Vigorosa</button>
+                                <button type="button" name="" class="btn btn-warning" 
+                                id="debil" >Debil</button>
+                                <button type="button" name="" class="btn btn-danger" 
+                                id="muerta" >Muerta</button>
+                                <button type="button" name="" class="btn btn-dark" 
+                                id="replantada" >Replantada</button>
+                            </div>
+                        </div>
+                    </form>
+                    <script>
+                       
+                    </script>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Small modal
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Estado</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                <form class="needs-validation" novalidate>
+                    <div class="form-row" >
+
+                        <fieldset class="position-relative form-group">
+                            <div class="position-relative form-check">
+                                <label class="form-check-label">
+                                    <input name="radio1" data-dismiss="modal" type="radio" class="form-check-input"> 
+                                    Viva</label>
+                            </div>
+                            <div class="position-relative form-check">
+                                <label class="form-check-label">
+                                <input name="radio1" data-dismiss="modal" type="radio" class="form-check-input">
+                                Muerta</label></div>
+                            <div class="position-relative form-check disabled">
+                                <label class="form-check-label">
+                                    <input name="radio1" data-dismiss="modal"  type="radio" class="form-check-input"> 
+                                    Débil</label></div>
+                        </fieldset>
+                    </div>
+                
+                </form> 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+           
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+</script>
+<!-- DATATABLES -->
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
+</script>
+<!-- BOOTSTRAP -->
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
+</script>
+<script>
+    function eliminarCampaña() {
+        if (confirm("Esta seguro de eliminar?")) {
+        }
+        window.location.href="LoteList.html";
+    }
+
+</script>
+<script type="text/javascript" src="../../../assets/scripts/GeneradorDeTabla.js"></script>
+<script type="text/javascript" src="../../../assets/scripts/tree_view.js"></script>
+<script type="text/javascript" src="../../../assets/scripts/Tabla.js"></script>
+<script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</html>

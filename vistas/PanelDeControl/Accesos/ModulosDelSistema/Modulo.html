@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../../../estilo/main.css">
+    <link rel="stylesheet" href="../../../../estilo/estilo.css">
+    
+    <title>Document</title>
+</head>
+<body class="pagina">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-network  icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div>
+                     Nuevo Módulo
+                    <div class="page-title-subheading">
+                        Nueva información de un nuevo módulo del sistema.
+                    </div>
+                </div>
+            </div>
+            <div class="page-title-actions">
+
+                <div class="d-inline-block dropdown">
+                    <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-business-time fa-w-20"></i>
+                        </span>
+                        Acciones
+                    </button>
+                    <div tabindex="-1" role="menu" aria-hidden="true"
+                        class="dropdown-menu dropdown-menu-right">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a disabled href="ModulosDelSistemaLista.html" class="nav-link">
+                                    <i class="fas fa-window-close nav-link-icon"></i>
+                                    <span>
+                                        Cerrar
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title">Nuevo</h5>
+
+            <form class="needs-validation"  novalidate>
+               
+                    
+                
+                <div class="form-row ">
+
+                    <div class="col-md-4  mb-3">
+
+                        <label class="letra" for="validationCustom01">Código</label>
+                        <input type="text" disabled class="form-control" id="validationCustom01"
+                            placeholder="Campo Autogenerado" value="" name="txtNombrePais" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4  mb-3">
+                        <label  class="letra" for="validationCustom02">Nombre </label>
+                        <input type="text"  class="form-control" id="validationCustom02"
+                            placeholder="Ingresar el nombre" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4  mb-3">
+                        <label  class="letra" for="validationCustom02">Descripción </label>
+                        <input type="text"  class="form-control" id="validationCustom02"
+                            placeholder="Ingresar la descripción" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+        
+                    <div class="mb-3" style="margin-top: 40px; margin-right: 4px;">
+                        <input type="checkbox"  onchange="habilitar(this.checked);">
+
+                    </div>
+
+                    <div class="col-md-4  mb-3">
+                        
+                        <label  class="letra" for="validationCustom02">Módulo Raiz</label>
+                        <input type="text" id="lbl" disabled class="form-control" id="validationCustom02"
+                            placeholder="Descripción del módulo"  required>
+                    </div>
+
+                    <div class="col-md-4  mb-3" style="margin-top: 32px;">
+                        <button type="button" id="btn"  disabled data-toggle="modal"
+                         data-target="#agronomo" onclick="myFunction()"
+                           class="btn-shadow  btn btn-info">
+                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                <i class="fas fa-search"></i>
+                             </span>
+                             
+                          </button>
+                    </div>
+                    
+                </div>
+
+
+    
+                <button class="btn btn-primary" type="submit">Guardar</button>
+                <button class="btn btn-secondary" type="button" onclick="ModuloList()">Cerrar</button>
+
+                                
+            </form>
+
+            <script>
+
+               
+
+                function ModuloList(){
+                
+                window.location.href="ModulosDelSistemaLista.html";
+                }
+
+                 //habilitar y deshabilitar
+
+                function habilitar(value){
+                if(value==true)
+                {
+                    document.getElementById("lbl").disabled=false;
+                    document.getElementById("btn").disabled=false;
+                }
+                if(value==false){
+                    document.getElementById("lbl").disabled=true;
+                    document.getElementById("lbl").value="";
+                    document.getElementById("btn").disabled=true;
+                }
+            }
+
+               
+
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                    'use strict';
+                    window.addEventListener('load', function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+      
+            </script>
+        </div>
+    </div>
+
+
+    <!-- MODAL  DE PERFILES Y ACCESOS -->
+    <div class="modal fade" id="agronomo" tabindex="-1" role="dialog" 
+        aria-labelledby="exampleModalLabel"aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="titulos_datos" id="exampleModalLabel">
+                        Configuración de Accessos
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" method="post" name="formulario" >
+                        <div class="form-row">
+                            <div class="table-responsive">
+                                <div id="datos" class="datos">
+                                    <div class="accesos">
+                                        <div class="accesos_lista" >
+                                                <input type="checkbox" id="0" value="Todo" onclick="todo(this);" >
+                                                <label for="0" class="flecha" >Todo</label>
+                                                <div class="lista">
+                                                        <div>
+                                                            <i class="fas fa-angle-right cursor"  onClick="muestra_oculta('panelcontrol')"></i>
+                                                            <input type="checkbox" id="1" value="Panel de Control" onclick="PanelDeControl(this);" >
+                                                            <label for="1" class="flecha" onClick="muestra_oculta('panelcontrol')" >Panel de control</label>
+                                                        </div>
+                                                
+                                                        <div class="sublista" id="panelcontrol">
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="PanelC1" value="País" onclick="pais(this);">
+                                                                <label for="PanelC1">País</label>
+                                                            </div>
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="PanelC2" value="Empresa" onclick="empresa(this);">
+                                                                <label for="PanelC2">Empresa</label>
+                                                            </div>
+                                            
+                                                                <div class="sublista_interna">
+                                                                    <div class="tituloaccesos">
+                                                                        <i class="fas fa-angle-right cursor" onClick="muestra_oculta('accesos')"></i>
+                                                                        <input type="checkbox" id="PanelC3" value="Accesos" onclick="PanelDeControl_Accesos(this);">
+                                                                        <label for="PanelC3" class="flecha" onClick="muestra_oculta('accesos')">Accesos</label>
+                                                                    </div>
+                                                                    <div class="sublista_interna_items" id="accesos">
+                                                                        <div class="menus_ch">
+                                                                            <input type="checkbox" id="acceso1" value="Usuarios" onclick="usuario(this);">
+                                                                            <label for="acceso1">Usuarios</label>
+                                                                        </div>
+                                                                        <div class="menus_ch">
+                                                                            <input type="checkbox" id="acceso2" value="Roles" onclick="roles(this);">
+                                                                            <label for="acceso2">Roles</label>
+                                                                        </div>
+                                                                        <div class="menus_ch">
+                                                                            <input type="checkbox" id="acceso3" value="Módulos del Sistema" onclick="modulosdelsistema(this);">
+                                                                            <label for="acceso3">Módulos del Sistema</label>
+                                                                        </div>
+                                                                        <div class="menus_ch">
+                                                                            <input type="checkbox" id="acceso4" value="Perfiles"onclick="perfil(this);">
+                                                                            <label for="acceso4">Perfil</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                        
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="PanelC4" value="Moneda"onclick="moneda(this);">
+                                                                <label for="PanelC4">Moneda</label>
+                                                            </div>
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="PanelC5" value="Idioma" onclick="idioma(this);">
+                                                                <label for="PanelC5">Idioma</label>
+                                                            </div>
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="PanelC6" value="Tablas Generales" onclick="tablagenerales(this);">
+                                                                <label for="PanelC6">Tablas Generales</label>
+                                                            </div>
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="PanelC7" value="Seguridad y Auditoria" onclick="segirudadyauditoria(this);">
+                                                                <label for="PanelC7">Seguridad y Auditoria</label>
+                                                            </div>
+                                                        </div>
+                                                
+                                            </div>
+                                            <div class="lista">
+                                                <div>
+                                                    <i class="fas fa-angle-right cursor"  onClick="muestra_oculta('operacionesDeCam')"></i>
+                                                    <input type="checkbox" id="2" value="Operaciones de Campo" onclick="OperacionesDeCampo(this)">
+                                                    <label for="2" class="flecha" onClick="muestra_oculta('operacionesDeCam')" >Operaciones de Campo</label>
+                                                </div>
+                                                
+                                                <div class="sublista" id="operacionesDeCam" >
+                                                    <div class="menus_ch">
+                                                        <input type="checkbox" id="campo1" value="Ubicación de Fundos/Lotes" onclick="ubicaciondefundos(this);">
+                                                        <label for="campo1">Ubicación de Fundos/Lotes</label>
+                                                    </div>
+                                                    <div class="menus_ch">
+                                                        <input type="checkbox" id="campo2" value="Campaña" onclick="campaña(this);">
+                                                        <label for="campo2">Campaña</label>
+                                                    </div>
+                                                    <div class="sublista_interna">
+                                                        <div class="tituloaccesos">
+                                                            <i class="fas fa-angle-right cursor" onClick="muestra_oculta('ProgramaActi')"></i>
+                                                            <input type="checkbox" id="campo3"  value="Programa de Actividades" onclick="ProgramaActividad(this);">
+                                                            <label for="campo3" class="flecha"  onClick="muestra_oculta('ProgramaActi')">Programa de Actividades</label>
+                                                        </div>
+                                                        <div class="sublista_interna_items" id="ProgramaActi">
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="actividad1" value="Calendario de Actividades" onclick="calendario(this);">
+                                                                <label for="actividad1">Calendario de Actividades</label>
+                                                            </div>
+                                                                        <div class="sublista_interna">
+                                                                            <div class="tituloaccesos">
+                                                                                <i class="fas fa-angle-right cursor" onClick="muestra_oculta('controlfeno')"></i>
+                                                                                <input type="checkbox" id="actividad2"  value="Control Fenológico" onclick="fenologico(this);">
+                                                                                <label for="actividad2" class="flecha" onClick="muestra_oculta('controlfeno')">Control Fenológico</label>
+                                                                            </div>
+                                                                            <div class="sublista_interna_items" id="controlfeno">
+                                                                                <div class="menus_ch">
+                                                                                    <input type="checkbox" id="fenologico1" value="Análisis de Yemas" onclick="analisisdeyemas(this);">
+                                                                                    <label for="fenologico1">Análisis de Yemas</label>
+                                                                                </div>
+                                                                                <div class="menus_ch">
+                                                                                    <input type="checkbox" id="fenologico2"value="Conteo de Cargadores" onclick="conteodecargadores(this);">
+                                                                                    <label for="fenologico2">Conteo de Cargadores</label>
+                                                                                </div>
+                                                                                <div class="menus_ch">
+                                                                                    <input type="checkbox" id="fenologico3" value="Evaluación de Brotación" onclick="evaluaciondebrote(this);">
+                                                                                    <label for="fenologico3">Evaluación de Brotación</label>
+                                                                                </div>
+                                                                                <div class="menus_ch">
+                                                                                    <input type="checkbox" id="fenologico4" value="Conteo de Racimos"onclick="conteoderacimo(this);">
+                                                                                    <label for="fenologico4">Conteo de Racimos</label>
+                                                                                </div>
+                                                                                <div class="menus_ch">
+                                                                                    <input type="checkbox" id="fenologico5" value="Crecimiento de Brotes"onclick="crecimientodebrotes(this);">
+                                                                                    <label for="fenologico5">Crecimiento de Brotes</label>
+                                                                                </div>
+                                                                                <div class="menus_ch">
+                                                                                    <input type="checkbox" id="fenologico6" value="Evaluación de Floración"onclick="evaluaciondefloracion(this);">
+                                                                                    <label for="fenologico6">Evaluación de Floración</label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                    
+                                    
+                                                                        <div class="sublista_interna">
+                                                                            <div class="tituloaccesos">
+                                                                                <i class="fas fa-angle-right cursor" onClick="muestra_oculta('desinfeccion')"></i>
+                                                                                <input type="checkbox" id="actividad3" value="Desinfección" onclick="desinfec(this);">
+                                                                                <label for="actividad3" class="flecha" onClick="muestra_oculta('desinfeccion')">Desinfección</label>
+                                                                            </div>
+                                                                            <div class="sublista_interna_items" id="desinfeccion">
+                                                                                <div class="menus_ch">
+                                                                                    <input type="checkbox" id="des1" value="Solarización"onclick="solarizacion(this);">
+                                                                                    <label for="des1">Solarización</label>
+                                                                                </div>
+                                                                                <div class="menus_ch">
+                                                                                    <input type="checkbox" id="des2" value="Tratamiento Químico"onclick="tratamientoquimico(this);">
+                                                                                    <label for="des2">Tratamiento Químico</label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="actividad4" value="Siembra" onclick="siembra(this);">
+                                                                <label for="actividad4">Siembra</label>
+                                                            </div>
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="actividad5" value="Abonados Y Fertilizantes"onclick="tratamientofitosanitario(this);">
+                                                                <label for="actividad5">Tratamientos Fitosanitarios</label>
+                                                            </div>
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="actividad6" onclick="abonosyfertilizantes(this);">
+                                                                <label for="actividad6">Abonados Y Fertilizantes</label >
+                                                            </div>
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="actividad7" value="Muestreo de Plagas y Enfermedades"onclick="muestreodeplagasyenfermedades(this);">
+                                                                <label for="actividad7">Muestreo de Plagas y Enfermedades</label>
+                                                            </div>
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="actividad8" value="Otra Labores" onclick="otraslabores(this);">
+                                                                <label for="actividad8">Otra Labores</label>
+                                                            </div>
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="actividad9" value="Recolección/Cosecha" onclick="recoleccioncosecha(this);">
+                                                                <label for="actividad9">Recolección/Cosecha</label>
+                                                            </div>
+                                                            <div class="menus_ch">
+                                                                <input type="checkbox" id="actividad10" value="Otras Aplicaciones"onclick="otrasaplicaciones(this);">
+                                                                <label for="actividad10">Otras Aplicaciones</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                        
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="lista">
+                                                <div >
+                                                    <i class="fas fa-angle-right cursor" onclick="muestra_oculta('presu')"></i>
+                                                    <input type="checkbox" id="3"  value="Presupuesto" onclick="presupuesto(this)">
+                                                    <label for="3" class="flecha" onclick="muestra_oculta('presu')">Presupuesto</label>
+                                                </div>
+                                                
+                                                <div class="sublista" id="presu">
+                                                    <div class="menus_ch">
+                                                        <input type="checkbox" id="presu1" value="Estadistica de Costos"onclick="estadisticadecosto(this);">
+                                                        <label for="presu1">Estadistica de Costos</label>
+                                                    </div>
+                                                    <div class="menus_ch">
+                                                        <input type="checkbox" id="presu2" value="Mano de Obra"onclick="manodeobra(this);">
+                                                        <label for="presu2">Mano de Obra </label>
+                                                    </div>
+                                                    <div class="menus_ch">
+                                                        <input type="checkbox" id="presu3" value="Maquinaria"onclick="maquinaria(this);">
+                                                        <label for="presu3">Maquinaria </label>
+                                                    </div>
+                                                    <div class="menus_ch">
+                                                        <input type="checkbox" id="presu4" value="Insumos"onclick="insumos(this);">
+                                                        <label for="presu4">Insumos </label>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="lista">
+                                                <div>
+                                                    <i class="fas fa-angle-right cursor" onclick="muestra_oculta('anali')"></i>
+                                                    <input type="checkbox" id="4" value="Analitíca" onclick="analitica(this)">
+                                                    <label for="4" class="flecha" onclick="muestra_oculta('anali')">Analítica</label>
+                                                </div>
+                                                
+                                                <div class="sublista" id="anali">
+                                                    <div class="menus_ch">
+                                                        <input type="checkbox" id="analitica1" value="Panel de Control"onclick="panel(this);">
+                                                        <label for="analitica1">Panel de Control</label>
+                                                    </div>
+                                                    <div class="menus_ch">
+                                                        <input type="checkbox" id="analitica2" value="Analítica de Campo"onclick="analiticadecampo(this);">
+                                                        <label for="analitica2">Analítica de Campo</label>
+                                                    </div>
+                                                    <div class="menus_ch">
+                                                        <input type="checkbox" id="analitica3" value="Analítica de Estratégica"onclick="analiticaestrategica(this);">
+                                                        <label for="analitica3">Analítica de Estratégia</label>
+                                                    </div>
+                                                    <div class="menus_ch">
+                                                        <input type="checkbox" id="analitica4" value="Analítica de Resultados"onclick="analiticaresultado(this);">
+                                                        <label for="analitica4">Analítica de Resultados
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn"class="btn btn-secondary" onclick="enviartexto()" data-dismiss="modal">Seleccionar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="../../../../assets/scripts/tree_view_modulo.js"></script>
+    <script type="text/javascript" src="../../../../assets/scripts/OcultarTreView.js"></script>
+    <script type="text/javascript" src="../../../../assets/scripts/main.js"></script>
+</body>
+</html>

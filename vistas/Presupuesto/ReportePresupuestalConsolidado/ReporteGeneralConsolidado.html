@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../estilo/main.css" />
+    <link rel="stylesheet" href="../../../estilo/easyui.css" />
+    <script type="text/javascript" src="../../../assets/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../assets/scripts/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/excel.js"></script>
+    <title>Document</title>
+</head>
+<body class="pagina">
+    <div class="app-page-title">
+
+        <div class="page-title-wrapper">
+    
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-note2 icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div>Reporte General Consolidado 
+                    <div class="page-title-subheading"> 
+                        Este es un reporte general consolidado 
+                    </div>
+                </div>
+            </div>     
+        </div>
+    </div>
+
+    <div class="main-card mb-3 card ">
+        <div class="card-body">
+            <h5 class="card-title"  onClick="muestra_oculta('busqueda')">Filtros  <i class="fa fa-angle-down ic"></i> </h5>
+            <form class="needs-validation" novalidate id="busqueda">
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Iten Presupuestal </label>
+                        <select class="form-control" id="cboItemPresupuestal" onclick="activar();">
+                            <option value="0">Seleccione</option>
+                            <option value="1">Mano de Obra</option>
+                            <option value="2">Insumo Agrícola</option>
+                            <option value="3">Riego y Fertilizante</option>
+                            <option value="todo">Todos</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Tipo de Reporte</label>
+                        <select class="form-control" id="cboTipoReporte" >
+                            <option>Seleccione</option>
+                            <option>Semanal</option>
+                            <option>Mensual</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Tipo de Presupuesto</label>
+                        <select class="form-control" id="cboTipoPresupuesto" >
+                            <option>Seleccione</option>
+                            <option>Producción</option>
+                            <option>Inverción</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Campaña</label>
+                        <select class="form-control" id="cboCampaña" disabled onclick="campaña();">
+                            <option value="nada">Seleccione</option>
+                            <option value="Uva">Campaña Uva 2019 - 2021</option>
+                            <option value="Manzana">Campaña Manzana 2021</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Producto</label>
+                        <input type="text" name="" disabled class="form-control" placeholder="Seleccione la Campaña" id="txtProducto">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Variedad</label>
+                        <select class="form-control" id="cboVariedad" disabled>
+                            <option>Seleccione</option>
+                            <option>Red Glove</option>
+                            <option>Sugar Crisp</option>
+                            <option>Flame</option>
+                            <option>Summer Royal</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Manejo</label>
+                        <select class="form-control" id="cboManejo" disabled>
+                            <option>Seleccione</option>
+                            <option>Convencional</option>
+                            <option>Orgánico</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Criterio</label>
+                        <select class="form-control" id="cboCriterio" disabled>
+                            <option>Seleccione</option>
+                            <option>Por Lote</option>
+                            <option>Por Variedad</option>
+                            <option>Todo</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Categoria</label>
+                        <select name="" id="cboCategoria" class="form-control" disabled>
+                            <option value="">Seleccione</option>
+                            <option value="">Ferreteria</option>
+                            <option value="">Accesorios de PVC</option>
+                            <option value="">Equipos de Protección</option>
+                            <option value="">Instrumentos de Precisión</option>
+                            <option value="">Mano de Obra Riego</option>
+                          </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Rubro</label>
+                        <select name="" id="cboRubro" class="form-control" disabled>
+                            <option value="">Seleccione</option>
+                            <option value="">Material Varios</option>
+                          </select>
+                    </div>
+
+                    <script>
+                        function activar(){
+                             var cboItemPresupuestal = document.getElementById("cboItemPresupuestal").value
+
+                             switch(cboItemPresupuestal){
+                                case "0": 
+                                    var Campaña= document.getElementById("cboCampaña").disabled= true
+                                    var Variedad= document.getElementById("cboVariedad").disabled= true
+                                    var Manejo= document.getElementById("cboManejo").disabled= true
+                                    var Criterio= document.getElementById("cboCriterio").disabled= true
+                                    var Campaña= document.getElementById("cboCampaña").disabled= true
+                                    var Categoria= document.getElementById("cboCategoria").disabled= true
+                                    var Rubro= document.getElementById("cboRubro").disabled= true
+                                 break;
+                                case "1": 
+                                    var Campaña= document.getElementById("cboCampaña").disabled= false
+                                    var Variedad= document.getElementById("cboVariedad").disabled= false
+                                    var Manejo= document.getElementById("cboManejo").disabled= false
+                                    var Criterio= document.getElementById("cboCriterio").disabled= false
+                                    var Categoria= document.getElementById("cboCategoria").disabled= true
+                                    var Rubro= document.getElementById("cboRubro").disabled= true
+                                 break;
+                                 case "2": 
+                                    var Campaña= document.getElementById("cboCampaña").disabled= false
+                                    var Variedad= document.getElementById("cboVariedad").disabled= false
+                                    var Manejo= document.getElementById("cboManejo").disabled= false
+                                    var Criterio= document.getElementById("cboCriterio").disabled= false
+                                    var Categoria= document.getElementById("cboCategoria").disabled= true
+                                    var Rubro= document.getElementById("cboRubro").disabled= true
+                                 break;
+                                 case "3": 
+                                    var Campaña= document.getElementById("cboCampaña").disabled= false
+                                    var Categoria= document.getElementById("cboCategoria").disabled= false
+                                    var Rubro= document.getElementById("cboRubro").disabled= false
+                                    var Variedad= document.getElementById("cboVariedad").disabled= true
+                                    var Manejo= document.getElementById("cboManejo").disabled= true
+                                    var Criterio= document.getElementById("cboCriterio").disabled= true
+                                 break;
+                                 case "todo": 
+                                     var Campaña= document.getElementById("cboCampaña").disabled= false
+                                    var Variedad= document.getElementById("cboVariedad").disabled= false
+                                    var Manejo= document.getElementById("cboManejo").disabled= false
+                                    var Criterio= document.getElementById("cboCriterio").disabled= false
+                                    var Campaña= document.getElementById("cboCampaña").disabled= false
+                                    var Categoria= document.getElementById("cboCategoria").disabled= false
+                                    var Rubro= document.getElementById("cboRubro").disabled= false
+                             }
+                        }
+                        function campaña(){
+                            var Campaña = document.getElementById("cboCampaña").value
+                            switch(Campaña){
+                                case "nada":
+                                    document.getElementById("txtProducto").value ="Seleccione la Campaña"
+                                break;
+                                case "Uva":
+                                    document.getElementById("txtProducto").value ="Uva"
+                                break;
+                                case "Manzana":
+                                    document.getElementById("txtProducto").value ="Manzana"
+                                break;
+                            }
+                             }
+                    </script>
+                </div>   
+                <button class="btn btn-primary" id="GenerarReporte" type="submit">Generar Reporte</button>           
+            </form>
+        </div>
+    </div>
+    <div class="main-card mb-3 card ">
+        <div  class=" card-body ">
+            <h5 class="card-title">Reporte</h5>
+            <div class="table-responsive" id="tablaDatos">
+                <table id="tablaReport" title="Reporte" class="easyui-treegrid mb-0 table " style="width:100%;height:450px" 
+                data-options="
+                    url: 'treegrid_data3.json',
+                    method: 'get',
+                    rownumbers: true,
+                    showFooter: true,
+                    idField: 'id',
+                    treeField: 'reporte'
+                ">
+                <thead frozen="true">
+                    <tr>
+                        <th field="reporte" width="200">Item Presupuestal</th>
+                    </tr>
+		        </thead>
+                <thead>
+                    <tr>
+                        <th colspan="8">2021</th>
+                        <th colspan="4">2022</th>
+                        <th colspan="1"></th>
+                    </tr>
+                    <tr>
+                        <th field="f1" width="90" >Mayo</th>
+                        <th field="f2" width="90" >Junio</th>
+                        <th field="f3" width="90" >Julio</th>
+                        <th field="f4" width="90" >Agosto</th>
+                        <th field="f5" width="90" >Septiembre</th>
+                        <th field="f6" width="90" >Octubre</th>
+                        <th field="f7" width="90" >Noviembre</th>
+                        <th field="f8" width="90" >Diciembre</th>
+                        <th field="f9" width="90" >Enero</th>
+                        <th field="f10" width="90">Febrero</th>
+                        <th field="f11" width="90" >Marzo</th>
+                        <th field="f12" width="90">Abril</th>
+                        <th field="f13" width="90" >Total</th>
+                    </tr>
+                </thead>
+            </table> 
+            </div>
+        </div>
+    </div>
+
+    <script>  
+       
+        
+        function exportTableToExcel(tableID, filename = ''){
+            var downloadLink;
+            var dataType = 'application/vnd.ms-excel';
+            var tableSelect = document.getElementById(tableID);
+            var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+            
+            filename = filename?filename+'.xlsx':'excel_data.xls';
+            
+            downloadLink = document.createElement("a");
+            
+            document.body.appendChild(downloadLink);
+            
+            if(navigator.msSaveOrOpenBlob){
+                var blob = new Blob(['ufeff', tableHTML], {
+                    type: dataType
+                });
+                navigator.msSaveOrOpenBlob( blob, filename);
+            }else{
+                downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+            
+                downloadLink.download = filename;
+
+                downloadLink.click();
+            }
+        }
+    </script>
+<script type="text/javascript" src="../../../assets/scripts/tree_view.js"></script>
+<script type="text/javascript" src="../../../assets/scripts/main.js"></script>

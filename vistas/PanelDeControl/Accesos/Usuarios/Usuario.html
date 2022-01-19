@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../estilo/main.css">
+    <link rel="stylesheet" href="../../../../estilo/estilo.css">
+    <script src="../../../../assets/scripts/Busqueda_en_tabla.js"></script>
+    <title>Document</title>
+</head>
+<body class="pagina">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-user  icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div>
+                     Nuevo Usuario
+                    <div class="page-title-subheading">
+                        Nueva información del usuario.
+                    </div>
+                </div>
+            </div>
+            <div class="page-title-actions">
+                <div class="d-inline-block dropdown">
+                    <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-business-time fa-w-20"></i>
+                        </span>
+                        Acciones
+                    </button>
+                    <div tabindex="-1" role="menu" aria-hidden="true"
+                        class="dropdown-menu dropdown-menu-right">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a disabled href="UsuarioLista.html" class="nav-link">
+                                    <i class="fas fa-window-close nav-link-icon"></i>
+                                    <span>
+                                        Cerrar
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title">Nuevo</h5>
+
+            <form class="needs-validation" novalidate>
+
+                <div class="form-row">
+
+                    <div class="col-md-4 mb-3">
+
+                        <label class="letra" for="validationCustom01">Código</label>
+                        <input type="text" disabled class="form-control" id="validationCustom01"
+                            placeholder="Campo Autogenerado" value="" name="txtNombrePais" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label  class="letra" for="validationCustom02">Nombres</label>
+                        <input type="text"  class="form-control" id="validationCustom02"
+                            placeholder="Ingresar el nombre" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="letra"  for="validationCustom03">Apellido Paterno</label>
+                        <input type="text"  class="form-control" id="validationCustom03"
+                            placeholder="Ingresar el apellido paterno" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="letra"  for="validationCustom04">Apellido Materno</label>
+                        <input type="text"  class="form-control" id="validationCustom04"
+                            placeholder="Ingresar el apellido materno" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="letra" for="validationCustom05">Dirección</label>
+                        <input type="text"  class="form-control" id="validationCustom05"
+                            placeholder="Ingresar la dirección" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="letra" for="validationCustom06">Teléfono</label>
+                        <input type="text"  class="form-control" id="validationCustom06"
+                            placeholder="Ingresar el teléfono" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="letra" for="validationCustom07">Tipo de Documento</label>
+                        <select name="" id="validationCustom07" class="form-control">
+                            <option value="">Selecione</option>
+                            <option value="">DNI</option>
+                            <option value="">Carnet de Extranjeria</option>
+                        </select>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="letra" for="validationCustom08">Número del Documento</label>
+                        <input type="text"  class="form-control" id="validationCustom08"
+                        placeholder="Ingrese el número de documento" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="letra" for="validationCustom09">Correo</label>
+                        <input type="email"  class="form-control" id="validationCustom09"
+                            placeholder="usuario@ejemplo.com" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="letra" for="validationCustom10">Contraseña</label>
+                        <input type="password" disabled  class="form-control" id="validationCustom10"
+                            placeholder="Campo Autogenerado" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <label class="letra" for="area" >Área</label>
+                        <select id="area" class="form-control" >
+                            <option>Seleccione</option>
+                            <option value="1">Área 1</option>
+                            <option value="2">Área 2</option>
+                            <option value="3">Área 3</option>
+                        </select> 
+                    </div>
+
+                    
+                     <div class="col-md-4 mb-3">
+                            <label class="letra"for="cargo" >Cargo</label>
+                            <select id="cargo" class="form-control">
+                                <option>Seleccione</option>
+                                <option value="1">Agronomo</option>
+                                <option value="2">Contador</option>
+                                <option value="3">Jefe de Sanidad Agricóla</option>
+                            </select> 
+                    </div>
+
+                </div>
+                
+                <div class="form-row ">
+                        <!-- lISTA DE PERFILES -->
+                        <div class="col-md-6 mb-3">
+                            <div class="cabeza_tabla_variedadPoduc">
+                                <span class="span_enfermedades_titulo"  onclick="muestra_oculta('perfilTabla')">Perfiles</span>
+                                <div class="agregar_enfermedad">
+                                    <i class="fas fa-angle-down ico_enfer" onclick="muestra_oculta('perfilTabla')"></i>
+                                    <a class="btn btn-danger" id="EliminarPerfil"  href="javascript:void();" >
+                                    <i class="fas fa-trash-alt"></i></a>
+                                    <a class="btn btn-success " href="#" 
+                                    data-toggle="modal" data-target="#modaperfil" >
+                                    <i class="fas fa-plus-square"></i></a>
+                                </div> 
+                            </div> 
+                            <div class="table-responsive" id="perfilTabla">
+                                <table id="tablaPerfilesDos" class="mb-0 table">
+                                    <thead class="tabla_encabezado">
+                                        <th><input type = "checkbox" id = "all3"> Seleccionar todo </th>
+                                        <th>Código</th>
+                                        <th>Perfil</th>
+                                        <th colspan="2"></th>
+                                    </thead>
+                                    <tbody id="PerfilesEliminar">
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+
+                        <!-- LISTA DE LAS EMPRESAS -->
+                        <div class="col-md-6 mb-3">
+                            <div class="cabeza_tabla_variedadPoduc">
+                                <span class="span_enfermedades_titulo"  onclick="muestra_oculta('empresaTabla')">Empresas</span>
+                                <div class="agregar_enfermedad">
+                                    <i class="fas fa-angle-down ico_enfer" onclick="muestra_oculta('empresaTabla')"></i>
+                                    <a class="btn btn-danger" id="EliminarEmpresaU"  href="javascript:void();" >
+                                    <i class="fas fa-trash-alt"></i></a>
+                                    <a class="btn btn-success " href="#" 
+                                    data-toggle="modal" data-target="#modalEmpresas" >
+                                    <i class="fas fa-plus-square"></i></a>
+                                </div> 
+                            </div> 
+                            <div class="table-responsive" id="empresaTabla">
+                                <table id="tablaEmpresaDos" class="mb-0 table">
+                                    <thead class="tabla_encabezado">
+                                        <th><input type = "checkbox" id = "all4"> Seleccionar todo </th>
+                                        <th>Código</th>
+                                        <th>Nombre</th>
+                                    </thead>
+                                    <tbody id="empresaEliminar">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                </div>
+
+                <!-- MODAL  DE PERFILES Y ACCESOS -->
+
+                <div class="modal fade" id="agronomo" tabindex="-1" role="dialog" 
+                aria-labelledby="exampleModalLabel"aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="titulos_datos" id="exampleModalLabel">
+                                Configuración de Accessos
+                            </h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="needs-validation" method="post" name="formulario" >
+                                <div class="form-row">
+                                    <div class="table-responsive">
+                                        <div id="datos" class="datos">
+                                            <div class="accesos">
+                                                <div class="accesos_lista ">
+                                                    <input type="checkbox" id="0" onclick="todo(this);" >
+                                                    <label for="option-all" class="flecha"  >Todo</label>
+                                                    <div class="lista">
+                                                            <div>
+                                                                <i class="fas fa-angle-right cursor"  onClick="muestra_oculta('panelcontrol')"></i>
+                                                                <input type="checkbox" id="1" onclick="PanelDeControl(this);" >
+                                                                <label for="option-je" class="flecha" onClick="muestra_oculta('panelcontrol')" >Panel de control</label>
+                                                            </div>
+                                                    
+                                                            <div class="sublista" id="panelcontrol">
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="PanelC1">
+                                                                    <label for="PanelC1">País</label>
+                                                                </div>
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="PanelC2">
+                                                                    <label for="option-j">Empresa</label>
+                                                                </div>
+                                                
+                                                                    <div class="sublista_interna">
+                                                                        <div class="tituloaccesos">
+                                                                            <i class="fas fa-angle-right cursor" onClick="muestra_oculta('accesos')"></i>
+                                                                            <input type="checkbox" id="PanelC3" onclick="PanelDeControl_Accesos(this);">
+                                                                            <label for="option-j" class="flecha" onClick="muestra_oculta('accesos')">Accesos</label>
+                                                                        </div>
+                                                                        <div class="sublista_interna_items" id="accesos">
+                                                                            <div class="menus_ch">
+                                                                                <input type="checkbox" id="acceso1">
+                                                                                <label for="option-j">Usuarios</label>
+                                                                            </div>
+                                                                            <div class="menus_ch">
+                                                                                <input type="checkbox" id="acceso2">
+                                                                                <label for="option-j">Roles</label>
+                                                                            </div>
+                                                                            <div class="menus_ch">
+                                                                                <input type="checkbox" id="acceso3">
+                                                                                <label for="option-j">Módulos del Sistema</label>
+                                                                            </div>
+                                                                            <div class="menus_ch">
+                                                                                <input type="checkbox" id="acceso4">
+                                                                                <label for="option-j">Perfil</label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                            
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="PanelC4">
+                                                                    <label for="option-j">Moneda</label>
+                                                                </div>
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="PanelC5">
+                                                                    <label for="option-j">Idioma</label>
+                                                                </div>
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="PanelC6">
+                                                                    <label for="option-j">Tablas Generales</label>
+                                                                </div>
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="PanelC7">
+                                                                    <label for="option-j">Seguridad y Auditoria</label>
+                                                                </div>
+                                                            </div>
+                                                    
+                                                </div>
+                                                <div class="lista">
+                                                    <div>
+                                                        <i class="fas fa-angle-right cursor"  onClick="muestra_oculta('operacionesDeCam')"></i>
+                                                        <input type="checkbox" id="2" onclick="OperacionesDeCampo(this)">
+                                                        <label for="option-a" class="flecha" onClick="muestra_oculta('operacionesDeCam')" >Operaciones de campo</label>
+                                                    </div>
+                                                    
+                                                    <div class="sublista" id="operacionesDeCam">
+                                                        <div class="menus_ch">
+                                                            <input type="checkbox" id="campo1">
+                                                            <label for="option-j">Ubicación de Fundos/Lotes</label>
+                                                        </div>
+                                                        <div class="menus_ch">
+                                                            <input type="checkbox" id="campo2">
+                                                            <label for="option-j">Campaña</label>
+                                                        </div>
+                                                        <div class="sublista_interna">
+                                                            <div class="tituloaccesos">
+                                                                <i class="fas fa-angle-right cursor" onClick="muestra_oculta('ProgramaActi')"></i>
+                                                                <input type="checkbox" id="campo3" onclick="ProgramaActividad(this);">
+                                                                <label for="option-j" class="flecha"  onClick="muestra_oculta('ProgramaActi')">Programa de Actividades</label>
+                                                            </div>
+                                                            <div class="sublista_interna_items" id="ProgramaActi">
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="actividad1">
+                                                                    <label for="option-j">Calendario de Actividades</label>
+                                                                </div>
+                                                                            <div class="sublista_interna">
+                                                                                <div class="tituloaccesos">
+                                                                                    <i class="fas fa-angle-right cursor" onClick="muestra_oculta('controlfeno')"></i>
+                                                                                    <input type="checkbox" id="actividad2" onclick="fenologico(this);">
+                                                                                    <label for="option-j" class="flecha" onClick="muestra_oculta('controlfeno')">Control Fenológico</label>
+                                                                                </div>
+                                                                                <div class="sublista_interna_items" id="controlfeno">
+                                                                                    <div class="menus_ch">
+                                                                                        <input type="checkbox" id="fenologico1">
+                                                                                        <label for="option-j">Análisis de Yemas</label>
+                                                                                    </div>
+                                                                                    <div class="menus_ch">
+                                                                                        <input type="checkbox" id="fenologico2">
+                                                                                        <label for="option-j">Conteo de Cargadores</label>
+                                                                                    </div>
+                                                                                    <div class="menus_ch">
+                                                                                        <input type="checkbox" id="fenologico3">
+                                                                                        <label for="option-j">Evaluación de Brotación</label>
+                                                                                    </div>
+                                                                                    <div class="menus_ch">
+                                                                                        <input type="checkbox" id="fenologico4">
+                                                                                        <label for="option-j">Conteo de Racimos</label>
+                                                                                    </div>
+                                                                                    <div class="menus_ch">
+                                                                                        <input type="checkbox" id="fenologico5">
+                                                                                        <label for="option-j">Crecimiento de Brotes</label>
+                                                                                    </div>
+                                                                                    <div class="menus_ch">
+                                                                                        <input type="checkbox" id="fenologico6">
+                                                                                        <label for="option-j">Evaluación de Floración</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                        
+                                        
+                                                                            <div class="sublista_interna">
+                                                                                <div class="tituloaccesos">
+                                                                                    <i class="fas fa-angle-right cursor" onClick="muestra_oculta('desinfeccion')"></i>
+                                                                                    <input type="checkbox" id="actividad3" onclick="desinfec(this);">
+                                                                                    <label for="option-j" class="flecha" onClick="muestra_oculta('desinfeccion')">Desinfección</label>
+                                                                                </div>
+                                                                                <div class="sublista_interna_items" id="desinfeccion">
+                                                                                    <div class="menus_ch">
+                                                                                        <input type="checkbox" id="des1">
+                                                                                        <label for="option-j">Solarización</label>
+                                                                                    </div>
+                                                                                    <div class="menus_ch">
+                                                                                        <input type="checkbox" id="des2">
+                                                                                        <label for="option-j">Tratamiento Químico</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="actividad4">
+                                                                    <label for="option-j">Siembra</label>
+                                                                </div>
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="actividad5">
+                                                                    <label for="option-j">Tratamientos Fitosanitarios</label>
+                                                                </div>
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="actividad6">
+                                                                    <label for="option-j">Abonados Y Fertilizantes</label>
+                                                                </div>
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="actividad7">
+                                                                    <label for="option-j">Muestreo de Plagas y Enfermedades</label>
+                                                                </div>
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="actividad8">
+                                                                    <label for="option-j">Otra Labores</label>
+                                                                </div>
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="actividad9">
+                                                                    <label for="option-j">Recolección/Cosecha</label>
+                                                                </div>
+                                                                <div class="menus_ch">
+                                                                    <input type="checkbox" id="actividad10">
+                                                                    <label for="option-j">Otras Aplicaciones</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="lista">
+                                                    <div >
+                                                        <i class="fas fa-angle-right cursor" onclick="muestra_oculta('presu')"></i>
+                                                        <input type="checkbox" id="3" onclick="presupuesto(this)">
+                                                        <label for="option-a" class="flecha" onclick="muestra_oculta('presu')">Presupuesto</label>
+                                                    </div>
+                                                    
+                                                    <div class="sublista" id="presu">
+                                                        <div class="menus_ch">
+                                                            <input type="checkbox" id="presu1">
+                                                            <label for="option-j">Estadistica de Costos</label>
+                                                        </div>
+                                                        <div class="menus_ch">
+                                                            <input type="checkbox" id="presu2">
+                                                            <label for="option-j">Mano de Obra </label>
+                                                        </div>
+                                                        <div class="menus_ch">
+                                                            <input type="checkbox" id="presu3">
+                                                            <label for="option-j">Maquinaria </label>
+                                                        </div>
+                                                        <div class="menus_ch">
+                                                            <input type="checkbox" id="presu4">
+                                                            <label for="option-j">Insumos </label>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="lista">
+                                                    <div>
+                                                        <i class="fas fa-angle-right cursor" onclick="muestra_oculta('anali')"></i>
+                                                        <input type="checkbox" id="4" onclick="analitica(this)">
+                                                        <label for="option-a" class="flecha" onclick="muestra_oculta('anali')">Analítica</label>
+                                                    </div>
+                                                    
+                                                    <div class="sublista" id="anali">
+                                                        <div class="menus_ch">
+                                                            <input type="checkbox" id="analitica1">
+                                                            <label for="option-j">Panel de Control</label>
+                                                        </div>
+                                                        <div class="menus_ch">
+                                                            <input type="checkbox" id="analitica2">
+                                                            <label for="option-j">Analítica de Campo</label>
+                                                        </div>
+                                                        <div class="menus_ch">
+                                                            <input type="checkbox" id="analitica3">
+                                                            <label for="option-j">Analítica de Estratégia</label>
+                                                        </div>
+                                                        <div class="menus_ch">
+                                                            <input type="checkbox" id="analitica4">
+                                                            <label for="option-j">Analítica de Resultados</label>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>  
+                                                </div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btn" class="btn btn-secondary" data-dismiss="modal">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+                        
+                </div>
+
+                <button class="btn btn-primary" type="submit">Guardar</button>
+
+                <button class="btn btn-secondary" type="button" onclick="UsuarioList()">Cerrar</button>
+
+                                
+            </form>
+
+            <script>
+
+                function UsuarioList(){
+                
+                window.location.href="UsuarioLista.html";
+                }
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                    'use strict';
+                    window.addEventListener('load', function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+      
+            </script>
+        </div>
+    </div>
+        <!-- MODAL  DE PERFILES Y ACCESOS -->
+        <div class="modal fade" id="modaperfil" tabindex="-1" role="dialog" 
+            aria-labelledby="exampleModalLabel"aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="titulos_datos" id="exampleModalLabel">
+                            Perfiles
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-3">
+                            <div class="table-responsive" >
+                                <div class="buscar_tabla">
+                                    <div class="col-md-4 mb-1">
+                                        <label class="label_buscar" for="validationCustom03">Buscar:</label>
+                                    </div>
+                                    <div class="col-md-4 mb-1">
+                                        <input type="text" class="form-control light-table-filter buscar_input" data-table="order-table"  >
+                                    </div>
+                                </div>
+                                <table id="tablaPerfilesUno" class="table table-bordered order-table">
+                                    <thead class="tabla_encabezado">
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Nombre</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="checked"><input type="checkbox" name="Perfil" id="1" value="Perfil 1"></td>
+                                            <td>Cof22</td>
+                                            <td>Agronomo</td>
+                                            <td class="perfilLista">   
+                                                <div class="page-title-actions">
+                                                    <div class="d-inline-block dropdown">
+                                                        <button type="button"  data-toggle="modal" data-target="#agronomo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                                                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                            <i class="fas fa-cog"></i>
+                                                            </span>
+                                                            Accesos
+                                                        </button>
+                                                    </div>
+                                                </div> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="checked"><input type="checkbox" name="Perfil" id="2" value="Perfil 2"></td>
+                                            <td>Cof24</td>
+                                            <td>Contador</td>
+                                            <td class="perfilLista">   
+                                                <div class="page-title-actions">
+                                                    <div class="d-inline-block dropdown">
+                                                        <button type="button"  data-toggle="modal" data-target="#agronomo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                                                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                            <i class="fas fa-cog"></i>
+                                                            </span>
+                                                            Accesos
+                                                        </button>
+                                                    </div>
+                                                </div> 
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>    
+                        </div>
+                    </div> 
+                    <div class="modal-footer">
+                        <button type="button" id="btnCopiarPerfiles" class="btn btn-secondary" data-dismiss="modal">Seleccionar</button>
+                    </div>
+                </div>
+            </div>
+                            
+        </div>
+
+        <!-- MODAL DE EMPRESAS -->
+        <div class="modal fade" id="modalEmpresas" tabindex="-1" role="dialog" 
+        aria-labelledby="exampleModalLabel"aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="titulos_datos" id="exampleModalLabel">
+                        Empresas
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12 mb-3">
+                        <div class="table-responsive" >
+                            <div class="buscar_tabla">
+                                <div class="col-md-4 mb-1">
+                                    <label class="label_buscar" for="validationCustom03">Buscar:</label>
+                                </div>
+                                <div class="col-md-4 mb-1">
+                                    <input type="text" class="form-control light-table-filter buscar_input" data-table="order-table"  >
+                                </div>
+                            </div>
+                            <table id="tablaEmpresaUno" class="table table-bordered order-table">
+                                <thead class="tabla_encabezado">
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="checked"><input type="checkbox" name="Perfil" id="1" value="Perfil 1"></td>
+                                        <td>CO022 </td>
+                                        <td>Tomatito S.A </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checked"><input type="checkbox" name="Perfil" id="2" value="Perfil 2"></td>
+                                        <td>CO098</td>
+                                        <td>Tecnologica de Alimentos SA</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>    
+                    </div>
+                </div> 
+                <div class="modal-footer">
+                    <button type="button" id="btnCopiarEmpresa" class="btn btn-secondary" data-dismiss="modal">Seleccionar</button>
+                </div>
+            </div>
+        </div>
+                        
+        </div>
+    <script  type="text/javascript" src="../../../../assets/scripts/jquery.min.js"></script>
+    <script  type="text/javascript" src="../../../../assets/scripts/ElimarEnTabla.js"></script>
+    <script  type="text/javascript" src="../../../../assets/scripts/CopiarTablaEmpresadelUsuario.js"></script>
+    <script  type="text/javascript" src="../../../../assets/scripts/CopiarTablaPerfil.js"></script>
+    <script  type="text/javascript" src="../../../../assets/scripts/tree_view.js"></script>
+    <script  type="text/javascript" src="../../../../assets/scripts/OcultarTreView.js"></script>
+    <script  type="text/javascript" src="../../../../assets/scripts/main.js"></script>
+</body>
+</html>

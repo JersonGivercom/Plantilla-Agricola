@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../estilo/main.css" />
+    <link rel="stylesheet" href="../../../estilo/easyui.css" />
+    <script type="text/javascript" src="../../../assets/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../assets/scripts/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/excel.js"></script>
+    <title>Document</title>
+</head>
+<body class="pagina">
+    <div class="app-page-title">
+
+        <div class="page-title-wrapper">
+    
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-note2 icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div>Generaración del Reporte de Presupuestal de Insumo Agrícola
+                    <div class="page-title-subheading"> 
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page-title-actions">
+                
+    
+                <div class="d-inline-block dropdown">
+                    <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-business-time fa-w-20"></i>
+                        </span>
+                        Acciones
+                    </button>
+                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                        <ul class="nav flex-column">
+
+                            <li class="nav-item">
+                                <a href="PresupuestoInsumoAgricolaLista.html" class="nav-link">
+                                    <i class="fas fa-file-excel nav-link-icon"></i>
+                                    <span>
+                                        Exportar Dato
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="PresupuestoInsumoAgricolaLista.html" class="nav-link">
+                                    <i class="fas fa-window-close nav-link-icon"></i>
+                                    <span>
+                                        Cerrar
+                                    </span>
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                </div>
+            </div>      
+        </div>
+    </div>
+
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title"  onClick="muestra_oculta('busqueda')">Reporte <i class="fa fa-angle-down ic"></i> </h5>
+            <form class="needs-validation" novalidate id="busqueda">
+                <div class="form-row" >
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Tipo de Reporte </label>
+                        <select class="form-control">
+                            <option>Seleccione</option>
+                            <option>Semanal</option>
+                            <option>Mensual</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Manejos</label>
+                        <select class="form-control">
+                            <option>Seleccione</option>
+                            <option>Convencional</option>
+                            <option>Orgánico</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Criterios</label>
+                        <select class="form-control">
+                            <option>Seleccione</option>
+                            <option>Por Lote</option>
+                            <option>Por Variedad</option>
+                            <option>Todo</option>
+                        </select>
+                    </div>
+                </div> 
+                <button class="btn btn-primary" id="GenerarReporte" type="submit">Generar Reporte</button>               
+            </form>
+        </div>
+    </div>
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title">Reporte Generado </h5>
+            <div class="table-responsive" id="tablaDatos">
+                <table id="tablaReporteSemanal" title="Reporte" class="easyui-treegrid mb-0 table " style="width:100%;height:450px" 
+                data-options="
+                    url: 'treegrid_data3.json',
+                    method: 'get',
+                    rownumbers: true,
+                    showFooter: true,
+                    idField: 'id',
+                    treeField: 'reporte'
+                ">
+                <thead frozen="true">
+                    <tr>
+                        <th field="reporte" width="200">Item Presupuestal</th>
+                    </tr>
+		        </thead>
+                <thead>
+                    <tr>
+                        <th colspan="8">2021</th>
+                        <th colspan="4">2022</th>
+                        <th colspan="1"></th>
+                    </tr>
+                    <tr>
+                        <th field="f1" width="90" >Mayo</th>
+                        <th field="f2" width="90" >Junio</th>
+                        <th field="f3" width="90" >Julio</th>
+                        <th field="f4" width="90" >Agosto</th>
+                        <th field="f5" width="90" >Septiembre</th>
+                        <th field="f6" width="90" >Octubre</th>
+                        <th field="f7" width="90" >Noviembre</th>
+                        <th field="f8" width="90" >Diciembre</th>
+                        <th field="f9" width="90" >Enero</th>
+                        <th field="f10" width="90">Febrero</th>
+                        <th field="f11" width="90" >Marzo</th>
+                        <th field="f12" width="90">Abril</th>
+                        <th field="f13" width="90" >Total</th>
+                    </tr>
+                </thead>
+            </table> 
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../../assets/scripts/tree_view.js"></script>
+    <script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../../estilo/main.css">
+    <title></title>
+</head>
+
+<body class="pagina">
+  
+
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="fas fa-calculator icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div> Detalle de Conteo de Racimos
+                    <div class="page-title-subheading">Detalle de conteo de racimos.
+                    </div>
+                </div>
+            </div>
+            <div class="page-title-actions">
+
+        
+
+                <div class="d-inline-block dropdown">
+                    <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-business-time fa-w-20"></i>
+                        </span>
+                        Acciones
+                    </button>
+                    <div tabindex="-1" role="menu" aria-hidden="true"
+                        class="dropdown-menu dropdown-menu-right">
+                        <ul class="nav flex-column">
+
+
+
+                            <li class="nav-item">
+                                <a  href="ConteoRacimoList.html" class="nav-link" >
+                                    <i class="fas fa-window-close nav-link-icon"></i>
+                                    <span>
+                                        Cerrar
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title">Detalle</h5>
+
+            <form class="needs-validation" novalidate>
+
+                <div class="form-row">
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Código </label>
+                        <input type="text" disabled class="form-control" id="validationCustom02"
+                            placeholder="EB000001" value="" required>
+                        <div class="valid-feedback">
+                            Correcto!
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom03">Fundo</label>
+                        <input type="text" disabled class="form-control" id="validationCustom02"
+                        placeholder="Sacramento" value="" required>
+
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Lote</label>
+                        <input type="text" disabled class="form-control" id="validationCustom02"
+                        placeholder="Ampliación 1" value="" required>
+                    </div>
+
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom03">Producto</label>
+                        <input type="text" disabled class="form-control" id="validationCustom02"
+                        placeholder="Uva" value="" required>
+
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom03">Variedad</label>
+                        <input type="text" disabled class="form-control" id="validationCustom02"
+                        placeholder="Red Glove" value="" required>
+
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Evaluador</label>
+                        <input type="text" disabled  class="form-control" id="validationCustom02"
+                            placeholder="Rosmery Chavez" value="" required>
+                        <div class="valid-feedback">
+                            Correcto!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Fecha de Programación</label>
+                        <input type="text" disabled class="form-control" id="validationCustom02" placeholder="12/01/2022"
+                            value="" required>
+                        <div class="valid-feedback">
+                            Correcto!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Nro. Zona</label>
+                        <input type="number"  disabled class="form-control" id="validationCustom02"
+                            placeholder="2" value="" required>
+                        <div class="valid-feedback">
+                            Correcto!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom03">Estado</label>
+                        <input type="text"  disabled class="form-control" id="validationCustom02"
+                            placeholder="En Proceso" value="" required>
+                        <div class="invalid-feedback">
+                            Por favor seleccionar un variedad producto
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 mb-3 fradio">
+                        <label for="validationCustom02" class="form-check-labe">Finalizar Programa</label>
+                        <input type="checkbox" class="form-che" id="validationCustom02"  disabled required>
+                    </div>
+                </div>
+
+
+    
+            </form>
+    
+
+            <button class="btn btn-secondary"  onclick="goConteoRacimoList()" >Cerrar
+            </button>
+        
+            <script>
+
+
+                function goConteoRacimoList(){
+                
+                window.location.href="ConteoRacimoList.html";
+                }
+
+
+
+
+
+
+
+
+
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                    'use strict';
+                    window.addEventListener('load', function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="../../../../../assets/scripts/main.js"></script>
+</body>
+
+</html>

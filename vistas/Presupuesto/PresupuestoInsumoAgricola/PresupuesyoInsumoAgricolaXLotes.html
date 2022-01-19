@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../estilo/main.css" />
+    <script type="text/javascript" src="../../../assets/scripts/jquery.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body class="pagina">
+    <div class="app-page-title">
+      <div class="page-title-wrapper">
+        <div class="page-title-heading">
+          <div class="page-title-icon">
+            <i class="pe-7s-note2 icon-gradient bg-night-fade"> </i>
+          </div>
+          <div>
+            Nuevo Registro Presupuestal de Insumo Agrícola
+            <div class="page-title-subheading">
+              Nueva información del registro presupuestal de insumo agrícola
+            </div>
+          </div>
+        </div>
+        <div class="page-title-actions">
+          <div class="d-inline-block dropdown">
+            <button
+              type="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="btn-shadow dropdown-toggle btn btn-info"
+            >
+              <span class="btn-icon-wrapper pr-2 opacity-7">
+                <i class="fa fa-business-time fa-w-20"></i>
+              </span>
+              Acciones
+            </button>
+            <div
+              tabindex="-1"
+              role="menu"
+              aria-hidden="true"
+              class="dropdown-menu dropdown-menu-right" >
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a disabled href="PresupuestoInsumoAgricolaLista.html" class="nav-link">
+                    <i class="fas fa-window-close nav-link-icon"></i>
+                    <span> Cerrar </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-card mb-3 card">
+      <div class="card-body">
+        <h5 class="card-title">Nuevo</h5>
+
+        <form class="needs-validation" id="formulario" novalidate>
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Item Presupuestal</label>
+              <input type="text" placeholder="Insumos Agrícolas" disabled  class="form-control">
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom02">Tipo de Presupuesto</label>
+              <select name="" id="" class="form-control">
+                <option value="">Seleccione</option>
+                <option value="">Producción</option>
+                <option value="">Inversion</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Campaña </label>
+              <select name="" id="cboCampaña" class="form-control" onclick="campaña()">
+                <option value="seleccione">Seleccione</option>
+                <option value="Uva">Campaña Uva 2018-2019</option>
+                <option value="Manzana">Campaña Manzana Enero 2021</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <script>
+               
+
+              function campaña(){
+                          
+              var cboCampaña = document.getElementById("cboCampaña").value
+            
+                switch(cboCampaña){
+                  case "seleccione":
+                    document.getElementById("producto").value="Seleccione una Campaña"
+                    break;
+                  case "Uva":
+                    document.getElementById("producto").value="Uva"
+                    break;
+                  case "Manzana":
+                    document.getElementById("producto").value="Manzana"
+                    break;
+                }
+             
+              }            
+            </script>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Fecha</label>
+              <input type="date" id="FechaActual" class="form-control" 
+              disabled value="" required/>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Manejo </label>
+              <select name="" id="" class="form-control">
+                <option value="">Seleccione</option>
+                <option value="">Convencional</option>
+                <option value="">Orgánico</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Producto</label>
+              <input type="text"  class="form-control"  placeholder="Seleccione una Campaña" disabled id="producto">
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Variedad</label>
+              <select name="" id="variedad" class="form-control">
+                <option value="">Seleccione</option> 
+                <option value="">Flame</option>
+                <option value="">Jack Salute</option>
+                <option value="">Red Globe</option>
+                <option value="">Sugar Crisp</option>
+                <option value="">Sugraome</option> 
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Estado Fenológico </label>
+              <select name="" id="" class="form-control">
+                <option value="">Seleccione</option>
+                <option value="">Dormacia</option>
+                <option value="">Brotación</option>
+                <option value="">Crecimiento de Brotes</option>
+                <option value="">Floracion</option>
+                <option value="">Cuajado de Frutos</option>
+                <option value="">Crecimiento de Bayas</option>
+                <option value="">Ablande de Bayas</option>
+                <option value="">Envero</option>
+                <option value="">Pre-Cosecha</option>
+                <option value="">Cosecha</option>
+                <option value="">Post-Cosecha</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Lotes </label>
+              <select name="" id="" class="form-control">
+                <option value="">Seleccione</option>
+                <option value="">Lote 1(A)</option>
+                <option value="">Lote 2(B)</option>
+                <option value="">Todos</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Moneda</label>
+              <input type="text" name="" class="form-control" placeholder="Dolar" id="" disabled>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Tipo de Cambio</label>
+              <input type="text" class="form-control" id="validationCustom01" value=""   disabled  placeholder="4.10"
+              />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            
+           
+
+             <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Nr. Aplicación</label>
+              <input type="text" name="" class="form-control" placeholder="Nr. Aplicación" id="" >
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Tratamiento</label>
+              <input type="text" name="" class="form-control" placeholder="Tratamiento" id="" >
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Referencia</label>
+              <input type="text" name="" class="form-control" placeholder="Referencia" id="" >
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Observaciones</label>
+              <input type="text" name="" class="form-control" placeholder="Observaciones" id="" >
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <button class="btn btn-info" type="submit">Insertar Lote</button>
+              <button class="btn btn-success" id="CopiarFila" type="submit">Copiar Registro</button>
+              <button class="btn btn-warning" type="submit">Quitar Registro</button>
+              <a class="btn btn-info" href="#" data-toggle="modal" data-target="#modelCalcularFechas">Calcular Fechas</a>
+            </div>
+           <!-- Modal Cacular Fecha -->
+            <div class="modal fade" id="modelCalcularFechas" tabindex="-1" role="dialog" 
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="titulos_datos" id="exampleModalLabel">
+                                Calcular Fecha de Ejecución Proyectada
+                            </h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div> 
+                        <div class="modal-body">
+                          <div class="divCalcularFecha">
+                            <input type="number" class="form-control min" name="" value="1" min="1" id="">
+                            Dia depues de la Aplicacion Nro. 
+                            <input type="number" class="form-control min" name="" value="1" min="1" id="">
+                          </div>
+                          </div> 
+                        <div class="modal-footer">
+                            <button type="button" id="btnCopiar" class="btn btn-secondary"   data-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 mb-3">
+              <h5 class="card-title">Tabla</h5> 
+              <div class="chebo_Todo">
+                 <input type="checkbox" name="" id="todoTablaInsumoAgricolaXLotes"><span>Todo</span> 
+              </div>
+             
+                <div class="table-responsive" id="tablaDatos">
+                  <table id="reporte" class="mb-0 table tablaGrande">
+                    <thead class="tabla_encabezado">
+                      <tr>
+                        <th></th>
+                        <th>Item</th>
+                        <th>Lote</th>
+                        <th>Plantas HA.</th>
+                        <th>HAS</th>
+                        <th>Fecha Proy Poda</th>
+                        <th>Fecha Proy Cianamida</th>
+                        <th>Fecha Proy Cosecha</th>
+                        <th>Rango de Días Estado Fenológico</th>
+                        <th>DDC</th>
+                        <th>Fecha Ejec. Aprox.</th>
+                        <th>Grupo</th>
+                        <th>Producto</th>
+                        <th>Objetivo</th>
+                        <th>Unidades</th>
+                        <th>Ingrediente Activo</th>
+                        <th>Producto Alternativo 1</th>
+                        <th>Objetivo 1</th>
+                        <th>Unidad 1</th>
+                        <th>Ingrediente Activo 1</th>
+                        <th>Dosis x 100L</th>
+                        <th>Mojam. x HA</th>
+                        <th>Dosis HA</th>
+                        <th>Cantidad</th>
+                        <th>Prec. Unitario</th>
+                        <th>Costo Total</th>
+                      </tr>
+                    </thead>
+                    <tbody id="ItemPresupuestaXlotes">
+                        <tr>
+                          <td><input type="checkbox" name="" id=""></td>
+                          <td>1</td>
+                          <td>Lote 1(A)</td>
+                          <td>1.500</td>
+                          <td>2.85</td>
+                          <td>29/04/2021</td>
+                          <td>30/04/2021</td>
+                          <td>11/11/2021</td>
+                          <td>18 - 31 días</td>
+                          <td>89</td>
+                          <td>28/07/2021</td>
+                          <td>Regulador de Crecimiento</td>
+                          <td><select class="form-control" name="" id="">
+                            <option value="">Abscisic Acid 10%</option>
+                          </select></td>
+                          <td>LT</td>
+                          <td>Acido Absiciso-Linentes</td>
+                          <td><input type="text" name=""  id="" class="form-control"></td>
+                          <td><select class="form-control" name="" id="">
+                            <option value="">Abamectin 18Grl EC</option>
+                          </select></td>
+                          <td>Control de Acaro</td>
+                          <td>LT.</td>
+                          <td>Abamectina 1.8%</td>
+                          <td><input type="number" class="form-control" name=""min="1" value="1" id=""></td>
+                          <td><input type="number" class="form-control" name="" min="1" value="1" id=""></td>
+                          <td>40.000,000</td>
+                          <td>114.800,0000</td>
+                          <td><input type="number" class="form-control" min="1" value="1" name="" id=""></td>
+                          <td>229.600,00</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox" name="" id=""></td>
+                          <td>2</td>
+                          <td>Lote 2(A)</td>
+                          <td>1.500</td>
+                          <td>2.85</td>
+                          <td>29/04/2021</td>
+                          <td>30/04/2021</td>
+                          <td>11/11/2021</td>
+                          <td>18 - 31 días</td>
+                          <td>89</td>
+                          <td>28/07/2021</td>
+                          <td>Regulador de Crecimiento</td>
+                          <td><select class="form-control" name="" id="">
+                            <option value="">Abscisic Acid 10%</option>
+                          </select></td>
+                          <td>LT</td>
+                          <td>Acido Absiciso-Linentes</td>
+                          <td><input type="text" name=""  id="" class="form-control"></td>
+                          <td><select class="form-control" name="" id="">
+                            <option value="">Abamectin 18Grl EC</option>
+                          </select></td>
+                          <td>Control de Acaro</td>
+                          <td>LT.</td>
+                          <td>Abamectina 1.8%</td>
+                          <td><input type="number" class="form-control" name=""min="1" value="1" id=""></td>
+                          <td><input type="number" class="form-control" name="" min="1" value="1" id=""></td>
+                          <td>40.000,000</td>
+                          <td>114.800,0000</td>
+                          <td><input type="number" class="form-control" min="1" value="1" name="" id=""></td>
+                          <td>229.600,00</td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+          </div>
+
+
+          <button class="btn btn-primary" type="submit">Guardar</button>
+          <a class="btn btn-secondary" href="PresupuestoInsumoAgricolaLista.html" >Cerrar</a>
+        </form>
+
+        <script>
+            function fecha(){
+            var fecha = new Date(); //Fecha actual
+            var mes = fecha.getMonth()+1; //obteniendo mes
+            var dia = fecha.getDate(); //obteniendo dia
+            var ano = fecha.getFullYear(); //obteniendo año
+            if(dia<10)
+              dia='0'+dia; //agrega cero si el menor de 10
+            if(mes<10)
+              mes='0'+mes //agrega cero si el menor de 10
+            document.getElementById('FechaActual').value=ano+"-"+mes+"-"+dia;
+          }
+ 
+
+          // Example starter JavaScript for disabling form submissions if there are invalid fields
+          (function () {
+            "use strict";
+            window.addEventListener(
+              "load",
+              function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName("needs-validation");
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(
+                  forms,
+                  function (form) {
+                    form.addEventListener(
+                      "submit",
+                      function (event) {
+                        if (form.checkValidity() === false) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }
+                        form.classList.add("was-validated");
+                      },
+                      false
+                    );
+                  }
+                );
+              },
+              false
+            );
+            $('#todoTablaInsumoAgricolaXLotes').click(function(){
+                $.each($('#ItemPresupuestaXlotes input'),function(idx,item){
+                    item.checked = $('#todoTablaInsumoAgricolaXLotes').prop('checked');
+                })
+            })
+          })();
+          fecha()
+        </script>
+      </div>
+    </div>
+
+
+   
+    <!-- <script type="text/javascript"src="../../../assets/scripts/TablaReporte.js"></script> -->
+    <script type="text/javascript"src="../../../assets/scripts/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="../../../assets/scripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../../estilo/main.css" />
+    <title>Document</title>
+  </head>
+  <body class="pagina">
+    <div class="app-page-title">
+      <div class="page-title-wrapper">
+        <div class="page-title-heading">
+          <div class="page-title-icon">
+            <i class="pe-7s-note2 icon-gradient bg-night-fade"> </i>
+          </div>
+          <div>
+            Nuevo Registro Presupuestal de Mano de Obra
+            <div class="page-title-subheading">
+              Nueva información del registro presupuestal de mano de obra.
+            </div>
+          </div>
+        </div>
+        <div class="page-title-actions">
+          <div class="d-inline-block dropdown">
+            <button
+              type="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="btn-shadow dropdown-toggle btn btn-info"
+            >
+              <span class="btn-icon-wrapper pr-2 opacity-7">
+                <i class="fa fa-business-time fa-w-20"></i>
+              </span>
+              Acciones
+            </button>
+            <div
+              tabindex="-1"
+              role="menu"
+              aria-hidden="true"
+              class="dropdown-menu dropdown-menu-right" >
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a disabled href="RegistroPresupuestoManoObraLista.html" class="nav-link">
+                    <i class="fas fa-window-close nav-link-icon"></i>
+                    <span> Cerrar </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-card mb-3 card">
+      <div class="card-body">
+        <h5 class="card-title">Nuevo</h5>
+
+        <form class="needs-validation" id="formulario" novalidate>
+          <div class="form-row">
+            
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Item Presupuestal</label>
+              <input type="text" placeholder="Mano de Obra" disabled  class="form-control">
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom02">Tipo de Presupuesto</label>
+              <select name="" id="" class="form-control">
+                <option value="">Seleccione</option>
+                <option value="">Producción</option>
+                <option value="">Inversión</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Campaña </label>
+              <select name="" id="cboCampaña" class="form-control" onclick="campaña()">
+                <option value="seleccione">Seleccione</option>
+                <option value="Uva">Campaña Uva 2018-2019</option>
+                <option value="Manzana">Campaña Manzana Enero 2021</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <script>
+               
+
+              function campaña(){
+                          
+              var cboCampaña = document.getElementById("cboCampaña").value
+            
+                switch(cboCampaña){
+                  case "seleccione":
+                    document.getElementById("producto").value="Seleccione una Campaña"
+                    break;
+                  case "Uva":
+                    document.getElementById("producto").value="Uva"
+                    break;
+                  case "Manzana":
+                    document.getElementById("producto").value="Manzana"
+                    break;
+                }
+             
+              }            
+            </script>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Fecha</label>
+              <input type="date" id="FechaActual" class="form-control" 
+              disabled value="" required/>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Manejo </label>
+              <select name="" id="" class="form-control">
+                <option value="">Seleccione</option>
+                <option value="">Convencional</option>
+                <option value="">Orgánico</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Producto</label>
+              <input type="text"  class="form-control"  placeholder="Seleccione una Campaña" disabled id="producto">
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Variedad</label>
+              <select name="" id="variedad" class="form-control">
+                <option value="">Seleccione</option> 
+                <option value="">Flame</option>
+                <option value="">Jack Salute</option>
+                <option value="">Red Globe</option>
+                <option value="">Sugar Crisp</option>
+                <option value="">Sugraome</option> 
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <script>
+            </script>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Estado Fenológico </label>
+              <select name="" id="" class="form-control">
+                <option value="">Seleccione</option>
+                <option value="">Dormacia</option>
+                <option value="">Brotación</option>
+                <option value="">Crecimiento de Brotes</option>
+                <option value="">Floracion</option>
+                <option value="">Cuajado de Frutos</option>
+                <option value="">Crecimiento de Bayas</option>
+                <option value="">Ablande de Bayas</option>
+                <option value="">Envero</option>
+                <option value="">Pre-Cosecha</option>
+                <option value="">Cosecha</option>
+                <option value="">Post-Cosecha</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Moneda</label>
+              <input type="text" name="" class="form-control" placeholder="Dolar" id="" disabled>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Tipo de Cambio</label>
+              <input type="text" class="form-control" id="validationCustom01" value=""   disabled  placeholder="4.10"
+              />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Actividad</label>
+              <select name="" id="" class="form-control">
+                <option value="">Seleccione</option>
+                <option value="">Cosecha</option>
+                <option value="">Porda</option>
+                <option value="">Labros Generales</option>
+                <option value="">Siembra y Guiado</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Labores</label>
+              <select name="" id="" class="form-control">
+                <option value="">Seleccione</option>
+                <option value="">Abrir Ventana</option>
+                <option value="">Anillado</option>
+                <option value="">Anillado Precio 2</option>
+                <option value="">Arreglo de Racimos</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Unidades</label>
+              <select name="" id="" class="form-control">
+                <option value="">Seleccione</option>
+                <option value="">KG</option>
+                <option value="">GR</option>
+                <option value="">LT</option>
+                <option value="">Planta</option>
+                <option value="">Jaba</option>
+                <option value="">Unidad</option>
+                <option value="">GLN</option>
+                <option value="">Racimo</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <button class="btn btn-info" type="submit">Insertar Lote</button>
+              <button class="btn btn-success" id="CopiarFila" type="submit">Copiar Registro</button>
+              <button class="btn btn-warning" type="submit">Quitar Registro</button>
+            </div>
+            
+
+            <div class="col-md-12 mb-3">
+              <h5 class="card-title">Tabla</h5> 
+              <div class="chebo_Todo">
+                 <input type="checkbox" name="" id="todoTablaItemPresManoObra"><span>Todo</span> 
+              </div>
+             
+                <div class="table-responsive" id="tablaDatos">
+                  <table id="reporte" class="mb-0 table tablaGrande">
+                    <thead class="tabla_encabezado">
+                      <tr>
+                        <th></th>
+                        <th>Item</th>
+                        <th>Lote</th>
+                        <th>Plantas HA.</th>
+                        <th>HAS</th>
+                        <th>Fecha Proy Poda</th>
+                        <th>Fecha Proy Cianamida</th>
+                        <th>Fecha Proy Cosecha</th>
+                        <th>Rango de Días Estado Fenológico</th>
+                        <th>Fecha Proy. Ejecucucion</th>
+                        <th>Rendimiento</th>
+                        <th>Precio Jornal</th>
+                        <th>Jornales/Lotes</th>
+                        <th>Precio Labora S/.</th>
+                        <th>Costo Total S/</th>
+                        <th>Costo Total S/</th>
+                        <th>Días Ejecutar</th>
+                        <th>Jornales/Día</th>
+                      </tr>
+                    </thead>
+                    <tbody id="ItemPresupuestalManoObra">
+                        <tr>
+                          <td><input type="checkbox" name="" id=""></td>
+                          <td>1</td>
+                          <td>Lote 1(A)</td>
+                          <td>1.500</td>
+                          <td>0.35</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>10- 17 días</td>
+                          <td><input type="date" name="" id="" class="form-control"></td>
+                          <td><input type="text" name=""  id="" class="form-control"></td>
+                          <td>50.00</td>
+                          <td><input type="text"  name=""  id="" class="form-control"></td>
+                          <td><input type="text"  name=""  id="" class="form-control"></td>
+                          <td><input type="text"  name=""  id="" class="form-control"></td>
+                          <td><input type="text" name=""  id="" class="form-control"></td>
+                          <td>1</td>
+                          <td><input type="text"  name=""  id="" class="form-control"></td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox" name="" id=""></td>
+                          <td>2</td>
+                          <td>Lote 2(A)</td>
+                          <td>1.500</td>
+                          <td>0.35</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>10- 17 días</td>
+                          <td><input type="date" name="" id="" class="form-control"></td>
+                          <td><input type="text" name=""  id="" class="form-control"></td>
+                          <td>50.00</td>
+                          <td><input type="text"  name=""  id="" class="form-control"></td>
+                          <td><input type="text"  name=""  id="" class="form-control"></td>
+                          <td><input type="text"  name=""  id="" class="form-control"></td>
+                          <td><input type="text" name=""  id="" class="form-control"></td>
+                          <td>1</td>
+                          <td><input type="text"  name=""  id="" class="form-control"></td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+          </div>
+
+
+          <button class="btn btn-primary" type="submit">Guardar</button>
+          <a class="btn btn-secondary" href="RegistroPresupuestoManoObraLista.html" >Cerrar</a>
+        </form>
+
+        <script>
+        function fecha(){
+          var fecha = new Date(); //Fecha actual
+          var mes = fecha.getMonth()+1; //obteniendo mes
+          var dia = fecha.getDate(); //obteniendo dia
+          var ano = fecha.getFullYear(); //obteniendo año
+          if(dia<10)
+            dia='0'+dia; //agrega cero si el menor de 10
+          if(mes<10)
+            mes='0'+mes //agrega cero si el menor de 10
+          document.getElementById('FechaActual').value=ano+"-"+mes+"-"+dia;
+        }
+
+          // Example starter JavaScript for disabling form submissions if there are invalid fields
+          (function () {
+             //seleccionar todo 
+             $('#todoTablaItemPresManoObra').click(function(){
+                    $.each($('#ItemPresupuestalManoObra input'),function(idx,item){
+                        item.checked = $('#todoTablaItemPresManoObra').prop('checked');
+                    })
+                })
+            "use strict";
+            window.addEventListener(
+              "load",
+              function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName("needs-validation");
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(
+                  forms,
+                  function (form) {
+                    form.addEventListener(
+                      "submit",
+                      function (event) {
+                        if (form.checkValidity() === false) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }
+                        form.classList.add("was-validated");
+                      },
+                      false
+                    );
+                  }
+                );
+              },
+              false
+            );
+          })();
+          fecha()
+        </script>
+      </div>
+    </div>
+    <!-- <script type="text/javascript"src="../../../assets/scripts/TablaReporte.js"></script> -->
+    <script type="text/javascript"src="../../../assets/scripts/main.js"></script>
+  </body>
+</html>

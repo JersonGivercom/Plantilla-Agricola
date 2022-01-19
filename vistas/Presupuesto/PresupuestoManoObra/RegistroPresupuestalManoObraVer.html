@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../estilo/main.css">
+    <title>Document</title>
+</head>
+<body class="pagina">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+          <div class="page-title-heading">
+            <div class="page-title-icon">
+              <i class="pe-7s-note2 icon-gradient bg-night-fade"> </i>
+            </div>
+            <div>
+              Detalle de la Información Presupuestal de Mano de Obra 
+              <div class="page-title-subheading">
+                Detalle de la información presupuestal de mano de obra
+              </div>
+            </div>
+          </div>
+          <div class="page-title-actions">
+            <div class="d-inline-block dropdown">
+              <button
+                type="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                class="btn-shadow dropdown-toggle btn btn-info">
+                <span class="btn-icon-wrapper pr-2 opacity-7">
+                  <i class="fa fa-business-time fa-w-20"></i>
+                </span>
+                Acciones
+              </button>
+              <div
+                tabindex="-1"
+                role="menu"
+                aria-hidden="true"
+                class="dropdown-menu dropdown-menu-right" >
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a disabled href="RegistroPresupuestoManoObraLista.html" class="nav-link">
+                      <i class="fas fa-window-close nav-link-icon"></i>
+                      <span> Cerrar </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title">Detalle</h5>
+
+            <form class="needs-validation" id="formulario" novalidate>
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom02">Tipo de Presupuesto</label>
+                  <input type="text" class="form-control" disabled placeholder="Tipo de presupuesto" >
+                </div>
+    
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Campaña </label>
+                  <input type="text" class="form-control" disabled placeholder="Campaña" >
+                </div>
+    
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Fecha</label>
+                  <input type="text" class="form-control" disabled placeholder="Fecha" >
+                </div>
+    
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Manejo </label>
+                  <input type="text" class="form-control" disabled placeholder="Manejo" >
+                </div>
+    
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Producto</label>
+                  <input type="text" class="form-control" disabled placeholder="Producto" >
+                </div>
+    
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Variedad</label>
+                  <input type="text" class="form-control" disabled placeholder="Variedad" >
+                </div>
+    
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Estado Fenológico </label>
+                  <input type="text" class="form-control" disabled placeholder="Estado fenológico" >
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Moneda</label>
+                  <input type="text" name="" class="form-control" placeholder="Momeda"  disabled>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Tipo de Cambio</label>
+                  <input type="text" class="form-control" id="validationCustom01"  disabled  placeholder="Tipo de cambio"/>
+                </div>
+                
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Item Presupuestal</label>
+                  <input type="text" placeholder="Mano de Obra" disabled  class="form-control">
+                </div>
+    
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Actividad</label>
+                  <input type="text" class="form-control" disabled placeholder="Actividad" >
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Labores</label>
+                  <input type="text" class="form-control" disabled placeholder="Labores" >
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Unidades</label>
+                  <input type="text" class="form-control" disabled placeholder="Unidades" >
+                </div>
+
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <h5 class="card-title">Tabla</h5> 
+                    <div class="table-responsive" id="tablaDatos">
+                      <table id="reporte" class="mb-0 table tablaGrande">
+                        <thead class="tabla_encabezado">
+                          <tr>
+                            <th>Item</th>
+                            <th>Lote</th>
+                            <th>Plantas HA.</th>
+                            <th>HAS</th>
+                            <th>Fecha Proy Poda</th>
+                            <th>Fecha Proy Cianamida</th>
+                            <th>Fecha Proy Cosecha</th>
+                            <th>Rango de Días Estado Fenológico</th>
+                            <th>Fecha Proy. Ejecucucion</th>
+                            <th>Rendimiento</th>
+                            <th>Precio Jornal</th>
+                            <th>Jornales/Lotes</th>
+                            <th>Precio Labora S/.</th>
+                            <th>Costo Total S/</th>
+                            <th>Costo Total S/</th>
+                            <th>Días Ejecutar</th>
+                            <th>Jornales/Día</th>
+                          </tr>
+                        </thead>
+                        <tbody id="ItemPresupuestalManoObra">
+                            <tr>
+                              <td>1</td>
+                              <td>Lote 1(A)</td>
+                              <td>1.500</td>
+                              <td>0.35</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>10- 17 días</td>
+                              <td>12/12/2021</td>
+                              <td>50</td>
+                              <td>50.00</td>
+                              <td>480,90</td>
+                              <td>2</td>
+                              <td>14,426,88</td>
+                              <td>4.808,96</td>
+                              <td>1</td>
+                              <td>480,90</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>Lote 2(A)</td>
+                              <td>1.500</td>
+                              <td>0.35</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>10- 17 días</td>
+                              <td>12/12/2021</td>
+                              <td>50</td>
+                              <td>50.00</td>
+                              <td>264,90</td>
+                              <td>2</td>
+                              <td>7.931,52</td>
+                              <td>2.643,84</td>
+                              <td>1</td>
+                              <td>264,38</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+              </div>
+
+            <a class="btn btn-secondary"  href="RegistroPresupuestoManoObraLista.html" >Cerrar</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+</body>
+</html>

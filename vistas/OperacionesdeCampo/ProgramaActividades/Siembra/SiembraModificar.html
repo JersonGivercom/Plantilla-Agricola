@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../estilo/main.css">
+    <script type="text/javascript" src="../../../../assets/scripts/Busqueda_en_tabla.js"></script>
+    <script>
+        function llevar_producto(){
+            if(document.getElementById('p1').checked){
+                var pe = document.getElementById("p1").value;
+                document.getElementById("lblProducto").value=pe;
+            }else if(document.getElementById('p2').checked){
+                var ch = document.getElementById("p2").value;
+                document.getElementById("lblProducto").value=ch; 
+            }else if(document.getElementById('p3').checked){
+                var ar = document.getElementById("p3").value;
+                document.getElementById("lblProducto").value=ar;
+            }
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body class="pagina">
+    <div class="app-page-title">
+
+        <div class="page-title-wrapper">
+
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-map-2 icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <div>Modificar la Siembra
+                    <div class="page-title-subheading">Modificar la información de la siembra. 
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-title-actions">
+                
+                <div class="d-inline-block dropdown">
+                    <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-business-time fa-w-20"></i>
+                        </span>
+                        Acciones
+                    </button>
+                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="SiembraLista.html" class="nav-link">
+                                    <i class="fas fa-window-close nav-link-icon"></i>
+                                    <span>
+                                        Cerrar
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>      
+        
+        </div>
+
+    </div>           
+    
+    
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title">Modificar</h5>
+
+            <form class="needs-validation" novalidate>
+
+                <div class="form-row">
+
+                    <div class="col-md-4 mb-3" >
+                        <label for="validationCustom01">Código</label>
+                        <input type="text" disabled  class="form-control" id="validationCustom01"
+                             placeholder="Campo Autogenerado" value="" name="txtNombrePais" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-4 mb-3" >
+                        <label for="validationCustom01">Fundo</label>
+                        <select name="" id="" class="form-control">
+                            <option value="1">Seleccione</option>
+                            <option value="2">Fundo 1</option>
+                            <option value="3">Fundo 2</option>
+                            <option value="4">Fundo 3</option>
+                        </select>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-4 mb-3" >
+                        <label for="validationCustom01">Lote</label>
+                        <select name="" id="" class="form-control">
+                            <option value="1">Seleccione</option>
+                            <option value="2">Lote 1</option>
+                            <option value="3">Lote 2</option>
+                            <option value="4">Lote 3</option>
+                        </select>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-4 mb-3" >
+                        <label for="validationCustom01">Producto</label>
+                        <input type="text" disabled  class="form-control" id="validationCustom01"
+                             placeholder="Producto" value="" name="txtNombrePais" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-4 mb-3" >
+                        <label for="validationCustom01">Variedad de Producto</label>
+                        <input type="text" disabled  class="form-control" id="validationCustom01"
+                             placeholder="Variedad" value="" name="txtNombrePais" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-4 mb-3" >
+                        <label for="validationCustom01">Producto Químico</label>
+                        <div class="caja_pais_texto_boton">
+                             <input type="text" disabled class="form-control texto_buscar_pais"
+                              id="lblProducto"
+                            placeholder="Seleccione el producto"  value="" name="txtNombrePais" required>
+                            <button type="button" id="btn"   data-toggle="modal"
+                             data-target="#modalProducto" 
+                           class="btn-shadow  btn btn-info boton_buscar_pais">
+                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                <i class="fas fa-search"></i>
+                             </span> 
+                        </button>
+                        </div>
+                       
+                    </div>
+                  
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom01">Fecha Inicio</label>
+                        <input type="date"  class="form-control" id="validationCustom01"
+                             value="" name="txtNombrePais" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom01">Fecha Fin</label>
+                        <input type="date"  class="form-control" id="validationCustom01"
+                            value="" name="txtNombrePais" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 mb-3">
+
+                        <label for="validationCustom01">Fecha Estimada de Recolección</label>
+                        <input type="date"  class="form-control" id="validationCustom01"
+                            value="" name="txtNombrePais" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom03">Estado</label>
+
+                        <select class="mb-2 form-control" required>
+                            <option>Seleccione</option>
+                            <option>No Iniciado</option>
+                            <option>En Proceso</option>
+                            <option>Finalizado</option>
+                        </select>
+
+                        <div class="invalid-feedback">
+                            Por favor seleccionar un estado
+                        </div>
+                    </div>
+                    <div class="col-md-8 mb-3" >
+                            <label for="validationCustom02">Observaciones</label>
+                            <textarea  class="form-control" id="" cols="30" rows="5" placeholder="Ingres las observaciones..."></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                    </div>
+                 </div>
+
+          
+                <button class="btn btn-primary" type="submit">Aplicar</button>
+                <a href="SiembraLista.html" class="btn btn-secondary" type="submit">Cerrar</a>
+            </form>
+
+            <script>
+
+
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                    'use strict';
+                    window.addEventListener('load', function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
+        </div>
+    </div>
+    
+
+  
+    
+
+<div class="modal fade" id="modalProcess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                
+                <div class="mb-3 progress">
+                    <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
+                </div>
+
+                <p>Generando reporte de datos...  </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal FUNDO -->
+ <div class="modal fade" id="modalFundo" tabindex="-1" role="dialog" 
+ aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h4 class="titulos_datos" id="exampleModalLabel">
+                     Fundos
+                 </h4>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+             </div> 
+             <div class="modal-body">
+                 <div class="col-md-12 mb-3">
+                     <div class="table-responsive" >
+                         <div class="buscar_tabla">
+                             <div class="col-md-4 mb-1">
+                                 <label class="label_buscar" for="validationCustom03">Buscar:</label>
+                             </div>
+                             <div class="col-md-4 mb-1">
+                                 <input type="text" class="form-control light-table-filter buscar_input" data-table="order-table"  >
+                             </div>
+                         </div>
+                     
+                         <table class="table table-bordered order-table ">
+                             <thead>
+                               <tr>
+                                 <th>Seleccione</th>
+                                 <th>Código</th>
+                                 <th>Nombre</th>
+                               </tr>
+                             </thead>
+                             <tr>
+                               <td><input type="radio" name="Fundo" id="f1" value="Fundo 1 "></td>
+                               <td>f001</td>
+                               <td>Fundo 1</td>
+                             </tr>
+                             <tr>
+                                <td><input type="radio" name="Fundo" id="f2" value="Fundo 2 "></td>
+                                <td>f002</td>
+                                <td>Fundo  2</td>
+                              </tr>
+                              <tr>
+                                <td><input type="radio" name="Fundo" id="f3" value="Fundo 3 "></td>
+                                <td>f003</td>
+                                <td>Fundo 3</td>
+                              </tr>
+                              <tr>
+                                <td><input type="radio" name="Fundo" id="f4" value="Fundo 4 "></td>
+                                <td>f004</td>
+                                <td>Fundo 4</td>
+                              </tr>
+                           </table>
+                     </div>    
+                 </div>
+             </div> 
+             <div class="modal-footer">
+                 <button type="button" id="btn"class="btn btn-secondary" onclick="llevar_fundo()"  data-dismiss="modal">Seleccionar</button>
+             </div>
+         </div>
+     </div>
+  </div>
+<!-- Modal Produto -->
+<div class="modal fade " id="modalProducto" tabindex="-1" role="dialog" 
+aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content tablamodal">
+            <div class="modal-header">
+                <h4 class="titulos_datos" id="exampleModalLabel">
+                    Productos Químico
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div> 
+            <div class="modal-body">
+                <div class="col-md-12 mb-3">
+                    <div class="table-responsive" >
+                        <div class="buscar_tabla_pq">
+                            <div class="col-md-6 mb-1">
+                                <label class="label_buscar_pq" for="validationCustom03">Buscar:</label>
+                            </div>
+                            <div class="col-md-6 mb-1">
+                                <input type="text" class="form-control light-table-filter buscar_input" data-table="order-table"  >
+                            </div>
+                        </div>
+                    
+                        <table class="table table-bordered order-table ">
+                            <thead>
+                              <tr>
+                                <th>Seleccione</th>
+                                <th>Nom. Comercial</th>
+                                <th>Fabricante</th>
+                                <th>Formulación</th>
+                                <th>N° Regitro</th>
+                                <th>Composición</th>
+                              </tr>
+                            </thead>
+                            <tr>
+                              <td><input type="radio" name="productos" id="p1" value="Anti-Limacos directo Plus"></td>
+                              <td>Anti-Limacos directo Plus</td>
+                              <td>De-Sangosse</td>
+                              <td>GB (Cebo granulado)</td>
+                              <td>ES-00048</td>
+                              <td>Metaldehydo (4%)</td>
+                            </tr>
+                          </table>
+                    </div>    
+                </div>
+            </div> 
+            <div class="modal-footer">
+                <button type="button" id="btn"class="btn btn-secondary" onclick="llevar_producto()"  data-dismiss="modal">Seleccionar</button>
+            </div>
+        </div>
+    </div>
+ </div>
+
+ <script type="text/javascript" src="../../../../assets/scripts/main.js"></script>
+</body>
+</html>
