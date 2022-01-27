@@ -64,6 +64,91 @@
             </div>
     <div class="main-card mb-3 card">
         <div class="card-body">
+            <h5 class="card-title">Resumen</h5>
+            <div class="table-responsive">
+                <table class="mb-2 table colorTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th style="background-color: #93eba8a6;">Zona 1</th>
+                            <th>Zona 2</th>
+                            <th>Zona 3</th>
+                            <th>Zona 4</th>
+                            
+                            <th style="font-weight: 800;">Promedio</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cargador</td>
+                            <td>19,38</td>
+                            <td>19.31</td>
+                            <td>19.69</td>
+                            <td>18,08</td>
+                            
+                            <td style="font-weight: 800;">19,12</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>Racimo</td>
+                            <td>38.85</td>
+                            <td>39.54</td>
+                            <td>35.54</td>
+                            <td>34.92</td>
+                            
+                            <td style="font-weight: 800;">37.2</td>
+
+                        </tr>
+                        <tr>
+                            <td>Rac. Sec.</td>
+                            <td>5.15</td>
+                            <td>5.54</td>
+                            <td>4.31</td>
+                            <td>2.92</td>
+                            
+                            <td style="font-weight: 800;">4.48</td>
+
+                        </tr>
+                        <tr>
+                            <td>Rac I. F.</td>
+                            <td>0.15</td>
+                            <td>5.54</td>
+                            <td>4.31</td>
+                            <td>2.92</td>
+                            
+                            <td style="font-weight: 800;">4.48</td>
+
+                        </tr>
+                        <tr>
+                            <td>Pampano</td>
+                            <td>0,38</td>
+                            <td>3.38</td>
+                            <td>2,69</td>
+                            <td>0.69</td>
+                            
+                            <td style="font-weight: 800;">1.79</td>
+
+                        </tr>
+                        <tr>
+                            <td>Rac. 2 brote</td>
+                            <td>0.77</td>
+                            <td>0.69</td>
+                            <td>0.85</td>
+                            <td>0.69</td>
+                            
+                            <td style="font-weight: 800;">0.75</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-card mb-3 card">
+        <div class="card-body">
             <h5 class="card-title">Reporte</h5>
             <div class="table-responsive">
 
@@ -349,140 +434,25 @@
                             <td>3</td>
 
                             <td style="font-weight: 800;">29</td>
-                        
+
 
                         </tr>
 
                     </tbody>
                 </table>
             </div>
-
-
-
-
-            <div class="table-responsive">
-
-                <table class="mb-2 table colorTable">
-                    <thead>
-                        <tr>
-                            <th>Resumen</th>
-                            <th>Zona 1</th>
-                            <th>Zona 2</th>
-                            <th>Zona 3</th>
-                            <th>Zona 4</th>
-                            
-                            <th style="font-weight: 800;">Promedio</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Cargador</td>
-                            <td>19,38</td>
-                            <td>19.31</td>
-                            <td>19.69</td>
-                            <td>18,08</td>
-                            
-                            <td style="font-weight: 800;">19,12</td>
-
-                        </tr>
-
-                        <tr>
-                            <td>Racimo</td>
-                            <td>38.85</td>
-                            <td>39.54</td>
-                            <td>35.54</td>
-                            <td>34.92</td>
-                            
-                            <td style="font-weight: 800;">37.2</td>
-
-                        </tr>
-                        <tr>
-                            <td>Rac. Sec.</td>
-                            <td>5.15</td>
-                            <td>5.54</td>
-                            <td>4.31</td>
-                            <td>2.92</td>
-                            
-                            <td style="font-weight: 800;">4.48</td>
-
-                        </tr>
-                        <tr>
-                            <td>Rac I. F.</td>
-                            <td>0.15</td>
-                            <td>5.54</td>
-                            <td>4.31</td>
-                            <td>2.92</td>
-                            
-                            <td style="font-weight: 800;">4.48</td>
-
-                        </tr>
-                        <tr>
-                            <td>Pampano</td>
-                            <td>0,38</td>
-                            <td>3.38</td>
-                            <td>2,69</td>
-                            <td>0.69</td>
-                            
-                            <td style="font-weight: 800;">1.79</td>
-
-                        </tr>
-                        <tr>
-                            <td>Rac. 2 brote</td>
-                            <td>0.77</td>
-                            <td>0.69</td>
-                            <td>0.85</td>
-                            <td>0.69</td>
-                            
-                            <td style="font-weight: 800;">0.75</td>
-
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-
-
-
-
-
 
             <button class="btn btn-secondary"  onclick="goConteoRacimoList()" >Cerrar </button>
             
             <script>
-
-
                 function goConteoRacimoList(){
                 
                 window.location.href="ConteoRacimoList.html";
                 }
-
-                // Example starter JavaScript for disabling form submissions if there are invalid fields
-                (function () {
-                    'use strict';
-                    window.addEventListener('load', function () {
-                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                        var forms = document.getElementsByClassName('needs-validation');
-                        // Loop over them and prevent submission
-                        var validation = Array.prototype.filter.call(forms, function (form) {
-                            form.addEventListener('submit', function (event) {
-                                if (form.checkValidity() === false) {
-                                    event.preventDefault();
-                                    event.stopPropagation();
-                                }
-                                form.classList.add('was-validated');
-                            }, false);
-                        });
-                    }, false);
-                })();
             </script>
         </div>
     </div>
 
-
-   
-    
     <script type="text/javascript" src="../../../../../assets/scripts/main.js"></script>
 </body>
-
 </html>

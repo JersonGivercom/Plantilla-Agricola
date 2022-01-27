@@ -525,13 +525,13 @@
                 </div>
                 
                 <div class="scrollbar-sidebar">
-                    <div class="app-sidebar__inner">
+                    <div class="app-sidebar__inner" id="menus">
                         <ul class="vertical-nav-menu">
 
                             <li class="app-sidebar__heading">Menú - Presupuesto</li>
                             <li>
 
-                                <a href="Graficos/Graficos.html" target="vista">
+                                <a class="activo"  href="Graficos/Graficos.html" target="vista">
                                     <i class="metismenu-icon pe-7s-map-2"></i>
                                     Proyección de Ejecución                                  
                                 </a>
@@ -586,6 +586,18 @@
                                     Reporte Presupuestal Consolidado
                                 </a>
                             </li>
+                            <li>
+                                <a href="GastosIndirectos/GastosIndirectosLista.html" target="vista">
+                                    <i class="metismenu-icon pe-7s-copy-file"></i>
+                                    Gastos Indirectos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Produccion/PresupuestoLaboresLista.html" target="vista">
+                                    <i class="metismenu-icon pe-7s-copy-file"></i>
+                                    Presupuesto de Labores
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>  
@@ -599,6 +611,16 @@
            
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('#menus .vertical-nav-menu a').forEach((elemento) => {
+            elemento.addEventListener('click', () => {
+                document.querySelector('#menus .activo').classList.remove('activo');
+                elemento.parentElement.classList.add('activo');
+            });
+        });
+
+    </script>
     <script type="text/javascript" src="../../assets/scripts/main.js"></script>
 </body>
 </html>

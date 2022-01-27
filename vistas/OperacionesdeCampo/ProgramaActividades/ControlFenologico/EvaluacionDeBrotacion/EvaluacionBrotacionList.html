@@ -24,7 +24,7 @@
                                         </i>
                                     </div>
                                     <div>Evaluación de Brotación
-                                        <div class="page-title-subheading">Listado de evaluación de brotación creados en el sistema
+                                        <div class="page-title-subheading">Listado de las evaluaciones de brotación creadas en el sistema.
                                         </div>
                                     </div>
                                 </div>
@@ -100,13 +100,33 @@
                                 <div class="col-md-4 mb-3">
                     
                                     <label for="validationCustom03">Fundo</label>
-
-
                                     <select class="mb-2 form-control">
-                                        <option>Seleccione</option>
+                                        <option>Todos</option>
                                         <option>Sacramento</option>
                                         
                                     </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+
+                                    <label for="validationCustom03">Producto</label>
+                                    <select class="mb-2 form-control">
+                                        <option>Todos</option>
+                                        <option>Uva</option>
+                                        <option>Palta</option>
+                                        <option>Manzana</option>
+                                    </select>
+                
+                                </div>
+                                <div class="col-md-4 mb-3">
+                
+                                    <label for="validationCustom03">Variedad</label>
+                                    <select class="mb-2 form-control">
+                                        <option>Todos</option>
+                                        <option>Red Globe</option>
+                                        <option>Flame</option>
+                                        <option>Autumn Royal</option>
+                                    </select>
+                
                                 </div>
 
                                 <div class="col-md-4 mb-3">
@@ -114,7 +134,7 @@
                                     <label for="validationCustom03">Lote</label>
 
                                     <select class="mb-2 form-control">
-                                        <option>Seleccione</option>
+                                        <option>Todos</option>
                                         <option>Ampliación 1</option>
                                         <option>Ampliación 2</option>
                                         <option>Ampliación 3</option>
@@ -122,17 +142,15 @@
                                 </div>
 
                                 <div class="col-md-4 mb-3">
-                                    <label for="validationCustom02">Fecha de Cianamida</label>
-                                    
-                                    <input type="date" class="form-control" id="validationCustom01"    value="" >
-                                    
+                                    <label for="validationCustom02">Fecha de Cianamida</label>   
+                                    <input type="date" class="form-control" id="validationCustom01" value="" >     
                                 </div>
                                 
                                 <div class="col-md-4 mb-3">
                     
                                     <label for="validationCustom03">Estado</label>
-                                    <select class="mb-2 form-control"  >
-                                        <option>Seleccione</option>
+                                    <select class="mb-2 form-control">
+                                        <option>Todos</option>
                                         <option>En Proceso</option>
                                         <option>Pendiente</option>
                                         <option>Finalizado</option>
@@ -453,15 +471,25 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Evaluación de Calibre de Bayas</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Registrar Diario</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-row">
+
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom02">Fecha de Evaluacion</label>
+                            <input type="date" name="" disabled class="form-control "  id="FechaActual">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom02">% de Brotación</label>
+                            <input type="text" name=""class="form-control " disabled id="" value="">
+                        </div>
+                    
                         <div class="cabeza_tabla_variedadPoduc">
-                            <span class="span_enfermedades_titulo">Conteo de Cargadores</span>
+                            <span class="span_enfermedades_titulo">Registro de Brotación</span>
                             <!-- <div class="agregar_enfermedad">
                                 <a href="javascript:eliminarFila()" class="btn btn-danger"  id="btnEliminarCargadores" > <i class="fas fa-trash-alt"></i></a>
                                 <a href="javascript:insertarFila()"  class="btn btn-success" id="btnAgregar" > <i class="fas fa-plus-square"></i> </a>
@@ -470,15 +498,10 @@
                     <div class="table-responsive tablaAlto ">                                  
                         <table class="mb-5 table colorTable " id="tablaRacimo" >
                             <thead class="tabla_encabezado" id="cabeza">
-                                <tr>
-                                    <th>Fecha de Evaluación</th>
-                                    <th><input type="date" name="" disabled class="form-control numTabla"  id="FechaActual"></th>
-                                   
-                                </tr>
-                                <tr>
+                                <!-- <tr>
                                     <th>% de Brotación</th>
                                     <th><input type="text" name=""class="form-control numTabla" disabled id="" value=""></th>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <th>Estado Fenológico</th>
                                     <th>Cantidad de Yemas</th>

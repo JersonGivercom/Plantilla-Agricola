@@ -20,7 +20,7 @@
                         <i class="fas fa-calculator icon-gradient bg-night-fade"></i>
                     </div>
                     <div>Conteo de Racimos
-                        <div class="page-title-subheading"> Listado de conteo de racimos creados en el sistema
+                        <div class="page-title-subheading"> Listado de los conteos de racimos creados en el sistema.
                         </div>
                     </div>
                 </div>
@@ -91,25 +91,43 @@
                             <label for="validationCustom01">Código </label>
                             <input type="text" class="form-control" id="validationCustom01"
                                 placeholder="ingrese código" value="">
-
                         </div>
 
                         <div class="col-md-4 mb-3">
-
                             <label for="validationCustom03">Fundo</label>
-
-
                             <select class="mb-2 form-control" required>
-                                <option>Seleccionar</option>
+                                <option>Todos</option>
                                 <option>Sacramento</option>
                             </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+
+                            <label for="validationCustom03">Producto</label>
+                            <select class="mb-2 form-control">
+                                <option>Todos</option>
+                                <option>Uva</option>
+                                <option>Palta</option>
+                                <option>Manzana</option>
+                            </select>
+        
+                        </div>
+                        <div class="col-md-4 mb-3">
+        
+                            <label for="validationCustom03">Variedad</label>
+                            <select class="mb-2 form-control">
+                                <option>Todos</option>
+                                <option>Red Globe</option>
+                                <option>Flame</option>
+                                <option>Autumn Royal</option>
+                            </select>
+        
                         </div>
 
                         <div class="col-md-4 mb-3">
 
                             <label for="validationCustom03">Lote</label>
                             <select required class="mb-2 form-control">
-                                <option>Seleccionar </option>
+                                <option>Todos </option>
                                 <option>Ampliación 1</option>
                                 <option>Ampliación 2</option>
                                 <option>Ampliación 3</option>
@@ -128,7 +146,7 @@
 
                             <label for="validationCustom03">Estado</label>
                             <select class="mb-2 form-control">
-                                <option>Seleccione</option>
+                                <option>Todos</option>
                                 <option>En Proceso</option>
                                 <option>Pendiente</option>
                                 <option>Finalizado</option>
@@ -183,6 +201,7 @@
                                 <th>Producto</th>
                                 <th>Variedad</th>
                                 <th>Fecha de Programación</th>
+                                <th>Zona</th>
                                 <th>Estado</th>
                                 <th></th>
 
@@ -196,7 +215,8 @@
                                 <td>Ampliación 1 </td>
                                 <td>Uva</td>
                                 <td>Red Globe</td>
-                                <td>12/01/2022 </td>        
+                                <td>12/01/2022 </td> 
+                                <td>1</td>       
                                 <td>En Proceso</td>
                                 <td>
                                     <div class="d-inline-block dropdown">
@@ -274,6 +294,7 @@
                                 <td>Uva</td>
                                 <td>Red Globe</td>
                                 <td>30/01/2022 </td>
+                                <td>2</td> 
                                 <td>Pendiente</td>
                                 <td>
                                     <div class="d-inline-block dropdown">
@@ -351,6 +372,7 @@
                                 <td>Uva</td>
                                 <td>Red Globe</td>
                                 <td>14/01/2022 </td>
+                                <td>3</td> 
                                 <td>Finalizado</td>
                                 <td>
                                     <div class="d-inline-block dropdown">
@@ -447,19 +469,25 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Registro Diario</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Registrar Diario</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                         <div class="form-row">
-                            <div class="cabeza_tabla_variedadPoduc">
-                                <span class="span_enfermedades_titulo">Conteo de Cargadores</span>
-                                <div class="agregar_enfermedad">
-                                    <a href="javascript:eliminarFila()" class="btn btn-danger"  id="btnEliminarCargadores" > <i class="fas fa-trash-alt"></i></a>
-                                    <a href="javascript:insertarFila()"  class="btn btn-success" id="btnAgregar" > <i class="fas fa-plus-square"></i> </a>
-                                </div> 
+
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom02">Fecha de Evaluacion</label>
+                            <input type="date" name="" disabled class="form-control "  id="FechaActual">
+                        </div>
+
+                        <div class="cabeza_tabla_variedadPoduc">
+                            <span class="span_enfermedades_titulo">Conteo de Racimos</span>
+                            <div class="agregar_enfermedad">
+                                <a href="javascript:eliminarFila()" class="btn btn-danger"  id="btnEliminarCargadores" > <i class="fas fa-trash-alt"></i></a>
+                                <a href="javascript:insertarFila()"  class="btn btn-success" id="btnAgregar" > <i class="fas fa-plus-square"></i> </a>
+                            </div> 
                         </div> 
 
                         <div class="table-responsive ">                                  
@@ -527,6 +555,18 @@
         function eliminarFila(){
             $("#tablaRacimo th:last-child , #tablaRacimo td:last-child ").remove();
         }
+        function fecha(){
+          var fecha = new Date(); //Fecha actual
+          var mes = fecha.getMonth()+1; //obteniendo mes
+          var dia = fecha.getDate(); //obteniendo dia
+          var ano = fecha.getFullYear(); //obteniendo año
+          if(dia<10)
+            dia='0'+dia; //agrega cero si el menor de 10
+          if(mes<10)
+            mes='0'+mes //agrega cero si el menor de 10
+          document.getElementById('FechaActual').value=ano+"-"+mes+"-"+dia;
+        }
+        fecha()
     </script>
 
 
