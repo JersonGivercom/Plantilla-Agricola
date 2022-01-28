@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../estilo/main.css">
+    <title>Document</title>
+</head>
+<body class="pagina">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+          <div class="page-title-heading">
+            <div class="page-title-icon">
+              <i class="pe-7s-copy-file icon-gradient bg-night-fade"> </i>
+            </div>
+            <div>
+              Detalle del Gasto Indirecto
+              <div class="page-title-subheading">
+                Detalle de la información del gasto indirecto.
+              </div>
+            </div>
+          </div>
+          <div class="page-title-actions">
+            <div class="d-inline-block dropdown">
+              <button
+                type="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                class="btn-shadow dropdown-toggle btn btn-info"
+              >
+                <span class="btn-icon-wrapper pr-2 opacity-7">
+                  <i class="fa fa-business-time fa-w-20"></i>
+                </span>
+                Acciones
+              </button>
+              <div
+                tabindex="-1"
+                role="menu"
+                aria-hidden="true"
+                class="dropdown-menu dropdown-menu-right" >
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a disabled href="GastosIndirectosLista.html" class="nav-link">
+                      <i class="fas fa-window-close nav-link-icon"></i>
+                      <span> Cerrar </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+          <h5 class="card-title">Detalle</h5>
+  
+          <form class="needs-validation" id="formulario" novalidate>
+            <div class="form-row">
+              
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom01">Código</label>
+                <input type="text" placeholder="MO0001" disabled  class="form-control">
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom02">Fundo</label>
+                <input type="text" placeholder="Sacramento" disabled  class="form-control">
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+  
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom02">Tipo de Presupuesto</label>
+                <input type="text" placeholder="Fuentes de Agua y Sistema de Frío" disabled  class="form-control">
+               
+              </div>
+  
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom01">Tipo de Moneda</label>
+                <input type="text" placeholder="Dolar" disabled  class="form-control">
+              </div>
+              
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom01">Tipo de Cambio</label>
+                <input type="number" placeholder="3.24" disabled  class="form-control">
+              </div>
+
+               
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom01">Fecha Inicio</label>
+                <input type="month" id="fechaDesde" placeholder="" class="form-control"disabled  value="2019-05" required/>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom01">Fecha Fin</label>
+                <input type="month" id="fechaHasta" placeholder="" class="form-control" disabled value="2020-04" required/>
+              </div>
+      
+            </div>
+  
+            <div class="form-row">
+
+              <div class="col-md-12 mb-3">
+                <h5 class="card-title">Tabla</h5> 
+                  <div class="table-responsive" id="tablaDatos">
+                    <table id="reporte" class="mb-0 table tablaGrande colorTable">
+                      <thead class="tabla_encabezado" id="headerGastoIndirecto">
+                        <tr>
+                          <th>Descripcion</th>
+                          <th>Mayo del 2019</th>
+                          <th>Junio del 2019</th>
+                          <th>Julio del 2019</th>
+                          <th>Agosto del 2019</th>
+                          <th>Septiembre del 2019</th>
+                          <th>Octubre del 2019</th>
+                          <th>Noviembre del 2019</th>
+                          <th>Diciembre del 2019</th>
+                          <th>Enero del 2019</th>
+                          <th>Febrero del 2019</th>
+                          <th>Marzo del 2020 </th>
+                          <th>Abril del 2020 </th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tablalistagastoIndirecto" >
+                        <tr>
+                          <td>Tunel 1</td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 1.500.00"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 1.500.00"></td>
+                        </tr>
+                        <tr>
+                          <td>Tunel 2</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 1.500.00"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 1.500.00"></td>
+                        </tr>
+                        <tr>
+                          <td>Tunel 3</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 1.500.00"></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 1.500.00"></td>
+                        </tr>
+                        <tr>
+                          <td>Tunel 4</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 1.500.00"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 1.500.00"></td>
+                        </tr>
+                        <tr>
+                          <td>Tunel 5</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 1.500.00"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 1.500.00"></td>
+                        </tr>
+                        <tr>
+                          <td>Frigorifico</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                        </tr>
+                        <tr>
+                          <td>Camara 1</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 1.500.00"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 1.500.00"> </td>
+                        </tr>
+                        <tr>
+                          <td>Camara 2</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 1.500.00"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 1.500.00"></td>
+                        </tr>
+                        <tr>
+                          <td>Camara 3</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 1.500.00"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 1.500.00"></td>
+                        </tr>
+                        <tr>
+                          <td>Camara 4</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 1.500.00"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 1.500.00"></td>
+                        </tr>
+                        <tr>
+                          <td>Despacho 1</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 1.500.00"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 1.500.00"></td>
+                        </tr>
+                        <tr>
+                          <td>Despacho 2</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 2.592.00"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 2.592.00" ></td>
+                        </tr>
+                        <tr>
+                          <td>SMC 112</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                        </tr>
+                        <tr>
+                          <td>Compresores Frio</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 12.150.00"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 12.150.00"></td>
+                        </tr>
+                        <tr>
+                          <td>Ablandador Agua</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 8.546.40"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 8.546.40"></td>
+                        </tr>
+                        <tr>
+                          <td>Unidad Frigorifica</td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled placeholder="S/. 42.999.26"></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control"disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 42.999.26"></td>
+                        </tr>
+                        <tr>
+                          <td>Total (S/.)</td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 7.500.00"></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 7.500.00"></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 2.592.00"></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 63.695.66"></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 81.287.66"></td>
+                        </tr>
+                        <tr>
+                          <td>Total ($/.)</td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="$/. 2.315"></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="$/. 2.315"></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 800"></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="$/. 19.659"></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled></td>
+                          <td><input type="number" name="" id="" class="form-control" disabled placeholder="$/. 25.089"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+            </div>
+
+  
+            <button class="btn btn-primary" type="submit">Guardar</button>
+            <a class="btn btn-secondary" href="GastosIndirectosLista.html" >Cerrar</a>
+          </form>
+  
+          <script>
+     
+  
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+              "use strict";
+              window.addEventListener(
+                "load",
+                function () {
+                  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                  var forms = document.getElementsByClassName("needs-validation");
+                  // Loop over them and prevent submission
+                  var validation = Array.prototype.filter.call(
+                    forms,
+                    function (form) {
+                      form.addEventListener(
+                        "submit",
+                        function (event) {
+                          if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                          }
+                          form.classList.add("was-validated");
+                        },
+                        false
+                      );
+                    }
+                  );
+                },
+                false
+              );
+            })();
+          </script>
+        </div>
+      </div>
+    <script type="text/javascript"src="../../../assets/scripts/main.js"></script>
+</body>
+</html>
