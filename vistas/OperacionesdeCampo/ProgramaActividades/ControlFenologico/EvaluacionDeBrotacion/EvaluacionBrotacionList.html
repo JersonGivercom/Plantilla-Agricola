@@ -455,10 +455,6 @@
                     }
                 }
 
-
-                
-
-
                 function goYemasModificar()
                 {
                     window.location.href="YemasModificar.html";
@@ -485,7 +481,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">% de Brotación</label>
-                            <input type="text" name=""class="form-control " disabled id="" value="">
+                            <input type="number" name=""  class="form-control" disabled id="totalBrotacion" value="0">
                         </div>
                     
                         <div class="cabeza_tabla_variedadPoduc">
@@ -511,40 +507,40 @@
                             <tbody id="cuerpo">
                                 <tr>
                                     <td>Yema Necrosada</td>
-                                    <td><input type="number" name="" min="1" id="" value="0" class="form-control numTabla"></td>
-                                    <td><input type="number" name="" min="1" id="" value="0" disabled class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="valor 1" value="" oninput="sumar()"   class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="%1" value="0" disabled class="form-control numTabla"></td>
                                 </tr>
                                 <tr>
                                     <td>Yema </td>
-                                    <td><input type="number" name="" min="1" id="" value="0"  class="form-control numTabla"></td>
-                                    <td><input type="number" name="" min="1" id="" value="0" disabled class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="valor 2" value="" oninput="sumar()"    class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="%2" value="0" disabled class="form-control numTabla"></td>
                                 </tr>
                                 <tr>
                                     <td>Yema Hinchada</td>
-                                    <td><input type="number" name="" min="1" id="" value="0"  class="form-control numTabla"></td>
-                                    <td><input type="number" name="" min="1" id="" value="0" disabled class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="valor 3" value="" oninput="sumar()"    class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="%3" value="0" disabled class="form-control numTabla"></td>
                                 </tr>
                                 <tr>
                                     <td>Punta Verda</td>
-                                    <td><input type="number" name="" min="1" id="" value="0"  class="form-control numTabla"></td>
-                                    <td><input type="number" name="" min="1" id="" value="0" disabled class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="valor 4" value="" oninput="sumar()"    class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="%4" value="0" disabled class="form-control numTabla"></td>
 
                                 </tr>
                                 <tr>
                                     <td>Apertura de Hoja</td>
-                                    <td><input type="number" name="" min="1" id="" value="0"  class="form-control numTabla"></td>
-                                    <td><input type="number" name="" min="1" id="" value="0" disabled class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="valor 5" value="" oninput="sumar()"    class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="%5" value="0" disabled class="form-control numTabla"></td>
 
                                 </tr>
                                 <tr>
                                     <td>Brote</td>
-                                    <td><input type="number" name="" min="1" id="" value="0"  class="form-control numTabla"></td>
-                                    <td><input type="number" name="" min="1" id="" value="0" disabled class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="valor 6" value="" oninput="sumar()"  class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="%6" value="0" disabled class="form-control numTabla"></td>
                                 </tr>
                                 <tr style="font-weight: 800;">
                                     <td>Total</td>
-                                    <td><input type="number" name="" min="1" id="" value="0" disabled  class="form-control numTabla"></td>
-                                    <td><input type="number" name="" min="1" id="" value="0" disabled  class="form-control numTabla"></td>
+                                    <td><input type="number" name="" min="1" id="resultadoSuma" value="0" disabled  class="form-control numTabla"></td>
+                                    <td><input type="number" name=""  id="%resultado" value="0" disabled  class="form-control numTabla"></td>
                                 </tr>
                             </tbody> 
                         </table>
@@ -559,6 +555,50 @@
         </div>
     </div>
     <script>
+        function sumar(){
+            try{
+                var a = parseFloat(document.getElementById("valor 1").value) || 0,
+                    b = parseFloat(document.getElementById("valor 2").value) || 0,
+                    c = parseFloat(document.getElementById("valor 3").value) || 0,
+                    d = parseFloat(document.getElementById("valor 4").value) || 0,
+                    e = parseFloat(document.getElementById("valor 5").value) || 0,
+                    f = parseFloat(document.getElementById("valor 6").value) || 0;
+
+                    var resultadosum =document.getElementById("resultadoSuma");
+                    resultadosum.value=a+b+c+d+e+f;
+
+                var p1 =document.getElementById("%1"),
+                    p2 =document.getElementById("%2"),
+                    p3 =document.getElementById("%3"),
+                    p4 =document.getElementById("%4"),
+                    p5 =document.getElementById("%5"),
+                    p6 =document.getElementById("%6");
+
+                    p1.value =((a*100)/resultadosum.value).toFixed(2),
+                    p2.value =((b*100)/resultadosum.value).toFixed(2),
+                    p3.value =((c*100)/resultadosum.value).toFixed(2),
+                    p4.value =((d*100)/resultadosum.value).toFixed(2),
+                    p5.value =((e*100)/resultadosum.value).toFixed(2),
+                    p6.value =((f*100)/resultadosum.value).toFixed(2);
+
+
+                   var resultadoSumaPor = document.getElementById("%resultado");
+                   resultadoSumaPor.value=Number(((a*100)/resultadosum.value).toFixed(2))+Number(((b*100)/resultadosum.value).toFixed(2))+
+                                          Number(((c*100)/resultadosum.value).toFixed(2))+Number(((d*100)/resultadosum.value).toFixed(2))+
+                                          Number(((e*100)/resultadosum.value).toFixed(2))+Number(((f*100)/resultadosum.value).toFixed(2))
+
+                   var totalBrotacion =document.getElementById("totalBrotacion");
+                   totalBrotacion.value = (Number(((d*100)/resultadosum.value).toFixed(2))+
+                                          Number(((e*100)/resultadosum.value).toFixed(2))+Number(((f*100)/resultadosum.value).toFixed(2))).toFixed(2);
+                   
+
+            }catch(e){
+
+            }
+        }
+
+
+
         function insertarFila(colCount){
             var tabla = document.getElementById('tablaRacimo').tHead.children[0];
             th = document.createElement('th');

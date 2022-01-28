@@ -495,7 +495,7 @@
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="validationCustom02">Fecha de Evaluación</label>
-                                <input type="date" name="" id="FechaActual"disabled  class="form-control" value="0" min="0" >
+                                <input type="date" name="" id="FechaActual"disabled  class="form-control" >
                                 <div class="invalid-feedback">
                                     Por favor seleccionar nro. zona
                                 </div>
@@ -527,19 +527,19 @@
                                     <tr>
                                         <!-- <td rowspan="3">1</td> -->
                                         <td>Grande</td>
-                                        <td> <input type="number" name="" class="form-control" min="0" value="0" id="a" >  </td>
-                                        <td> <input type="number" name="" class="form-control" min="0" disabled value="0" id="b"  >  </td>
-                                        <td rowspan="3" style="text-align: center;"><span id="promedio">0</span></td>
+                                        <td> <input type="number" name="" oninput="suma()" class="form-control" min="0" value="0" id="valor 1" >  </td>
+                                        <td> <input type="number" name="" oninput="suma()" class="form-control" min="0"  value="0" id="valor 2"  >  </td>
+                                        <td rowspan="3" style="text-align: center;"><span id="total">0</span></td>
                                     </tr>
                                     <tr>
                                         <td>Mediana</td>
-                                        <td> <input type="number" name="" class="form-control" min="0" value="0" id="c" >  </td>
-                                        <td> <input type="number" name="" class="form-control" min="0" disabled value="0" id="d"  >  </td>
+                                        <td> <input type="number" name="" oninput="suma()" class="form-control" min="0" value="0" id="valor 3" >  </td>
+                                        <td> <input type="number" name="" oninput="suma()" class="form-control" min="0"  value="0" id="valor 4"  >  </td>
                                     </tr>
                                     <tr>
                                         <td>Chica</td>
-                                        <td> <input type="number" name="" class="form-control" min="0" value="0" id="e"  >  </td>
-                                        <td> <input type="number" name="" class="form-control" min="0" disabled value="0" id="f" >  </td>
+                                        <td> <input type="number" name="" oninput="suma()" class="form-control" min="0" value="0" id="valor 5"  >  </td>
+                                        <td> <input type="number" name="" oninput="suma()" class="form-control" min="0"  value="0" id="valor 6" >  </td>
                                     </tr>
                                 </tbody> 
                             </table>
@@ -558,6 +558,18 @@
     </div>
 
     <script>
+
+        function suma(){
+            var a =parseFloat(document.getElementById("valor 1").value) ||0,
+                b =parseFloat(document.getElementById("valor 2").value) ||0,
+                c =parseFloat(document.getElementById("valor 3").value) ||0,
+                d =parseFloat(document.getElementById("valor 4").value) ||0,
+                e =parseFloat(document.getElementById("valor 5").value) ||0,
+                f =parseFloat(document.getElementById("valor 6").value) ||0;
+
+            var resultado = document.getElementById("total");
+            resultado.innerHTML=((a*b)+(c*d)+(e*f))/100;
+        }
         
         
        function fecha1(){

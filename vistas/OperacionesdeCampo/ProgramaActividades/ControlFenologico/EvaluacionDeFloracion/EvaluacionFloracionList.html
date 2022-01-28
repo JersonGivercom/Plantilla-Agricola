@@ -490,7 +490,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">% de Floración</label>
-                            <input type="number" name="" class="form-control" disabled id="">
+                            <input type="number" name="" class="form-control" disabled id="porcentajeFloracion">
                         </div>
                         <div class="cabeza_tabla_variedadPoduc">
                             <span class="span_enfermedades_titulo">Evaluación de Floración</span>
@@ -512,56 +512,104 @@
                                 <tbody id="cuerpo">
                                     <tr>
                                         <td>Infl. Aglomerado</td>
-                                        <td><input type="number"  name="txt1" min="1" id="" value="0" class="form-control"></td>
-                                        <td><input type="number"  name="txt1" min="1" id="" value="0" disabled class="form-control"></td>
+                                        <td><input type="number"  name="txt1" min="0" id="valor 1" oninput="calculo()"  value="" class="form-control"></td>
+                                        <td><input type="number"  name="txt1" min="0" id="calculo 1" value="0" disabled class="form-control"></td>
                                     </tr>
                                     <tr>
                                         <td>Infl. Libre </td>
-                                        <td><input type="number" name="txt2" min="1" id="" value="0"  class="form-control"></td>
-                                        <td><input type="number" name="txt2" min="1" id="" value="0" disabled  class="form-control"></td>
+                                        <td><input type="number" name="txt2" min="0" id="valor 2"  oninput="calculo()"  value=""  class="form-control"></td>
+                                        <td><input type="number" name="txt2" min="0" id="calculo 2" value="0" disabled  class="form-control"></td>
                                     </tr>
                                     <tr>
                                         <td>Pre Flor</td>
-                                        <td><input type="number" name="txt3" min="1" id="" value="0"  class="form-control"></td>
-                                        <td><input type="number" name="txt3" min="1" id="" value="0"  disabled class="form-control"></td>
+                                        <td><input type="number" name="txt3" min="0" id="valor 3" oninput="calculo()"  value=""  class="form-control"></td>
+                                        <td><input type="number" name="txt3"min="0" id="calculo 3" value="0"  disabled class="form-control"></td>
                                     </tr>
                                     <tr>
                                         <td>Caliptra Rajada</td>
-                                        <td><input type="number" name="txt4" min="1" id="" value="0"  class="form-control"></td>
-                                        <td><input type="number" name="txt4" min="1" id="" value="0"  disabled class="form-control"></td>
+                                        <td><input type="number" name="txt4" min="0" id="valor 4" oninput="calculo()"  value=""  class="form-control"></td>
+                                        <td><input type="number" name="txt4" min="0" id="calculo 4" value="0"  disabled class="form-control"></td>
                                     </tr>
                                     <tr style="background-color: #93eba8a6;">
                                         <td>Inicio de Floracion (1 a 10 %)</td>
-                                        <td><input type="number" name="txt5" min="1" id="" value="0"  class="form-control"></td>
-                                        <td><input type="number" name="txt5" min="1" id="" value="0" disabled  class="form-control"></td>
+                                        <td><input type="number" name="txt5" min="0" id="valor 5" oninput="calculo()"  value=""  class="form-control"></td>
+                                        <td><input type="number" name="txt5" min="0" id="calculo 5" value="0" disabled  class="form-control"></td>
                                     </tr>
                                     <tr style="background-color: #93eba8a6;">
                                         <td>11 a 30 % Floracion</td>
-                                        <td><input type="number" name="txt6" min="1" id="" value="0"  class="form-control"></td>
-                                        <td><input type="number" name="txt6" min="1" id="" value="0" disabled  class="form-control"></td>
+                                        <td><input type="number" name="txt6" min="0" id="valor 6" oninput="calculo()"  value=""  class="form-control"></td>
+                                        <td><input type="number" name="txt6" min="0" id="calculo 6" value="0" disabled  class="form-control"></td>
                                     </tr>
                                     <tr style="background-color: #93eba8a6;">
                                         <td>31 a 50 % Floracion</td>
-                                        <td><input type="number" name="txt7" min="1" id="" value="0"  class="form-control"></td>
-                                        <td><input type="number" name="txt7" min="1" id="" value="0"  disabled class="form-control"></td>
+                                        <td><input type="number" name="txt7" min="0" id="valor 7" oninput="calculo()"  value=""  class="form-control"></td>
+                                        <td><input type="number" name="txt7" min="0" id="calculo 7" value="0"  disabled class="form-control"></td>
                                     </tr>
                                     <tr style="background-color: #93eba8a6;">
                                         <td>51 % a mas</td>
-                                        <td><input type="number" name="txt8" min="1" id="" value="0"  class="form-control"></td>
-                                        <td><input type="number" name="txt8" min="1" id="" value="0" disabled  class="form-control"></td>
+                                        <td><input type="number" name="txt8" min="0" id="valor 8" oninput="calculo()"  value=""  class="form-control"></td>
+                                        <td><input type="number" name="txt8" min="0" id="calculo 8" value="0" disabled  class="form-control"></td>
                                     </tr>
                                     <tr>
                                         <td>Inicio cuajado</td>
-                                        <td><input type="number" name="txt9" min="1" id=""  value="0"  class="form-control"></td>
-                                        <td><input type="number" name="txt9" min="1" id=""  value="0"  disabled class="form-control"></td>
+                                        <td><input type="number" name="txt9" min="1" id="valor 9" oninput="calculo()"   value=""  class="form-control"></td>
+                                        <td><input type="number" name="txt9" min="1" id="calculo 9"  value="0"  disabled class="form-control"></td>
                                     </tr>
                                     <tr style="font-weight: 700;">
                                         <td>Todal</td>
-                                        <td><input type="number" name="txt10" min="1" id=""  value="0" disabled  class="form-control"></td>
-                                        <td><input type="number" name="txt10" min="1" id=""  value="0" disabled  class="form-control"></td>
+                                        <td><input type="number" name="txt10" min="1" id="resultadoSuma"  value="" disabled  class="form-control"></td>
+                                        <td><input type="number" name="txt10"  id="totalCalculo"  value="0" disabled  class="form-control"></td>
                                     </tr>
                                 </tbody> 
                             </table>
+
+                            <script>
+                                function calculo(){
+                                    var v1 =parseFloat(document.getElementById("valor 1").value) || 0,
+                                        v2 =parseFloat(document.getElementById("valor 2").value) || 0,
+                                        v3 =parseFloat(document.getElementById("valor 3").value) || 0,
+                                        v4 =parseFloat(document.getElementById("valor 4").value) || 0,
+                                        v5 =parseFloat(document.getElementById("valor 5").value) || 0,
+                                        v6 =parseFloat(document.getElementById("valor 6").value) || 0,
+                                        v7 =parseFloat(document.getElementById("valor 7").value) || 0,
+                                        v8 =parseFloat(document.getElementById("valor 8").value) || 0,
+                                        v9 =parseFloat(document.getElementById("valor 9").value) || 0;
+
+
+                                        var suma = document.getElementById("resultadoSuma");
+                                        suma.value = v1+v2+v3+v4+v5+v6+v7+v8+v9;
+
+
+                                        var c1 = document.getElementById("calculo 1"),
+                                            c2 = document.getElementById("calculo 2"),
+                                            c3 = document.getElementById("calculo 3"),
+                                            c4 = document.getElementById("calculo 4"),
+                                            c5 = document.getElementById("calculo 5"),
+                                            c6 = document.getElementById("calculo 6"),
+                                            c7 = document.getElementById("calculo 7"),
+                                            c8 = document.getElementById("calculo 8"),
+                                            c9 = document.getElementById("calculo 9");
+
+                                            c1.value = ((v1*100)/suma.value).toFixed(2);
+                                            c2.value = ((v2*100)/suma.value).toFixed(2);
+                                            c3.value = ((v3*100)/suma.value).toFixed(2);
+                                            c4.value = ((v4*100)/suma.value).toFixed(2);
+                                            c5.value = ((v5*100)/suma.value).toFixed(2);
+                                            c6.value = ((v6*100)/suma.value).toFixed(2);
+                                            c7.value = ((v7*100)/suma.value).toFixed(2);
+                                            c8.value = ((v8*100)/suma.value).toFixed(2);
+                                            c9.value = ((v9*100)/suma.value).toFixed(2);
+
+                                            var calculototal = document.getElementById("totalCalculo");
+                                            calculototal.value=Math.round(Number(((v1*100)/suma.value).toFixed(2))+Number(((v2*100)/suma.value).toFixed(2))+
+                                            Number(((v3*100)/suma.value).toFixed(2))+Number(((v4*100)/suma.value).toFixed(2))+Number(((v5*100)/suma.value).toFixed(2))+Number(((v6*100)/suma.value).toFixed(2))+
+                                            Number(((v7*100)/suma.value).toFixed(2))+Number(((v8*100)/suma.value).toFixed(2))+Number(((v9*100)/suma.value).toFixed(2)));
+
+                                           var porcentajeFloracion = document.getElementById("porcentajeFloracion");
+                                           porcentajeFloracion.value=Number(((v5*100)/suma.value).toFixed(2))+Number(((v6*100)/suma.value).toFixed(2))+
+                                            Number(((v7*100)/suma.value).toFixed(2))+Number(((v8*100)/suma.value).toFixed(2));
+                                }
+                            </script>
 
 
                             
@@ -654,17 +702,7 @@
             mes='0'+mes //agrega cero si el menor de 10
           document.getElementById('FechaActual').value=ano+"-"+mes+"-"+dia;
         }
-        function fecha2(){
-          var fecha = new Date(); //Fecha actual
-          var mes = fecha.getMonth()+1; //obteniendo mes
-          var dia = fecha.getDate(); //obteniendo dia
-          var ano = fecha.getFullYear(); //obteniendo año
-          if(dia<10)
-            dia='0'+dia; //agrega cero si el menor de 10
-          if(mes<10)
-            mes='0'+mes //agrega cero si el menor de 10
-          document.getElementById('Fecha2').value=ano+"-"+mes+"-"+dia;
-        }
+      
 
 
         function eliminarFila(){
@@ -672,7 +710,7 @@
         }
         
         fecha1();        
-        fecha2(); 
+
     </script>
 
 
