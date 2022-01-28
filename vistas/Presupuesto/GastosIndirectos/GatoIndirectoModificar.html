@@ -78,7 +78,7 @@
               </div>
   
               <div class="col-md-4 mb-3">
-                <label for="validationCustom02">Tipo de Presupuesto</label>
+                <label for="validationCustom02">Tipo de Gasto Indirecto</label>
                 <select name="" id="cbotipoPresupuesto" class="form-control">
                   <option value="1">Fuentes de Agua y Sistema de Frío</option>
                   <option value="2"> Fuentes de Agua  </option>
@@ -90,14 +90,14 @@
               <div class="col-md-4 mb-3">
                 <label for="validationCustom01">Tipo de Moneda</label>
                 <select name="" id="cboTipoMoneda" class="form-control" onclick="tipoMoneda();" >
-                  <option value="dolar">Dolar</option>
+                  <option value="dolar" selected>Dolar</option>
                   <option value="sol">Sol</option>
                 </select>
                 <div class="valid-feedback">Looks good!</div>
               </div>
 
               <div class="col-md-4 mb-3">
-                <label for="validationCustom01">Tipo de Cambio</label>
+                <label for="validationCustom01">Tipo de Cambio <span id="cadena">en Doleres</span></label>
                 <input type="text" id="txttipoCambio" placeholder="3.24" class="form-control" 
                 disabled value="" required/>
                 <div class="valid-feedback">Looks good!</div>
@@ -111,9 +111,11 @@
                       break;
                       case "dolar":
                        document.getElementById("txttipoCambio").value="3.24"
+                       document.getElementById("cadena").innerHTML = "en Dolares"
                       break;
                       case "sol":
                        document.getElementById("txttipoCambio").value="0.26"
+                       document.getElementById("cadena").innerHTML = "en Soles"
                       break;
                   }
                 }
@@ -151,7 +153,7 @@
                           <th>Febrero del 2019</th>
                           <th>Marzo del 2020 </th>
                           <th>Abril del 2020 </th>
-                          <th>Total</th>
+                          <th class="negritaenTabla">Total</th>
                         </tr>
                       </thead>
                       <tbody id="tablalistagastoIndirecto">
@@ -411,7 +413,7 @@
                             <td><input type="number" name="" id="" class="form-control"></td>
                             <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 42.999.26"></td>
                           </tr>
-                          <tr>
+                          <tr class="negritaenTabla">
                             <td>Total (S/.)</td>
                             <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 7.500.00"></td>
                             <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 7.500.00"></td>
@@ -427,7 +429,7 @@
                             <td><input type="number" name="" id="" class="form-control" disabled></td>
                             <td><input type="number" name="" id="" class="form-control" disabled placeholder="S/. 81.287.66"></td>
                           </tr>
-                          <tr>
+                          <tr class="negritaenTabla">
                             <td>Total ($/.)</td>
                             <td><input type="number" name="" id="" class="form-control" disabled placeholder="$/. 2.315"></td>
                             <td><input type="number" name="" id="" class="form-control" disabled placeholder="$/. 2.315"></td>
