@@ -116,60 +116,9 @@
               </div>
                 <script>
 
-                  var sumar=document.getElementById("sumar");
-
-                  if(sumar){
-                    sumar.addEventListener("click",calcular,false)
-                  }
-
-                  function calcular() {
-                  
-                  /** sumamos las filas **/
-
-                  // obtenemos todas las filas del tbody
-                  const filas=document.querySelectorAll("#reporte tbody tr");
-
-                  // bucle por cada una de las filas
-                  filas.forEach((fila) => {
-
-                      // obtenemos los tds de cada fila
-                      const tds=fila.querySelectorAll("td");
-
-                      let total=0;
-
-                      // bucle por cada uno de los tds con excepcion el primero (producto) y ultimo (total)
-                      for(let i=1; i<tds.length-1; i++) {
-
-                          // sumamos los tds
-                          total+=parseFloat(tds[i].innerHTML);
-                      }
-
-                      // mostramos el total en la ultima casilla
-                      tds[tds.length-1].innerHTML=total.toFixed(2);
-                  });
-
-                     /** sumamos las columnas **/
- 
-                        // obtenemos el numero de columnas
-                        const columnas=document.querySelectorAll("#reporte thead tr th");
-                    
-                    // obtenemos las fila de los totales
-                    const totalFila=document.querySelectorAll("#reporte tfoot tr td");
-
-                    // bucle por cada una de las columnas excepto la primera
-                    for(let i=1; i<columnas.length; i++) {
-                        let total=0;
-
-                        // obtenemos el valor de cada una de las filas
-                        filas.forEach((fila) => {
-                            total+=parseFloat(fila.querySelectorAll("td")[i].innerHTML);
-                        });
-
-                        // mostramos el total en la ultima fila
-                        totalFila[i].innerHTML=total.toFixed(2);
-                    }
-
-                }
+              function sumar(){
+                var v1 = parseFloat(document.getElementById("valor 1"))
+              }
                  
 
                   function tipoMoneda(){
@@ -254,7 +203,7 @@
                       tablaLlena +=   "<td>"+mantenimientoAgruaySistemaFrio[i]+"</td>";
 
                         for(var p = 0; p<=months -1;p++){
-                          tablaLlena +="<td><input step='1' type='number' min='0' id='valor "+p+"' class='form-control' value='0'></td>";
+                          tablaLlena +="<td><input step='1' type='number' min='0' id='valor "+p+"' oninput='sumar();' class='form-control' value='0'></td>";
                         }
                         tablaLlena +="<td><input step='1' type='number' min='0' id='resultado' class='form-control' disabled value='0'></td>";
                       tablaLlena +=  "</tr>"; 
@@ -373,7 +322,6 @@
               <div class="col-md-12 mb-3">
                 <a href="javascript:calcular();" class="btn btn-info" >Crear Tabla</a>
                 <a href="javascript:eliminarTabla();" class="btn btn-warning">Quitar Tabla</a>
-                <a href="javascript:void();" id="sumar" class="btn btn-warning">Sumar</a>
               </div>
               
               <div class="col-md-12 mb-3">
