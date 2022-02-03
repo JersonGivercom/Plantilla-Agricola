@@ -117,6 +117,9 @@ body{
     color: #495057;
     text-align: right;
 }
+.recupContraseña:hover{
+    color:rgb(36, 187, 137) ;
+}
 .footer{
     width: 500px;
     position: absolute;
