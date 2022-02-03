@@ -14,16 +14,21 @@ body{
   color: #495057;
   text-align: left;
   background-color: #fff;
+
+}
+.panelLoginCel{
+    display: none;
 }
 .cajaIzquierdaAfuera{
     z-index: -1;
-    background-color: #00D69B;
     width: 34%;
     height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
+    background-image: linear-gradient( 45deg,rgba(40, 204, 133, 0.87) 0%, rgba(71, 148, 115, 1) 100% ); 
 }
+
 .caja1{
     border-radius: 15px;
     margin: 50px auto;
@@ -31,17 +36,19 @@ body{
     height: 500px;
     box-shadow: 5px 5px 9px 10px rgba(0, 0, 0, 0.16);
     display: flex;
+
 }
 .panelIzquierda{
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
     width: 30%;
-    
+    text-align: center;
 }
 .panelIzquierda img{
-    width: 145px;
-   margin-top: 170px;
-   margin-left: 30%;
+    width: 200px;
+    margin-top: 90px;
+}
+.textoenLogo{
+    font-size: 1rem;
+    
 }
 .frmLogin{  
     width: 40%;
@@ -51,7 +58,7 @@ body{
 .frmLogin h2{
     width: 100%;
     text-align: center;
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     color: #000000;
 }
 
@@ -60,7 +67,8 @@ body{
    flex-direction: column;
 }
 .item{
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 .item label{
     text-transform: uppercase;
@@ -89,18 +97,69 @@ body{
     box-shadow: 0 0 0 0.2rem rgba(0, 255, 191, 0.25);
 }
 .accionesLogin{
-    width: 100%;
     margin-top: 10px;
+    text-align: center;
 }
 .btnlogin{
     cursor: pointer;
-    background-color:  #00D69B;
+    background-image: linear-gradient(45deg, rgba(40, 204, 133, 0.87) 0%, rgba(71, 148, 115, 1) 100% );
     width: 200px;
     padding: 12px 10px;
     border-radius: 5px;
-    margin: 15px 115px;
-    border: 2px solid  #027a58;
+    border: none;
+    border-image: none;
 }
 .btnlogin:hover{
-    background-color:  #00ffb7; 
+    background-color:  #05664a; 
+}
+.recupContraseña{
+    text-decoration: none;
+    color: #495057;
+    text-align: right;
+}
+.footer{
+    width: 500px;
+    position: absolute;
+    left: 20px;
+}
+.footer_text{
+    color: #707070;
+    font-weight: 600;
+}
+/* CEL */
+@media (max-width: 450px){
+    .cajaIzquierdaAfuera{
+        width: 100%;
+        height: 80%;
+    }
+    .panelLoginCel{
+        display: block;
+        margin-top: 80px;
+        margin-left: 10px;
+    }
+    .panelLoginCel img{
+        width: 120px;
+    }
+    .panelIzquierda{
+        display: none;
+    }
+    .caja1{
+        background-color: #fff;
+        margin-top: 200px;
+        width: 100%;
+        height: 350px;
+        box-shadow: none;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .frmLogin{
+        width: 100%;
+        margin: 20px;
+    }
+    .frmLogin h2{
+        font-size: 1.5rem;
+    }
+    .footer_text{
+        font-size: 0.7rem;
+    }
 }

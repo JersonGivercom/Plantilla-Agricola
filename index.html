@@ -5,107 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/images/ico-logo1.png" type="image/x-icon">
-    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
-    <link rel="stylesheet" href="estilo/estilo.css">
-    <link rel="stylesheet" href="estilo/main.css">
-    <title>Sistema Agrícola</title>
+    <link rel="stylesheet" href="estilo/login.css">
+    <title>Sistema Agrícola || Iniciar Sesión</title>
 </head>
-<body class="Ventana_Principal">
-    <div class="app-header header-shadow">
-        <div class="app-header__logo">
-            <div class="logo-src">
-               
-            </div>
-      
-        </div>
-      
-        <div class="app-header__content">
-            <div class="app-header-left">
-             
-            </div>
-            <div class="app-header-right">
-                <div class="header-btn-lg pr-0">
-                    <div class="widget-content p-0">
-                        <div class="widget-content-wrapper">
-                            <div class="widget-content-left">
-                                <div class="btn-group">
-                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        class="p-0 btn">
-                                        <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg"
-                                            alt="">
-                                        <i class="fa fa-angle-down ml-2 opacity-8"></i>
-                                    </a>
-                                    <div tabindex="-1" role="menu" aria-hidden="true"
-                                        class="dropdown-menu dropdown-menu-right">
-                                        <button type="button" tabindex="0" class="dropdown-item">User
-                                            Account</button>
-                                        <button type="button" tabindex="0" class="dropdown-item">Settings</button>
-                                        <h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                        <button type="button" tabindex="0" class="dropdown-item">Actions</button>
-                                        <div tabindex="-1" class="dropdown-divider"></div>
-                                        <button type="button" tabindex="0" class="dropdown-item">Dividers</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget-content-left  ml-3 header-user-info">
-                                <div class="widget-heading">
-                                    Givercom
-                                </div>
-                                <div class="widget-subheading">
-                                    Administrador
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+<body>
+    <div class="cajaIzquierdaAfuera">
+        <div class="panelLoginCel">
+            <img src="assets/images/Logo_Texto.png" alt="Cargando..." > 
+            <br>
+            <span class="textoenLogo">Proyecto web pensado para gestionar los trabajos realizados en un fundo, creado por Givercom S.A.</span> 
         </div>
     </div>
-   
-    <div class="contenedor">
+    <div class="caja1">
+        <div class="panelIzquierda">
+            <img src="assets/images/Logo_Texto.png" alt="Cargando..." > 
+            <br>
+          <span class="textoenLogo">Proyecto web pensado para gestionar los trabajos realizados en un fundo, creado por Givercom S.A.</span> 
+        </div>
+       
+        <div class="frmLogin">
+             <h2>Bienvenido al Sistema Agrícola</h2>
+            <form action="">
+                <div class="cajaLogin">
 
-        
-            <div class="iten ">
-              
-                <img src="assets/images/1/1_Plano.png" alt="carando..." onclick="panelControl()" class="i1" >
-            </div>
-            <div class="iten  ">
-                
-                <img src="assets/images/2/2_Plano.png" alt="Cargando..."  onclick="operacionesDeCampo()" class="i2" >
+                    <div class="item">
+                        <label for="">Correo:</label>
+                        <input type="email" class="itemTexto" name="" placeholder="Ejemplo@email.com" id="">
+                    </div>
+                    <div class="item">
+                        <label for="">Contraseña:</label>
+                        <input type="password" class="itemTexto" name=""placeholder="Ingrese su Contraseña" id="">
+                    </div>
+                    <a href="" class="recupContraseña">¿Has olvidado tu contraseña? </a>
+                </div>
+            </form>
+
+            <div class="accionesLogin">
+                <button class="btnlogin" onclick="index()">Iniciar Sesión</button>
             </div>
             
-            <div class="iten  ">
-               
-                <img src="assets/images/3/3_Plano.png" alt="Cargando..." onclick="Presupuesto()" class="i3" >
-            </div>
+        </div>
+    </div>
 
-            <div class="iten ">
-               
-                <img src="assets/images/4/4_Plano.png" alt="Cargando..." onclick="Analitica()"  class="i4">
-            </div> 
-            
-             <img src="assets/images/Divisorio.png" alt="Cargando" class="imgdivisorio" >
-            
-
-            <div class="iten posicion  ">
-               
-                <img src="assets/images/5/5_Plano.png" alt="Cargando..."  class="i5">
-            </div>
-
-            <div class="iten posicion  ">
-            
-                <img src="assets/images/6/6_Plano.png" alt="Cargando..." class="i6" >
-            </div>
-            <div class="iten  posicion ">
-    
-                <img src="assets/images/7/7_Plano.png" alt="Cargando..."  class="i7">
-            </div>
-    </div>  
-        
-        
-
-    <script type="text/javascript" src="./assets/scripts/principal.js"></script>
-    <script type="text/javascript" src="./assets/scripts/main.js"></script>
+    <div class="footer">
+        <span class="footer_text">Copyright © Givercom S.A. Sistema Agrcícola 2022 - Version 1</span>
+    </div>
+    <script>
+        function index() {
+            window.location.href="Menu.html"
+        }
+    </script>
 </body>
 </html>
