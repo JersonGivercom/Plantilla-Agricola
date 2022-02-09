@@ -4,60 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/images/ico-logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="estilo/login.css">
+    <link rel="stylesheet" href="estilo/login1.css">
     <meta name="keywords" content="Sistema Agrícola de Givercom S.A."/>
     <meta name="author" content="Givercom S.A." />
     <meta name="copyright" content="Propietario de Givercom S.A." />
     <meta name="description" content="Proyecto web pensado para gestionar los trabajos realizados en un fundo, creado por Givercom S. A."/>
-    <title>Sistema Agrícola || Iniciar Sesión</title>
+    <title>Login</title>
 </head>
 <body>
-     <div class="cajaIzquierdaAfuera">
-        <div class="panelLoginCel">
-            <img src="assets/images/Logo_Texto.png" alt="Cargando..." > 
-            <br>
-            <span class="textoenLogo">Proyecto web pensado para gestionar los trabajos realizados en un fundo, creado por Givercom S. A.</span> 
-        </div>
+    <img src="assets/images/img2.png"  class="superior_izquierdo" alt="superior izquierdo">
+     <div class="cajaCel">
+        <img src="assets/images/Logo_Texto.png" class="imgLogoTexto" alt="logoenTexto">
     </div> 
-
-    <div class="caja1"> 
-        <div class="panelIzquierda">
-            <img src="assets/images/Logo_Texto.png" alt="Cargando..." > 
-            <br>
-          <span class="textoenLogo">Proyecto web pensado para gestionar los trabajos realizados en un fundo, creado por Givercom S. A.</span> 
+    <div class="caja">
+        <div class="cajaLeft">
+            <div class="frmLogin">
+                <h2>Bienvenido al Sistema</h2>
+               <form >
+                   <div class="cajaLogin">
+   
+                       <div class="item">
+                           <label for="">Correo:</label>
+                           <input type="email" class="itemTexto"  placeholder="Ejemplo@email.com" >
+                       </div>
+                       <div class="item">
+                           <label for="">Contraseña:</label>
+                           <input type="password" class="itemTexto" placeholder="Ingrese su Contraseña" >
+                       </div>
+                       <a href="" class="recupContraseña">¿Has olvidado tu contraseña? </a>
+                   </div>
+               </form>
+   
+               <div class="accionesLogin">
+                   <button class="btnlogin" onclick="iniciarSesion()" >Iniciar Sesión</button>
+               </div>
+               
+           </div>
         </div>
-       
-        <div class="frmLogin">
-             <h2>Bienvenido al Sistema</h2>
-            <form action="">
-                <div class="cajaLogin">
-
-                    <div class="item">
-                        <label for="">Correo:</label>
-                        <input type="email" class="itemTexto" name="" placeholder="Ejemplo@email.com" id="">
-                    </div>
-                    <div class="item">
-                        <label for="">Contraseña:</label>
-                        <input type="password" class="itemTexto" name=""placeholder="Ingrese su Contraseña" id="">
-                    </div>
-                    <a href="" class="recupContraseña">¿Has olvidado tu contraseña? </a>
-                </div>
-            </form>
-
-            <div class="accionesLogin">
-                <button class="btnlogin" onclick="index()">Iniciar Sesión</button>
-            </div>
-            
-        </div>
-    </div> 
+         <div class="cajaRight"> 
+            <img src="assets/images/Logo_Texto.png" class="imgLogoTexto" alt="logoenTexto">
+            <span class="parrafoRight">Proyecto web pensado para gestionar los
+                 trabajos realizados en un fundo, creado por Givercom S. A.</span> 
+             <img src="assets/images/img1.png" class="imgRight" alt="imgRight" >
+        </div> 
+    </div>
 
     <div class="footer">
         <span class="footer_text">Copyright © Givercom S. A. Sistema Agrícola - Version 1</span>
     </div>
+    <img src="assets/images/img3.png"  class="inferior_derecha" alt="inferior derecha" >
+
     <script>
-        function index() {
-            window.location.href="Menu.html"
+        function iniciarSesion(){
+            window.location.href="Menu.html";
         }
     </script>
 </body>
