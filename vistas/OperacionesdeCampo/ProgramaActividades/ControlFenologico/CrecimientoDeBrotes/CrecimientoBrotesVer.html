@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>document</title>
     <link rel="stylesheet" href="../../../../../estilo/main.css">
 </head>
 
@@ -124,11 +124,11 @@
                     </div>
                 </div>                         
                
-                <button class="btn btn-secondary" type="button" onclick="irCrecimientoBroteList()">Cerrar </button>
+               
 
                 
                 <div class="form-row">
-                    <div class="table-responsive">                                  
+                    <div class="table-responsive tablaAlto">                                  
                         <table class="mb-5 table colorTable tabla_encabezado" id="tablaRacimo" >
                             <thead class="tabla_encabezado" id="cabeza">
                                 <tr>
@@ -146,7 +146,7 @@
                                     <td>3</td>
                                     <td>AH-210</td>
                                     <td>3</td>
-                                    <td>18.7</td>
+                                    <td>2.3</td>
                                     <td> 
                                         <div class="d-inline-block dropdown">
                                             <button type="button" data-toggle="dropdown" aria-haspopup="true"
@@ -179,7 +179,7 @@
                                     <td>2</td>
                                     <td>PJ-310</td>
                                     <td>3</td>
-                                    <td>18.7</td>
+                                    <td>2.3</td>
                                     <td> 
                                         <div class="d-inline-block dropdown">
                                         <button type="button" data-toggle="dropdown" aria-haspopup="true"
@@ -212,6 +212,8 @@
                         </table>
                     </div>  
                 </div>
+
+                <button class="btn btn-secondary" type="button" onclick="irCrecimientoBroteList()">Cerrar </button>
             </form>     
             <script>
 
@@ -244,6 +246,71 @@
             </script>
         </div>
     </div>
+
+    <!-- Ver -->
+    <div class="modal fade" id="modelVer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content modal-lg-5">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detalle del Calibre de Brotación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" novalidate>                   
+                    <div class="form-row">
+                        <div class="table-responsive tablaBrote">                                  
+                            <table class="mb-5 table colorTable tabla_encabezado " id="tablaRacimo" >
+                                <thead class="tabla_encabezado" id="cabeza">
+                                    <tr>
+                                        <th></th>
+                                        <th>05/02/2022</th>
+                                        <th>06/02/2022</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Yema</th>
+                                        <th>Medida MM </th>
+                                        <th>Medida MM </th>
+                                    </tr>
+                                </thead> 
+                                <tbody id="cuerpo">
+                                    <tr>
+                                        <td>1</td>
+                                        <td> <input type="number" name="" disabled  class="form-control" min="0" value="2.0" id="valor 1" >  </td>
+                                        <td> <input type="number" name="" disabled  class="form-control" min="0" value="0.13" id="valor 1" >  </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td> <input type="number" name="" disabled  class="form-control" min="0" value="0.3" id="valor 3" >  </td>
+                                        <td> <input type="number" name="" disabled  class="form-control" min="0" value="2.5" id="valor 1" >  </td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td> <input type="number" name=""  disabled class="form-control" min="0" value="0.9" id="valor 5"  ></td>
+                                        <td> <input type="number" name="" disabled  class="form-control" min="0" value="2" id="valor 1" >  </td>
+                                    </tr> 
+                                    <tr class="negritaenTabla">
+                                        <td>Promedio</td>
+                                        <td><input type="number" name=""  disabled class="form-control" min="0" value="1.06" id="valor 5"  ></td>
+                                        <td><input type="number" name=""  disabled class="form-control" min="0" value="2.3" id="valor 5"  ></td>
+                                    </tr>
+                                </tbody> 
+                            </table>
+                        </div>  
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <script type="text/javascript" src="../../../../../assets/scripts/main.js"></script>
 </body>

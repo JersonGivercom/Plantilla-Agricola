@@ -212,7 +212,7 @@
                             <td>Ampliación 1 </td>
                             <td>Uva</td>
                             <td>Red Globe</td>
-                            <td>15/01/2022</td>
+                            <td>05/01/2022</td>
                             <td>En Proceso</td>
                             <td>
                                 <div class="d-inline-block dropdown">
@@ -493,7 +493,7 @@
 
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="validationCustom02">Identificador de Cargador</label>
+                                <label for="validationCustom02">Identificador del Cargador</label>
                                 <input type="text" name="" id="" class="form-control" value=""  >
                                 <div class="invalid-feedback">
                                     Por favor seleccionar nro. zona
@@ -501,14 +501,6 @@
 
                             </div>
 
-                            <div class="col-md-6 mb-3">
-                                <label for="validationCustom02">Promedio</label>
-                                <input type="number" name="" id="promedio" disabled class="form-control" value=""  >
-                                <div class="invalid-feedback">
-                                    Por favor seleccionar nro. zona
-                                </div>
-
-                            </div>
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom02">Fecha de Evaluación</label>
                                 <input type="date" name="" id="FechaActual"disabled  class="form-control" >
@@ -539,20 +531,15 @@
                                     </tr>
                                 </thead> 
                                 <tbody id="cuerpo">
-                                    <!-- <tr>
-                                        <td rowspan="3">1</td> 
-                                        <td>1</td>
-                                        <td> <input type="number" name="" oninput="suma()" class="form-control" min="0" value="0" id="valor 1" >  </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td> <input type="number" name="" oninput="suma()" class="form-control" min="0" value="0" id="valor 3" >  </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td> <input type="number" name="" oninput="suma()" class="form-control" min="0" value="0" id="valor 5"  >  </td>
-                                    </tr> -->
+
+                                    
                                 </tbody> 
+                                <tfoot>
+                                    <tr class="negritaenTabla">
+                                        <td>Promedio</td>
+                                        <td> <input type="number" disabled class="form-control" min="0" value="0" id="valor 1" >  </td>
+                                    </tr> 
+                                </tfoot>
                             </table>
                         </div>  
                         </div>
@@ -560,8 +547,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>       
                     <button type="button" class="btn btn-primary" onclick="calcular();" >Registrar datos</button>
                 </div>
             </div>
@@ -606,17 +592,18 @@
         fecha1();
 
         function insertarFila(){
-            var tabla = document.getElementById("tablaRacimo");
-            for(i = 0; i<tabla.getElementsByTagName('tr').length; i++){
+            var tabla = document.getElementById("cuerpo"); 
+            for(i = 1; i<tabla.getElementsByTagName('tr').length+1; i++){
                 i
             }
             tabla.insertRow(-1).innerHTML = '<td>'+i+'</td>'+
-                                            ' <td> <input type="number" name="" oninput="suma()" class="form-control" min="0" value="0" id="valor'+i+' " >  </td>';
-        }
-            
+                                            ' <td> <input type="number" name=""  class="form-control" min="0" value="0" id="valor'+i+' " > </td>';
+           
+      
+        } 
 
         function eliminarFila(){
-            $("#tablaRacimo tr:last-child ").remove();
+            $("#cuerpo tr:last-child ").remove();
         }
     </script>
 
