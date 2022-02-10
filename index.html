@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/images/ico-logo1.png" type="image/x-icon">
     <link rel="stylesheet" href="estilo/login1.css">
+    <link rel="stylesheet" href="estilo/main.css">
+    <link rel="shortcut icon" href="assets/images/ico-logo1.png" type="image/x-icon">
     <meta name="keywords" content="Sistema Agrícola de Givercom S.A."/>
     <meta name="author" content="Givercom S.A." />
     <meta name="copyright" content="Propietario de Givercom S.A." />
@@ -17,20 +18,31 @@
      <div class="cajaCel">
         <!-- <img src="assets/images/Logo_Texto.png" class="imgLogoTexto" alt="logoenTexto"> -->
     </div> 
-    <div class="caja">
+    <div class="frmcaja">
         <div class="cajaLeft">
             <div class="frmLogin">
                 <h2>Bienvenido al Sistema</h2>
-               <form >
+               <form>
                    <div class="cajaLogin">
    
                        <div class="item">
                            <label for="">Correo:</label>
-                           <input type="email" class="itemTexto"  placeholder="Ejemplo@email.com" >
+                           <div class="itemImput">
+                               <div class="itemImput_logo" id="logo_texto">
+                                   <i class="fa fa-envelope"></i>
+                               </div>
+                                <input type="email" class="itemTexto" id="email"  placeholder="Ejemplo@email.com" >
+                           </div>
+                           
                        </div>
                        <div class="item">
                            <label for="">Contraseña:</label>
-                           <input type="password" class="itemTexto" placeholder="Ingrese su Contraseña" >
+                           <div class="itemImput">
+                            <div class="itemImput_logo " id="logo_texto">
+                                <i class="fa fa-solid fa-key"></i>
+                            </div>
+                            <input type="password" class="itemTexto" id="password" placeholder="Ingrese su Contraseña" >
+                            </div>
                        </div>
                        <a href="" class="recupContraseña">¿Has olvidado tu contraseña? </a>
                    </div>
@@ -51,7 +63,7 @@
     </div>
 
     <div class="footer">
-        <span class="footer_text">Copyright © Givercom S. A. Sistema Agrícola - Version 1</span>
+        <span class="footer_text">Copyright © Givercom S.A. Sistema Agrícola-  Version 1 - 2022</span>
     </div>
     <img src="assets/images/img3.png"  class="inferior_derecha" alt="inferior derecha" >
 

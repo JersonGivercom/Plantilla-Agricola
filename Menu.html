@@ -91,32 +91,45 @@
                 <img src="assets/images/3/3_Plano.png" alt="Cargando..." onclick="Presupuesto()" class="i3" >
             </div>
 
-            <div class="iten ">
+            <div class="iten deshabilidado ">
                
-                <img src="assets/images/4/4_Plano.png" alt="Cargando..." onclick="Analitica()"  class="i4">
+                <img src="assets/images/4/4_Plano.png" alt="Cargando..." onclick="desactivado()"  class="i4">
             </div> 
             
              <img src="assets/images/Divisorio.png" alt="Cargando" class="imgdivisorio" >
             
 
-            <div class="iten posicion  ">
+            <div class="iten posicion  deshabilidado">
                
-                <img src="assets/images/5/5_Plano.png" alt="Cargando..."  class="i5">
+                <img src="assets/images/5/5_Plano.png" alt="Cargando..." onclick="desactivado()"  class="i5">
             </div>
 
-            <div class="iten posicion  ">
+            <div class="iten posicion  deshabilidado">
             
-                <img src="assets/images/6/6_Plano.png" alt="Cargando..." class="i6" >
+                <img src="assets/images/6/6_Plano.png" alt="Cargando..." onclick="desactivado()" class="i6" >
             </div>
-            <div class="iten  posicion ">
+            <div class="iten  posicion deshabilidado" >
     
-                <img src="assets/images/7/7_Plano.png" alt="Cargando..."  class="i7">
+                <img src="assets/images/7/7_Plano.png" alt="Cargando..." onclick="desactivado()"  class="i7">
             </div>
     </div>  
         
         
-
+    <script>
+        function desactivado(){
+            swal({
+             title: "Vaya... ¡Esta Opción Esta Desactivada!",
+             text:"Comuníquese con su proveedor ",
+            button: {
+                    text: "Okey!",
+                },
+        });
+       
+        }
+            
+    </script>
     <script src="./assets/scripts/principal.js"></script>
     <script src="./assets/scripts/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

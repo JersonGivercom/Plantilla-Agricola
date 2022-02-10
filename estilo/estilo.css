@@ -273,7 +273,6 @@
     box-shadow: 2px -4px 13px 10px rgba(244, 61, 37, 0.21);
 }
 .deshabilidado{
-    pointer-events: none;
     opacity: 0.4;
 }
 

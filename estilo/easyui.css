@@ -1784,6 +1784,7 @@ width: 95px !important;
   left: 0;
 }
 .datagrid-view2 {
+  text-align: center;
   right: 0;
 }
 .datagrid-mask {
@@ -2029,6 +2030,9 @@ width: 95px !important;
 .datagrid-footer td {
   border-color: #ccc;
 }
+.datagrid-htable{
+  text-align: center;
+}
 .datagrid-htable,
 .datagrid-btable,
 .datagrid-ftable {
@@ -2071,6 +2075,7 @@ width: 95px !important;
   line-height: 32px;
   padding: 0 4px;
 }
+
 .propertygrid .datagrid-view1 .datagrid-body td {
   padding-bottom: 1px;
   border-width: 0 1px 0 0;
