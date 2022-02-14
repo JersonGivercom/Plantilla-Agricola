@@ -29,7 +29,7 @@
 
             <div class="page-title-heading">
                 <div class="page-title-icon">
-                    <i class="pe-7s-map-2 icon-gradient bg-night-fade">
+                    <i class="pe-7s-box1 icon-gradient bg-night-fade">
                     </i>
                 </div>
                 <div>Información del Abonado y Fertilizante
@@ -112,7 +112,7 @@
                        
                     </div>
                     <div class="col-md-4 mb-3" >
-                        <label for="validationCustom01">Variedad de Producto</label>
+                        <label for="validationCustom01">Variedad</label>
                         <input type="text" disabled  class="form-control" id="validationCustom01"
                              placeholder="Variedad" value="" name="txtNombrePais" required>
                         <div class="valid-feedback">
@@ -131,13 +131,7 @@
                 <div class="form-row">
                     <div class="col-md-12 mb-6 tablavariedad_producto" style="pointer-events: none;">
                              <div class="cabeza_tabla_variedadPoduc">
-                                <span class="span_enfermedades_titulo"  onclick="muestra_oculta('ocultar')">Abono y fertilizante Aplicado</span>
-                                <div class="agregar_enfermedad">
-                                        <i class="fas fa-angle-down ico_enfer" onclick="muestra_oculta('ocultar')"></i>
-                                        <a class="btn btn-success " href="#" 
-                                        data-toggle="modal" data-target="#modalProductos" >
-                                        <i class="fas fa-plus-square"></i></a>
-                                </div> 
+                                <span class="span_enfermedades_titulo"  onclick="muestra_oculta('ocultar')">Abono y fertilizante Aplicado</span> 
                             </div> 
                             <div class="table-responsive" id="ocultar">
                                 <table  class="mb-0 table" >
@@ -146,17 +140,13 @@
                                         <th>Producto</th>
                                         <th>Fabricante</th>
                                         <th>Tipo de Producto</th>
-                                        <th colspan="1">Accion</th>
                                     </thead>
                                     <tbody>
                                         <tr> 
-                                            <td class="checked"><input type="checkbox"></td>
+                                            <td ><input type="checkbox"></td>
                                             <td>Naturgan 2-30-0</td> 
                                             <td>Laboratorios Econatura S.L.</td>  
                                             <td>Abono orgánico fosfatado de origen animal</td> 
-                                            <td class="acciones_variedadProducto">     
-                                                <a class="btn btn-danger" href="javascript:eliminar();"><i class="fas fa-trash"></i></a>   
-                                            </td>  
                                         </tr>                                       
                                     </tbody>
                                 </table>

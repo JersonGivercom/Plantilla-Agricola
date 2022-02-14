@@ -38,7 +38,7 @@
         <div class="page-title-wrapper">
             <div class="page-title-heading">
                 <div class="page-title-icon">
-                    <i class="pe-7s-map-marker icon-gradient bg-night-fade">
+                    <i class="pe-7s-leaf icon-gradient bg-night-fade">
                     </i>
                 </div>
                 <div>Detalle del Tratamiento Fitosanitario
@@ -116,7 +116,7 @@
                        
                     </div>
                     <div class="col-md-4 mb-3" >
-                        <label for="validationCustom01">Variedad de Producto</label>
+                        <label for="validationCustom01">Variedad</label>
                         <input type="text" disabled  class="form-control" id="validationCustom01"
                              placeholder="Variedad" value="" name="txtNombrePais" required>
                         <div class="valid-feedback">
@@ -130,12 +130,12 @@
                         <div class="caja_pais_texto_boton">
                              <input type="text" disabled class="form-control texto_buscar_pais" 
                              id="lblEnfermedad" placeholder="Seleccione el país"  value="" name="txtNombrePais" required>
-                            <button type="button" id="btn"   data-toggle="modal"
+                            <!-- <button type="button" id="btn"   data-toggle="modal"
                              data-target="#modalEnfermedad" onclick="myFunction()"
                            class="btn-shadow  btn btn-info boton_buscar_pais">
                             <span class="btn-icon-wrapper pr-2 opacity-7">
                                 <i class="fas fa-search"></i>
-                             </span> 
+                             </span>  -->
                         </button>
                         </div>
                        
@@ -155,9 +155,9 @@
                                 <span class="span_enfermedades_titulo"  onclick="muestra_oculta('ocultar')">Aplicar Producto</span>
                                 <div class="agregar_enfermedad">
                                         <i class="fas fa-angle-down ico_enfer" onclick="muestra_oculta('ocultar')"></i>
-                                        <a class="btn btn-success " href="#" 
+                                        <!-- <a class="btn btn-success " href="#" 
                                         data-toggle="modal" data-target="#modalProductos" >
-                                        <i class="fas fa-plus-square"></i></a>
+                                        <i class="fas fa-plus-square"></i></a> -->
                                 </div> 
                             </div> 
                             <div class="table-responsive" id="ocultar">
@@ -166,24 +166,19 @@
                                         <th>Seleccione</th>
                                         <th>Producto</th>
                                         <th>Principio Activo</th>
-                                        <th colspan="1">Accion</th>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="checked"><input type="checkbox"></td>
+                                            <td ><input type="checkbox"></td>
                                             <td>Producto 1</td>
                                             <td>Principio activo 1</td>
-                                            <td class="acciones_variedadProducto">     
-                                                <a class="btn btn-danger" href="javascript:eliminar();"><i class="fas fa-trash"></i></a>   
-                                            </td>  
+                                             
                                         </tr>
                                         <tr>
-                                            <td class="checked"><input type="checkbox"></td>
+                                            <td ><input type="checkbox"></td>
                                             <td>Producto 2</td>
                                             <td>Principio activo 2</td>
-                                            <td class="acciones_variedadProducto">     
-                                                <a class="btn btn-danger" href="javascript:eliminar();"><i class="fas fa-trash"></i></a>   
-                                            </td>  
+                                            
                                         </tr>                                       
                                     </tbody>
                                 </table>
@@ -216,9 +211,9 @@
                 })();
             </script>
         </div>
-    </div>
-<!-- Modal Para Las Enfermedades -->
-    <!-- Modal de Enfermedades -->
+    <!-- </div>
+<!-- Modal Para Las Enfermedades 
+     Modal de Enfermedades -
     <div class="modal fade" id="modalEnfermedad" tabindex="-1" role="dialog" 
     aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -279,7 +274,7 @@
         </div>
      </div>
 
-   <!-- Modal para agregar el producto -->
+    Modal para agregar el producto -
    <div class="modal fade" id="modalProductos" tabindex="-1" role="dialog" 
    aria-labelledby="exampleModalLabel" aria-hidden="true">
        <div class="modal-dialog" role="document">
@@ -332,7 +327,7 @@
           
        </div>
     </div>
-    
+     -->
    <script type="text/javascript" src="../../../../assets/scripts/tree_view.js"></script> 
     <script type="text/javascript" src="../../../../assets/scripts/main.js"></script>
 </body>
