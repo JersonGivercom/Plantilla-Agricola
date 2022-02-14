@@ -11,6 +11,13 @@
 /* DataTable --Tabla Encabezado */
 
 /* Esto es para la tabla de insertar lote de los items presupuestales POR MIENTRAS */
+.bordeTableIndicador{
+  border-spacing:5px;
+  text-align: center;
+}
+.bordeTop{
+  border-top:1.1px solid #53ac80;
+}
 .modal-lg-5{
   width:560px;
 }

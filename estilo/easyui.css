@@ -80,6 +80,8 @@ width: 95px !important;
   -moz-border-radius: 0 0 0 0;
   -webkit-border-radius: 0 0 0 0;
   border-radius: 0 0 0 0;
+  width: 100% !important;
+  margin-bottom: 10px;
 }
 .panel-header,
 .panel-body {
