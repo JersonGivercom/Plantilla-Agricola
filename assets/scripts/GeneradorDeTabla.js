@@ -18,18 +18,21 @@ const generarTabla = () => {
                 tabla +="<th class='tabla_generada_encabezado' >"+numerocolumna+"</th>";
             }
     tabla +="</thead>";
-
+    tabla +="<tbody>";
     for (let k = 1; k <= numFilas; k++) {
+       
         numerofinal++;
             tabla += "<tr>";   
                 for (let o = 1; o <= numColumnas; o++) {
+
                     id++;
                     tabla += "<td class='tabla_generada_td' id='"+id+"' onclick='cambiarColor("+id+")'>"+id+"</td>";  
                 }
                 tabla += "<td class='tabla_generada_celda_final'>"+numerofinal+"</td>";
-            tabla += "</tr>";
-        tabla +="</tbody>";
+                tabla += "</tr>";
+        
     }
+    tabla +="</tbody>";
     tabla += "</table>";
     contenedorTabla.innerHTML = tabla;
 };

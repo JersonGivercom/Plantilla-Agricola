@@ -9904,10 +9904,18 @@ button,
   transition: width 0.2s;
   background-color: #084884;
 }
-.app-header__logo .logo-src {
+/* .app-header__logo .logo-src {
   height: 23px;
   width: 97px;
   background: url(../assets/images/prototipo.png) no-repeat;
+} */
+.app-header__logo .logo-src {
+  height: 45px;
+  width: 185px;
+
+} 
+.img {
+  width: 175px; 
 }
 .app-header__menu,
 .app-header__mobile-menu {
