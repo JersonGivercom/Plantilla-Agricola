@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="estilo/login1.css">
     <link rel="stylesheet" href="estilo/main.css">
     <link rel="shortcut icon" href="assets/images/ico-logo1.png" type="image/x-icon">
+    <script src="assets/scripts/jquery.min.js"></script> 
     <meta name="keywords" content="Sistema Agrícola de Givercom S.A."/>
     <meta name="author" content="Givercom S.A." />
     <meta name="copyright" content="Propietario de Givercom S.A." />
     <meta name="description" content="Proyecto web pensado para gestionar los trabajos realizados en un fundo, creado por Givercom S. A."/>
-    <title>Login</title>
+    <title>Sistema Agrícola - Login</title>
 </head>
 <body>
-    <img src="assets/images/img2.png"  class="superior_izquierdo" alt="superior izquierdo">
+    <img src="assets/images/img2.png" draggable="false"   class="superior_izquierdo" alt="superior izquierdo">
 
     <div class="frmcaja">
         <div class="cajaLeft">
             <div class="frmLogin">
                 <div class="frm_ContenedorLogo">
-                     <img src="assets/images/1Verde.png" class="imgLogoBienvenido" alt="logoenTexto"> 
+                     <img src="assets/images/LogoVerde.png"  draggable="false"  class="imgLogoBienvenido" alt="logoenTexto"> 
                 </div>
                
                <form>
@@ -58,19 +59,28 @@
          <div class="cajaRight"> 
             <span class="parrafoRight">Proyecto web pensado para gestionar los
                  trabajos realizados en un fundo, creado por Givercom S. A.</span> 
-             <img src="assets/images/img1.png" class="imgRight" alt="imgRight" >
+             <img src="assets/images/img1.png" draggable="false"  class="imgRight" alt="imgRight" >
         </div> 
     </div>
 
     <div class="footer">
         <span class="footer_text">Copyright © Givercom S.A. Sistema Agrícola-  Version 1 - 2022</span>
     </div>
-    <img src="assets/images/img3.png"  class="inferior_derecha" alt="inferior derecha" >
+    <img src="assets/images/img3.png" draggable="false"   class="inferior_derecha" alt="inferior derecha" >
 
     <script>
         function iniciarSesion(){
             window.location.href="Menu.html";
         }
+        $(document).ready(function() {
+            $(window).keyup(function(e){
+            if(e.keyCode == 44){
+                $("body").hide();
+            }
+        
+            });
+         }); 
     </script>
+
 </body>
 </html>
