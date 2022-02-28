@@ -23,6 +23,11 @@ body{
 .imgLogoBienvenido{
     width: 65%;
 }
+.logiError{
+    font-weight: 500;
+    font-family: sans-serif;
+    color: red;
+}
 .frmcaja{
     margin-top: 50px;
     margin-left: auto;

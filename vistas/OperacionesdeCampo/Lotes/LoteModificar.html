@@ -11,10 +11,10 @@
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="Inline validation is very easy to implement using the Architect Framework.">
     <meta name="msapplication-tap-highlight" content="no">
-  
     <link href="../../../estilo/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.6.3.js" integrity="sha256-m6oQ4cVjDD3Nm7Rr8AkTzJSzhV1YyUWa6YSDOcVm6Xs=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.8.16/jquery-ui.js" integrity="sha256-gCmrsfQ3qKF9qCK8Ed0+loCZhOhr2tDgeayBcZlHefk=" crossorigin="anonymous"></script>
 </head>
-
 <body class="pagina">
     <div class="app-page-title">
         <div class="page-title-wrapper">
@@ -248,101 +248,12 @@
                             Por favor seleccionar un producto
                         </div>
 
-                    </div>
-
-                      <!--GENERADOR DE TALA  -->
-                      <div class="modal fade" id="modalInventario" tabindex="-1" role="dialog"
-                      aria-labelledby="exampleModalLabel"
-                          aria-hidden="true">
-                      <div class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Inventario de plantas</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                  </button>
-                              </div>
-                              <div class="modal-body">
-                                  <form class="needs-validation" novalidate>
-                                      <div class="form-row">
-                                          <div class="col-md-4 mb-3">
-                                              <label for="validationCustom01">Cantidad de Filas </label>
-                                              <input type="number" class="form-control" id="numFilas"
-                                              placeholder="Cantidad de filas" min="1" value="1" >
-                                              <div class="valid-feedback">
-                                                  Correcto!
-                                              </div>
-                                          </div>
-                                          <div class="col-md-4 mb-3">
-                                              <label for="validationCustom01">Cantidad de Columnas </label>
-                                              <input type="number" class="form-control"  id="numColumnas"
-                                              placeholder="Cantidad de columnas" min="1" value="1" >
-                                              <div class="valid-feedback">
-                                                  Correcto!
-                                              </div>
-                                          </div>
-                                          <div class="col-md-4 mb-3">
-                                              <button type="button" id="botonGenerar" onclick="generarTabla();" 
-                                              class="btn btn-info btn_crearInventario">Generar Inventario</button>
-                                          </div>
-                                          
-                                      </div>
-
-                                      <div class="form-row">
-                                        <div class="col-md-4 mb-3">
-                                            Buscar
-                                            <input type="text" class="form-control" placeholder="Buscar"  id="buscarPlanta" onkeyup="doSearch()" >
-                                        </div>
-                                    </div>
-                                      <div class="form-row">
-                                          <div class="col-md-10 mb-3">
-                                              <div id="contenedorTabla" class="responsive">
-
-                                                  
-                                              </div>
-                                          </div>
-                                          <div class="col-md-2 mb-3">
-                                              <div class="contenedor_botones">
-                                                  <button type="button" name="" class="btn btn-info"
-                                                  id="activar">Activar Planta</button> 
-                                                  <button type="button" name="" class="btn btn-secondary" 
-                                                  id="desactivar" >Quitar Plantas</button> 
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="form-row">
-                                        <div class="col-md-12 mb-3">
-                                            <button type="button" name="" class="btn btn-success" 
-                                            id="vigoroza" >Vigorosa</button>
-                                            <button type="button" name="" class="btn btn-warning" 
-                                            id="debil" >Debil</button>
-                                            <button type="button" name="" class="btn btn-danger" 
-                                            id="muerta" >Muerta</button>
-                                            <button type="button" name="" class="btn btn-dark" 
-                                            id="replantada" >Replantada</button>
-                                        </div>
-                                    </div>
-                                  </form>
-                                  <script>
-                                  
-                                  </script>
-                              </div>
-                              <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                  
-                              </div>
-                          </div>
-                      </div>
-                     </div>
-
-                </div>
+                    </div>          
+        </div>
 
                 <button class="btn btn-primary" data-toggle="modal" data-target="#modalInventario">Modificar Inventario</button>
-
                 <button class="btn btn-primary" type="submit">Guardar</button>
-
-                <button class="btn btn-secondary" onclick="LoteList()">Cerrar</button>
-
+                <button class="btn btn-secondary" onclick="LoteList()">Salir</button>
             </form>
 
             <script>
@@ -378,9 +289,152 @@
         </div>
     </div>
 
+     <!--GENERADOR DE TALA  -->
+     <div class="modal fade " id="modalInventario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-lg">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel">Inventario de plantas</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                   </button>
+               </div>
+               <div class="modal-body">
+                   <form class="needs-validation" novalidate>
+                       <div class="form-row">
+                           <div class="col-md-4 mb-3">
+                               <label for="validationCustom01">Cantidad de Filas </label>
+                               <input type="number" class="form-control" id="numFilas"
+                               placeholder="Cantidad de filas" min="1" value="1" >
+                               <div class="valid-feedback">
+                                   Correcto!
+                               </div>
+                           </div>
+                           <div class="col-md-4 mb-3">
+                               <label for="validationCustom01">Cantidad de Columnas </label>
+                               <input type="number" class="form-control"  id="numColumnas"
+                               placeholder="Cantidad de columnas" min="1" value="1" >
+                               <div class="valid-feedback">
+                                   Correcto!
+                               </div>
+                           </div>
+                           <div class="col-md-4 mb-3">
+                               <button type="button" id="botonGenerar" disabled
+                               class="btn btn-info btn_crearInventario">Generar Inventario</button>
+                           </div>
+                           
+                       </div>
+                       <br>
+                       <div class="form-row">
+                           <div class="col-md-4 mb-3">
+                                 <label for="validationCustom01">Buscar</label>
+                               <input type="text" class="form-control" placeholder="Buscar"  id="buscarPlanta" onkeyup="doSearch()" >
+                           </div>
+                           <div class="col-md-4 mb-3">
+                                <label for="validationCustom01">Nombre Zona</label>
+                                <input type="text" class="form-control" placeholder="Ingrese el nombre de la zona" 
+                                 id="registrarZona" onkeyup="RegistrarZona()" >
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <button type="button" id="btnRZona" disabled class="btn btn-secondary  btn_crearInventario">Registrar Zona</button>
+                             </div>
+                       </div>
+                       <div class="form-row">
+                           <div class="col-md-10 mb-3">
+                               <div id="contenedorTabla" class="responsive">
+                                   <div id="container-demo"> 
+                                   </div>   
+                               </div> 
+                           </div>
+                           <div class="col-md-2 mb-3">
+                               <div class="contenedor_botones">
+                                       <button type="button" class="btn btn-success" id="CrearZona" onclick="seleccionarTabla()" >Crear Zona</button>
+                                       <!-- <button type="button"class="btn btn-secondary" id="registrarZona" 
+                                   data-toggle="modal"  data-target="#modalcrearZona">Registrar Zona</button> -->
+                               </div>
+                           </div>
 
-    <script type="text/javascript" src="../../../assets/scripts/GeneradorDeTabla.js"></script>
+                       </div>
+                       <div class="form-row">
+                           <div class="col-md-12 mb-3">
+                               <label for="validationCustom01">* Presione la tecla CTRL y arrastre del mouse para elegir mas plantas</label>
+                           </div>
+                       </div>
+                       <!-- RELACIÓN DE PLANTAS -->
+                       <div class="form-row">
+                           <div class="col-md-10 mb-3">
+                               <div class="card-body">
+                                   <h5 class="card-title">Zonas Registradas</h5>
+                                   <div class="table-responsive">
+                                       <table class="mb-0 table">
+                                           <thead>
+                                           <tr>
+                                               <th>Zona</th>
+                                               <th>Cantidad de Plantas</th>
+                                               <th>Relación de Plantas</th> 
+                                               <th></th>
+                                           </tr>
+                                           </thead>
+                                           <tbody>
+                                               <tr>
+                                                   <th><a href="#">A1</a></th>
+                                                   <th>20</th>
+                                                   <th>1,2,3,4,5,6....,20</th>
+                                                   <th><a href="#"><i class="fas fa-trash-alt"></i></a></th>
+                                               </tr>
+                                               <tr>
+                                                   <th><a href="#">A2</a></th>
+                                                   <th>45</th>
+                                                   <th>1,2,3,4,5,6....,44,45</th>
+                                                   <th><a href="#"><i class="fas fa-trash-alt"></i></a></th>
+                                               </tr>
+                                           </tbody>
+                                       </table>
+                                   </div>                                              
+                               </div>
+                           </div>
+                       </div>
+                   </form>
+                   <script>
+                   
+                   </script>
+               </div>                             
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>                                
+                   </div>
+           </div>
+       </div>
+       
+    </div>
+
+
+     <!-- Contendor de Zonas -->
+     <div class="modal fade" id="modalcrearZona" role="dialog" >
+        <div class="modal-dialog modal-sm" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Crear Zonas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Nombre de zona</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="modal-footer">
+                            <button  type="button" class="btn btn-secondary" onclick="cerrarModal()"  >Grabar</button>                            
+                        </div>
+                    </form>
+                </div>                             
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript" src="../../../assets/scripts/main.js"></script>
+    <script  src="../../../assets/scripts/zonas1.js"></script>
+    <script id="main-js" src="../../../assets/scripts/zona_js.js"></script> 
 </body>
-
 </html>

@@ -11,9 +11,66 @@
 /* DataTable --Tabla Encabezado */
 
 /* Esto es para la tabla de insertar lote de los items presupuestales POR MIENTRAS */
-.img {
-  width: 185px; 
+.img{
+  width: 185px;
 }
+#container-demo {
+	width: 100%;
+}
+
+#container-demo ul {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#container-demo td {
+	width: 15px;
+	height: 15px;
+	list-style: none;
+	background-color: rgb(226, 218, 218);
+	margin: 0 5px 5px 0;
+	cursor: pointer;
+}
+
+#container-demo td.ui-selected, #container-demo td.ui-selecting {
+	border-color: #00f19b;
+	background-color:  #669c7d;
+	color: #fff;	
+}
+
+/* .selecTabla{ 
+  background: #0056b3 ; 
+}
+.selecTablaC { 
+  background: #009EEF ; 
+  color: white; 
+} */
+
+
+
+
+.ActivarPlanta { 
+  background: #229954; 
+}
+.ActivarPlantaC { 
+  background: #669c7d ; 
+  color: white; 
+}
+
+/* .QuitarPlanta { 
+  background: #865454 ; 
+}
+.QuitarPlantaC { 
+  background: #816363 ; 
+  color: white; 
+} */
+
+#selectable{ 
+  margin: 10px; 
+  padding: 0; }
+
 .bordeTableIndicador{
   border-spacing:5px;
   text-align: center;
@@ -428,10 +485,10 @@ width: 100% !important;
 .Tabla_generada{
   border: 1px solid black;
 }
-.tabla_generada_td{
+/* .tabla_generada_td{
   background-color: green;
   color: white;
-}
+} */
 .responsive{
   display: block;
   width: 100%;
@@ -466,10 +523,10 @@ width: 100% !important;
 }
 
 .tabla_generada_celda_final{
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(121, 119, 119);
   padding: 4px; 
   text-align: center;
-  background-color: darkslategray;
+  background-color: darkslategray !important;
   color: white;
 }
 

@@ -43,16 +43,17 @@
                             <div class="itemImput_logo " id="logo_texto">
                                 <i class="fa fa-solid fa-key"></i>
                             </div>
-                            <input type="password" class="itemTexto" id="password" placeholder="Ingrese su Contraseña" >
+                            <input type="password" class="itemTexto" id="password" placeholder="Ingrese su Contraseña" >                           
                             </div>
                        </div>
                        <a href="" class="recupContraseña">¿Has olvidado tu contraseña? </a>
                    </div>
-               </form>
-   
-               <div class="accionesLogin">
-                   <button class="btnlogin" onclick="iniciarSesion()" >Iniciar Sesión</button>
-               </div>
+              
+                </form>
+                    <div class="accionesLogin">
+                        <button class="btnlogin" onclick="iniciarSesion()" >Iniciar Sesión</button>
+                    </div>
+                
                
            </div>
         </div>
@@ -72,10 +73,13 @@
         function iniciarSesion(){
             window.location.href="Menu.html";
         }
+
         $(document).ready(function() {
             $(window).keyup(function(e){
             if(e.keyCode == 44){
                 $("body").hide();
+                var URLactual = window.location.href;
+                console.log(URLactual);
             }
         
             });
